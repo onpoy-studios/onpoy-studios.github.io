@@ -48,7 +48,7 @@ Bis der Key gesetzt ist, zeigt das Formular einen Hinweis auf die E-Mail-Adresse
 
 1. Ordner `games/<neues-spiel>/` anlegen, `index.html` + Rechtstexte hineinlegen
    (Aufbau wie bei `trend-or-flop`).
-2. In `index.html` im Abschnitt `<section ... id="spiele">` eine weitere
+2. In `index.html` im Abschnitt `<section ... id="apps">` eine weitere
    `<a class="game-card" href="games/<neues-spiel>/"> … </a>` ergänzen.
 
 ## Eigene Domain (später)
