@@ -1,0 +1,10 @@
+Die Schriftdateien in diesem Ordner stehen unter der SIL Open Font License 1.1
+und dürfen selbst gehostet und weitergegeben werden.
+
+  Bricolage Grotesque  – Copyright The Bricolage Grotesque Project Authors
+  IBM Plex Mono / Sans – Copyright IBM Corp.
+  Poppins              – Copyright The Poppins Project Authors
+  Source Serif 4       – Copyright Adobe
+
+Lizenztext: https://openfontlicense.org
+Bezogen über Fontsource (https://fontsource.org).
