@@ -174,6 +174,7 @@
   form.contact button:hover{filter:brightness(1.08)}
   form.contact button:disabled{opacity:.6;cursor:default}
   .formstatus{font-size:14px;line-height:1.5;padding:2px}
+  .formnote{color:var(--faint);font-size:13px;line-height:1.5}
   .formstatus.ok{color:#37D67A}
   .formstatus.err{color:#F0466E}
   .contact-aside{border:1px solid var(--border);border-radius:16px;background:var(--card);padding:24px;display:flex;flex-direction:column;gap:16px}
@@ -231,6 +232,7 @@
       <a href="#services">Services</a>
       <a href="#kontakt">Contact</a>
       <a href="#impressum">Imprint</a>
+      <a href="datenschutz.html">Privacy</a>
     </nav>
     <div class="lang-switch" role="group" aria-label="Sprache / Language">
       <a href="../de/">DE</a>
@@ -321,7 +323,7 @@
       <div class="contact-wrap reveal">
         <form class="contact" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
           <!-- SETUP: get an access key at https://web3forms.com with onpoy.studios@gmail.com and insert it here -->
-          <input type="hidden" name="access_key" value="DEIN_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="access_key" value="f14f2b71-3c4f-43e5-930e-f0921907d43d">
           <input type="hidden" name="subject" value="New message from the OnPoy Studios website">
           <input type="hidden" name="from_name" value="OnPoy Studios Website">
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
@@ -349,6 +351,7 @@
             <textarea id="f-msg" name="Message" required></textarea>
           </div>
           <button type="submit">Send message</button>
+          <p class="formnote">By submitting, the details you provide are processed in order to handle your enquiry. See our <a href="datenschutz.html">privacy policy</a> for more.</p>
           <p class="formstatus" id="formStatus" role="status" aria-live="polite"></p>
         </form>
         <aside class="contact-aside">
@@ -406,7 +409,9 @@
       <a href="#services">Services</a>
       <a href="#kontakt">Contact</a>
       <a href="#impressum">Imprint</a>
+      <a href="datenschutz.html">Privacy</a>
       <a href="../games/trend-or-flop/en/datenschutz.html">Privacy Policy (Trend or Flop)</a>
+      <a href="../games/trend-or-flop/en/nutzungsbedingungen.html">Terms of Service (Trend or Flop)</a>
     </nav>
   </div>
 </footer>
