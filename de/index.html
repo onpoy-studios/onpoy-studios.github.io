@@ -10,7 +10,9 @@
 <meta property="og:title" content="OnPoy Studios">
 <meta property="og:description" content="Wir entwickeln Apps, Spiele-Apps und Websites.">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Poppins:wght@600&display=swap">
 <style>
   :root{
     --bg:#0A0C12;
@@ -172,10 +174,6 @@
   form.contact button:hover{filter:brightness(1.08)}
   form.contact button:disabled{opacity:.6;cursor:default}
   .formstatus{font-size:14px;line-height:1.5;padding:2px}
-  .formnote{color:var(--faint);font-size:13px;line-height:1.5}
-  .field .err{color:#F0466E;font-size:13px;line-height:1.4}
-  .field [aria-invalid="true"]{border-color:#F0466E;background:rgba(240,70,110,.07)}
-  .field [aria-invalid="true"]:focus{border-color:#F0466E;box-shadow:0 0 0 3px rgba(240,70,110,.25)}
   .formstatus.ok{color:#37D67A}
   .formstatus.err{color:#F0466E}
   .contact-aside{border:1px solid var(--border);border-radius:16px;background:var(--card);padding:24px;display:flex;flex-direction:column;gap:16px}
@@ -233,7 +231,6 @@
       <a href="#services">Leistungen</a>
       <a href="#kontakt">Kontakt</a>
       <a href="#impressum">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
     </nav>
     <div class="lang-switch" role="group" aria-label="Sprache / Language">
       <span aria-pressed="true">DE</span>
@@ -266,7 +263,7 @@
       <div class="sec-head reveal">
         <span class="eyebrow">Spiele</span>
         <h2>Was wir ver&ouml;ffentlicht haben</h2>
-        <p>Aktuell ein Titel &ndash; weitere sind in Arbeit.</p>
+        <p>Zwei Titel &ndash; weitere sind in Arbeit.</p>
       </div>
       <div class="games-grid reveal">
         <a class="game-card" href="../games/trend-or-flop/de/">
@@ -280,6 +277,19 @@
             </div>
             <p class="desc">Sch&auml;tze, welcher Begriff h&auml;ufiger gesucht wird. Mit Klassik-, Blind-Duell- und Party-Modus.</p>
             <div class="tags"><span class="tag">Quiz</span><span class="tag">Party</span><span class="tag">iOS</span><span class="tag">DE / EN</span></div>
+          </div>
+        </a>
+        <a class="game-card" href="../games/chaos/de/">
+          <div class="thumb">
+            <img src="../games/chaos/icon.jpg" alt="Chaos – Verbotene W&ouml;rter" loading="lazy">
+          </div>
+          <div class="body">
+            <div class="row">
+              <h3>Chaos &ndash; Verbotene W&ouml;rter</h3>
+              <span class="go">Ansehen &rarr;</span>
+            </div>
+            <p class="desc">Erkl&auml;re Begriffe, ohne die verbotenen W&ouml;rter zu benutzen. Mit Team-, Duell- und Ja/Nein-Modus.</p>
+            <div class="tags"><span class="tag">Party</span><span class="tag">Wortspiel</span><span class="tag">iOS</span><span class="tag">DE / EN</span></div>
           </div>
         </a>
       </div>
@@ -322,14 +332,15 @@
         <p>Frage, Problem mit einer App oder Interesse an einem Projekt &ndash; f&uuml;ll das Formular aus, wir melden uns per E-Mail.</p>
       </div>
       <div class="contact-wrap reveal">
-        <form class="contact" id="contactForm" novalidate action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="f14f2b71-3c4f-43e5-930e-f0921907d43d">
+        <form class="contact" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <!-- SETUP: Access Key auf https://web3forms.com mit onpoy.studios@gmail.com holen und hier einsetzen -->
+          <input type="hidden" name="access_key" value="DEIN_WEB3FORMS_ACCESS_KEY">
           <input type="hidden" name="subject" value="Neue Nachricht über die OnPoy-Studios-Website">
           <input type="hidden" name="from_name" value="OnPoy Studios Website">
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
           <div class="field">
             <label for="f-anliegen">Anliegen</label>
-            <select id="f-anliegen" name="Anliegen">
+            <select id="f-anliegen" name="Anliegen" required>
               <option value="" disabled selected>Bitte w&auml;hlen &hellip;</option>
               <option>Allgemeine Frage</option>
               <option>Problem / Fehler in einer App</option>
@@ -337,25 +348,20 @@
               <option>Feedback / Vorschlag</option>
               <option>Presse / Sonstiges</option>
             </select>
-            <p class="err" id="e-anliegen" hidden></p>
           </div>
           <div class="field">
             <label for="f-name">Name</label>
-            <input id="f-name" name="Name" type="text" autocomplete="name">
-            <p class="err" id="e-name" hidden></p>
+            <input id="f-name" name="Name" type="text" autocomplete="name" required>
           </div>
           <div class="field">
             <label for="f-mail">E-Mail</label>
-            <input id="f-mail" name="email" type="email" autocomplete="email">
-            <p class="err" id="e-mail" hidden></p>
+            <input id="f-mail" name="E-Mail" type="email" autocomplete="email" required>
           </div>
           <div class="field">
             <label for="f-msg">Nachricht</label>
-            <textarea id="f-msg" name="Nachricht"></textarea>
-            <p class="err" id="e-msg" hidden></p>
+            <textarea id="f-msg" name="Nachricht" required></textarea>
           </div>
           <button type="submit">Nachricht senden</button>
-          <p class="formnote">Mit dem Absenden werden deine Angaben zur Bearbeitung der Anfrage verarbeitet. Einzelheiten in der <a href="datenschutz.html">Datenschutzerkl&auml;rung</a>.</p>
           <p class="formstatus" id="formStatus" role="status" aria-live="polite"></p>
         </form>
         <aside class="contact-aside">
@@ -413,9 +419,8 @@
       <a href="#services">Leistungen</a>
       <a href="#kontakt">Kontakt</a>
       <a href="#impressum">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
       <a href="../games/trend-or-flop/de/datenschutz.html">Datenschutz (Trend or Flop)</a>
-      <a href="../games/trend-or-flop/de/nutzungsbedingungen.html">Nutzungsbedingungen (Trend or Flop)</a>
+      <a href="../games/chaos/de/datenschutz.html">Datenschutz (Chaos)</a>
     </nav>
   </div>
 </footer>
@@ -435,105 +440,40 @@
   }
 
   // contact form via Web3Forms AJAX
-  (function(){
-    var form = document.getElementById('contactForm');
-    // WICHTIG: die Variable darf nicht 'status' heißen - window.status ist ein
-    // reservierter String; eine Zuweisung im globalen Scope würde das Element
-    // stillschweigend in Text umwandeln und jede Meldung verschlucken.
-    var statusEl = document.getElementById('formStatus');
-    if(!form || !statusEl) return;
-
-    var MSG = {
-      required: {
-        'f-anliegen': 'Bitte wähle ein Anliegen aus.',
-        'f-name'    : 'Bitte gib deinen Namen ein.',
-        'f-mail'    : 'Bitte gib deine E-Mail-Adresse ein.',
-        'f-msg'     : 'Bitte schreib uns eine Nachricht.'
-      },
-      mail: 'Bitte gib eine gültige E-Mail-Adresse ein, z. B. name@beispiel.de', sending: 'Senden …', send: 'Nachricht senden',
-      ok: 'Danke! Deine Nachricht ist raus – wir melden uns.', fail: 'Konnte nicht gesendet werden. Bitte per E-Mail an onpoy.studios@gmail.com.', net: 'Netzwerkfehler. Bitte per E-Mail an onpoy.studios@gmail.com.', setup: 'Formular noch nicht eingerichtet – bitte per E-Mail an onpoy.studios@gmail.com schreiben.'
-    };
-
-    // verlangt ein @ und eine echte Endung mit mindestens zwei Buchstaben
-    var MAIL_RE = /^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)*\.[A-Za-z]{2,}$/;
-    var fields = ['f-anliegen','f-name','f-mail','f-msg'];
-    var checked = false;
-
-    function box(id){ return document.getElementById('e-' + id.slice(2)); }
-
-    function problem(id){
-      var v = (document.getElementById(id).value || '').trim();
-      if(!v) return MSG.required[id];
-      if(id === 'f-mail' && !MAIL_RE.test(v)) return MSG.mail;
-      return null;
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('formStatus');
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var key = form.querySelector('[name=access_key]').value;
+    if(!key || key.indexOf('DEIN_') === 0){
+      status.className = 'formstatus err';
+      status.textContent = 'Formular noch nicht eingerichtet – bitte per E-Mail an onpoy.studios@gmail.com schreiben.';
+      return;
     }
-
-    function paint(id){
-      var el = document.getElementById(id), b = box(id), msg = problem(id);
-      if(msg){
-        el.setAttribute('aria-invalid','true');
-        el.setAttribute('aria-describedby', b.id);
-        b.textContent = msg; b.hidden = false;
+    var btn = form.querySelector('button');
+    btn.disabled = true; btn.textContent = 'Senden …';
+    status.className = 'formstatus'; status.textContent = '';
+    var data = Object.fromEntries(new FormData(form).entries());
+    fetch('https://api.web3forms.com/submit', {
+      method:'POST',
+      headers:{'Content-Type':'application/json', Accept:'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(r){ return r.json(); }).then(function(j){
+      if(j.success){
+        form.reset();
+        status.className = 'formstatus ok';
+        status.textContent = 'Danke! Deine Nachricht ist raus – wir melden uns.';
       } else {
-        el.removeAttribute('aria-invalid');
-        el.removeAttribute('aria-describedby');
-        b.textContent = ''; b.hidden = true;
+        status.className = 'formstatus err';
+        status.textContent = 'Konnte nicht gesendet werden. Bitte per E-Mail an onpoy.studios@gmail.com.';
       }
-      return !msg;
-    }
-
-    function clearAll(){
-      checked = false;
-      fields.forEach(function(id){
-        var b = box(id); b.hidden = true; b.textContent = '';
-        var el = document.getElementById(id);
-        el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby');
-      });
-    }
-
-    fields.forEach(function(id){
-      var el = document.getElementById(id);
-      ['input','change','blur'].forEach(function(ev){
-        el.addEventListener(ev, function(){ if(checked) paint(id); });
-      });
+    }).catch(function(){
+      status.className = 'formstatus err';
+      status.textContent = 'Netzwerkfehler. Bitte per E-Mail an onpoy.studios@gmail.com.';
+    }).finally(function(){
+      btn.disabled = false; btn.textContent = 'Nachricht senden';
     });
-
-    form.addEventListener('submit', function(ev){
-      ev.preventDefault();
-      checked = true;
-      statusEl.className = 'formstatus'; statusEl.textContent = '';
-
-      var firstBad = null;
-      fields.forEach(function(id){ if(!paint(id) && !firstBad) firstBad = id; });
-      if(firstBad){ document.getElementById(firstBad).focus(); return; }
-
-      var key = form.querySelector('[name=access_key]').value;
-      if(!key || key.indexOf('DEIN_') === 0){
-        statusEl.className = 'formstatus err'; statusEl.textContent = MSG.setup; return;
-      }
-
-      var btn = form.querySelector('button');
-      btn.disabled = true; btn.textContent = MSG.sending;
-
-      fetch('https://api.web3forms.com/submit', {
-        method:'POST',
-        headers:{'Content-Type':'application/json', Accept:'application/json'},
-        body: JSON.stringify(Object.fromEntries(new FormData(form).entries()))
-      }).then(function(r){ return r.json(); }).then(function(j){
-        if(j && j.success){
-          form.reset(); clearAll();
-          statusEl.className = 'formstatus ok'; statusEl.textContent = MSG.ok;
-        } else {
-          statusEl.className = 'formstatus err';
-          statusEl.textContent = (j && j.message) ? j.message : MSG.fail;
-        }
-      }).catch(function(){
-        statusEl.className = 'formstatus err'; statusEl.textContent = MSG.net;
-      }).finally(function(){
-        btn.disabled = false; btn.textContent = MSG.send;
-      });
-    });
-  })();
+  });
 </script>
 
 </body>
