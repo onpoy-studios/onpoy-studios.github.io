@@ -10,7 +10,9 @@
 <meta property="og:title" content="OnPoy Studios">
 <meta property="og:description" content="We build apps, games, and websites.">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Poppins:wght@600&display=swap">
 <style>
   :root{
     --bg:#0A0C12;
@@ -172,10 +174,6 @@
   form.contact button:hover{filter:brightness(1.08)}
   form.contact button:disabled{opacity:.6;cursor:default}
   .formstatus{font-size:14px;line-height:1.5;padding:2px}
-  .formnote{color:var(--faint);font-size:13px;line-height:1.5}
-  .field .err{color:#F0466E;font-size:13px;line-height:1.4}
-  .field [aria-invalid="true"]{border-color:#F0466E;background:rgba(240,70,110,.07)}
-  .field [aria-invalid="true"]:focus{border-color:#F0466E;box-shadow:0 0 0 3px rgba(240,70,110,.25)}
   .formstatus.ok{color:#37D67A}
   .formstatus.err{color:#F0466E}
   .contact-aside{border:1px solid var(--border);border-radius:16px;background:var(--card);padding:24px;display:flex;flex-direction:column;gap:16px}
@@ -233,7 +231,6 @@
       <a href="#services">Services</a>
       <a href="#kontakt">Contact</a>
       <a href="#impressum">Imprint</a>
-      <a href="datenschutz.html">Privacy</a>
     </nav>
     <div class="lang-switch" role="group" aria-label="Sprache / Language">
       <a href="../de/">DE</a>
@@ -266,7 +263,7 @@
       <div class="sec-head reveal">
         <span class="eyebrow">Games</span>
         <h2>What we've published</h2>
-        <p>Currently one title &ndash; more are in the works.</p>
+        <p>Two titles &ndash; more are in the works.</p>
       </div>
       <div class="games-grid reveal">
         <a class="game-card" href="../games/trend-or-flop/en/">
@@ -280,6 +277,19 @@
             </div>
             <p class="desc">Guess which term is searched more often. With Classic, Blind Duel, and Party mode.</p>
             <div class="tags"><span class="tag">Quiz</span><span class="tag">Party</span><span class="tag">iOS</span><span class="tag">DE / EN</span></div>
+          </div>
+        </a>
+        <a class="game-card" href="../games/chaos/en/">
+          <div class="thumb">
+            <img src="../games/chaos/icon.jpg" alt="Chaos – Forbidden Words" loading="lazy">
+          </div>
+          <div class="body">
+            <div class="row">
+              <h3>Chaos &ndash; Forbidden Words</h3>
+              <span class="go">View &rarr;</span>
+            </div>
+            <p class="desc">Explain terms without using the forbidden words. With Team, Duel and Yes/No mode.</p>
+            <div class="tags"><span class="tag">Party</span><span class="tag">Word Game</span><span class="tag">iOS</span><span class="tag">DE / EN</span></div>
           </div>
         </a>
       </div>
@@ -322,15 +332,15 @@
         <p>A question, an issue with an app, or interested in a project &ndash; fill out the form and we'll get back to you by email.</p>
       </div>
       <div class="contact-wrap reveal">
-        <form class="contact" id="contactForm" novalidate action="https://api.web3forms.com/submit" method="POST">
+        <form class="contact" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
           <!-- SETUP: get an access key at https://web3forms.com with onpoy.studios@gmail.com and insert it here -->
-          <input type="hidden" name="access_key" value="f14f2b71-3c4f-43e5-930e-f0921907d43d">
+          <input type="hidden" name="access_key" value="DEIN_WEB3FORMS_ACCESS_KEY">
           <input type="hidden" name="subject" value="New message from the OnPoy Studios website">
           <input type="hidden" name="from_name" value="OnPoy Studios Website">
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
           <div class="field">
             <label for="f-anliegen">Topic</label>
-            <select id="f-anliegen" name="Topic">
+            <select id="f-anliegen" name="Topic" required>
               <option value="" disabled selected>Please select &hellip;</option>
               <option>General question</option>
               <option>Problem / bug in an app</option>
@@ -338,25 +348,20 @@
               <option>Feedback / suggestion</option>
               <option>Press / other</option>
             </select>
-            <p class="err" id="e-anliegen" hidden></p>
           </div>
           <div class="field">
             <label for="f-name">Name</label>
-            <input id="f-name" name="Name" type="text" autocomplete="name">
-            <p class="err" id="e-name" hidden></p>
+            <input id="f-name" name="Name" type="text" autocomplete="name" required>
           </div>
           <div class="field">
             <label for="f-mail">Email</label>
-            <input id="f-mail" name="email" type="email" autocomplete="email">
-            <p class="err" id="e-mail" hidden></p>
+            <input id="f-mail" name="Email" type="email" autocomplete="email" required>
           </div>
           <div class="field">
             <label for="f-msg">Message</label>
-            <textarea id="f-msg" name="Message"></textarea>
-            <p class="err" id="e-msg" hidden></p>
+            <textarea id="f-msg" name="Message" required></textarea>
           </div>
           <button type="submit">Send message</button>
-          <p class="formnote">By submitting, the details you provide are processed in order to handle your enquiry. See our <a href="datenschutz.html">privacy policy</a> for more.</p>
           <p class="formstatus" id="formStatus" role="status" aria-live="polite"></p>
         </form>
         <aside class="contact-aside">
@@ -414,9 +419,8 @@
       <a href="#services">Services</a>
       <a href="#kontakt">Contact</a>
       <a href="#impressum">Imprint</a>
-      <a href="datenschutz.html">Privacy</a>
       <a href="../games/trend-or-flop/en/datenschutz.html">Privacy Policy (Trend or Flop)</a>
-      <a href="../games/trend-or-flop/en/nutzungsbedingungen.html">Terms of Service (Trend or Flop)</a>
+      <a href="../games/chaos/en/datenschutz.html">Privacy Policy (Chaos)</a>
     </nav>
   </div>
 </footer>
@@ -436,105 +440,40 @@
   }
 
   // contact form via Web3Forms AJAX
-  (function(){
-    var form = document.getElementById('contactForm');
-    // WICHTIG: die Variable darf nicht 'status' heißen - window.status ist ein
-    // reservierter String; eine Zuweisung im globalen Scope würde das Element
-    // stillschweigend in Text umwandeln und jede Meldung verschlucken.
-    var statusEl = document.getElementById('formStatus');
-    if(!form || !statusEl) return;
-
-    var MSG = {
-      required: {
-        'f-anliegen': 'Please choose what your message is about.',
-        'f-name'    : 'Please enter your name.',
-        'f-mail'    : 'Please enter your email address.',
-        'f-msg'     : 'Please enter a message.'
-      },
-      mail: 'Please enter a valid email address, e.g. name@example.com', sending: 'Sending …', send: 'Send message',
-      ok: 'Thanks! Your message is on its way – we\'ll get back to you.', fail: 'Couldn\'t be sent. Please email onpoy.studios@gmail.com.', net: 'Network error. Please email onpoy.studios@gmail.com.', setup: 'Form not yet set up – please email onpoy.studios@gmail.com.'
-    };
-
-    // verlangt ein @ und eine echte Endung mit mindestens zwei Buchstaben
-    var MAIL_RE = /^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)*\.[A-Za-z]{2,}$/;
-    var fields = ['f-anliegen','f-name','f-mail','f-msg'];
-    var checked = false;
-
-    function box(id){ return document.getElementById('e-' + id.slice(2)); }
-
-    function problem(id){
-      var v = (document.getElementById(id).value || '').trim();
-      if(!v) return MSG.required[id];
-      if(id === 'f-mail' && !MAIL_RE.test(v)) return MSG.mail;
-      return null;
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('formStatus');
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var key = form.querySelector('[name=access_key]').value;
+    if(!key || key.indexOf('DEIN_') === 0){
+      status.className = 'formstatus err';
+      status.textContent = 'Form not yet set up – please email onpoy.studios@gmail.com.';
+      return;
     }
-
-    function paint(id){
-      var el = document.getElementById(id), b = box(id), msg = problem(id);
-      if(msg){
-        el.setAttribute('aria-invalid','true');
-        el.setAttribute('aria-describedby', b.id);
-        b.textContent = msg; b.hidden = false;
+    var btn = form.querySelector('button');
+    btn.disabled = true; btn.textContent = 'Sending …';
+    status.className = 'formstatus'; status.textContent = '';
+    var data = Object.fromEntries(new FormData(form).entries());
+    fetch('https://api.web3forms.com/submit', {
+      method:'POST',
+      headers:{'Content-Type':'application/json', Accept:'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(r){ return r.json(); }).then(function(j){
+      if(j.success){
+        form.reset();
+        status.className = 'formstatus ok';
+        status.textContent = 'Thanks! Your message is on its way – we\'ll get back to you.';
       } else {
-        el.removeAttribute('aria-invalid');
-        el.removeAttribute('aria-describedby');
-        b.textContent = ''; b.hidden = true;
+        status.className = 'formstatus err';
+        status.textContent = 'Couldn\'t be sent. Please email onpoy.studios@gmail.com.';
       }
-      return !msg;
-    }
-
-    function clearAll(){
-      checked = false;
-      fields.forEach(function(id){
-        var b = box(id); b.hidden = true; b.textContent = '';
-        var el = document.getElementById(id);
-        el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby');
-      });
-    }
-
-    fields.forEach(function(id){
-      var el = document.getElementById(id);
-      ['input','change','blur'].forEach(function(ev){
-        el.addEventListener(ev, function(){ if(checked) paint(id); });
-      });
+    }).catch(function(){
+      status.className = 'formstatus err';
+      status.textContent = 'Network error. Please email onpoy.studios@gmail.com.';
+    }).finally(function(){
+      btn.disabled = false; btn.textContent = 'Send message';
     });
-
-    form.addEventListener('submit', function(ev){
-      ev.preventDefault();
-      checked = true;
-      statusEl.className = 'formstatus'; statusEl.textContent = '';
-
-      var firstBad = null;
-      fields.forEach(function(id){ if(!paint(id) && !firstBad) firstBad = id; });
-      if(firstBad){ document.getElementById(firstBad).focus(); return; }
-
-      var key = form.querySelector('[name=access_key]').value;
-      if(!key || key.indexOf('DEIN_') === 0){
-        statusEl.className = 'formstatus err'; statusEl.textContent = MSG.setup; return;
-      }
-
-      var btn = form.querySelector('button');
-      btn.disabled = true; btn.textContent = MSG.sending;
-
-      fetch('https://api.web3forms.com/submit', {
-        method:'POST',
-        headers:{'Content-Type':'application/json', Accept:'application/json'},
-        body: JSON.stringify(Object.fromEntries(new FormData(form).entries()))
-      }).then(function(r){ return r.json(); }).then(function(j){
-        if(j && j.success){
-          form.reset(); clearAll();
-          statusEl.className = 'formstatus ok'; statusEl.textContent = MSG.ok;
-        } else {
-          statusEl.className = 'formstatus err';
-          statusEl.textContent = (j && j.message) ? j.message : MSG.fail;
-        }
-      }).catch(function(){
-        statusEl.className = 'formstatus err'; statusEl.textContent = MSG.net;
-      }).finally(function(){
-        btn.disabled = false; btn.textContent = MSG.send;
-      });
-    });
-  })();
+  });
 </script>
 
 </body>
