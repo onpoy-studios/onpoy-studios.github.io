@@ -57,6 +57,13 @@ Bis der Key gesetzt ist, zeigt das Formular einen Hinweis auf die E-Mail-Adresse
 
 Die englische Version ist über den DE/EN-Umschalter auf jeder dieser Seiten erreichbar.
 
+## OnPoy Cars
+
+- **Datenschutz-URL (App Store Connect + AdMob-Einwilligungsmitteilung):** `https://onpoy-studios.github.io/games/onpoy-cars/de/datenschutz.html`
+- **Support-URL:** `https://onpoy-studios.github.io/games/onpoy-cars/de/`
+- Englisch: gleiche Pfade mit `/en/` statt `/de/`
+- Seiten: `index.html`, `datenschutz.html`, `nutzungsbedingungen.html`, `leitfaden-eltern.html`, `impressum.html` – die Rechtstexte sind 1:1 aus der App übernommen (`LegalTexts.swift`).
+
 ## Neues Spiel hinzufügen
 
 1. Ordner `games/<neues-spiel>/de/` und `games/<neues-spiel>/en/` anlegen, jeweils `index.html` + Rechtstexte
