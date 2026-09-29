@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Legal Notice – OnPoy Cars</title>
+<meta name="description" content="Legal Notice – OnPoy Cars. Provider of the app">
+<meta name="theme-color" content="#ff9d1c">
+<link rel="icon" href="../icon.jpg">
+<link rel="apple-touch-icon" href="../icon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap">
+<style>
+  :root{
+    --sun-a:#ff9d1c; --sun-b:#ffb534;
+    --yel-hi:#fff24d; --yel-lo:#ff8c1a; --yel:#ffc21a;
+    --blu-hi:#66e6ff; --blu-lo:#3380ff;
+    --red:#ff3b3b;
+    --ink:#2a1206;
+    --road:#262a3f; --road-deep:#1b1e2e;
+    --card:#30354f; --card-hi:#383e5c;
+    --line:rgba(255,255,255,0.14);
+    --text:#f7f8ff; --muted:#cfd4ea; --faint:#98a0c0;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  body{margin:0;min-height:100vh;color:var(--text);background:var(--road-deep);
+    font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.04rem;line-height:1.65;font-weight:600}
+  a{color:var(--yel);text-underline-offset:2px}
+  a:hover{color:var(--yel-hi)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--yel-hi);outline-offset:3px;border-radius:6px}
+  ::selection{background:rgba(255,194,26,0.3)}
+
+  /* Sonnenstrahlen wie im App-Icon */
+  .sun{position:relative;overflow:hidden;
+    background:
+      radial-gradient(60% 70% at 50% 45%, rgba(255,246,176,0.9), rgba(255,246,176,0) 70%),
+      repeating-conic-gradient(from 0deg at 50% 45%, var(--sun-a) 0deg 10deg, var(--sun-b) 10deg 20deg);}
+  /* Rennstrecke: rot-weißer Randstein + Asphalt mit Mittellinie */
+  .curb{height:16px;background:repeating-linear-gradient(90deg,var(--red) 0 44px,#fff 44px 88px);border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+  .road{background:linear-gradient(180deg,var(--road),var(--road-deep) 420px)}
+  .lane{height:8px;background:repeating-linear-gradient(90deg,rgba(255,255,255,0.85) 0 46px,transparent 46px 92px);opacity:.55;margin:0 auto;max-width:1220px}
+
+  /* Kopfzeile: zurück zu OnPoy Studios */
+  .topbar{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;max-width:1220px;margin:0 auto;padding:.85rem 1.2rem}
+  .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;flex:none}
+  .brand .mark{width:28px;height:28px;display:block}
+  .brand .wm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.02rem;color:var(--ink)}
+  .tabs{display:flex;gap:.35rem;flex-wrap:wrap;margin-left:auto}
+  .tabs a{font-weight:800;font-size:.84rem;color:var(--ink);text-decoration:none;padding:.4rem .75rem;border-radius:999px;
+    background:rgba(255,255,255,0.45);border:2px solid rgba(42,18,6,0.25)}
+  .tabs a:hover{background:rgba(255,255,255,0.75);color:var(--ink)}
+  .tabs a[aria-current="page"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .lang{display:flex;gap:.3rem;flex:none}
+  .lang a,.lang span{font-weight:900;font-size:.78rem;padding:.3rem .6rem;border-radius:.55rem;text-decoration:none;border:2px solid var(--ink)}
+  .lang a{background:rgba(255,255,255,0.55);color:var(--ink)}
+  .lang a:hover{background:#fff;color:var(--ink)}
+  .lang span{background:var(--ink);color:#fff}
+
+  /* Schriftzug wie im Spiel: ONPOY blau, CARS gelb/orange, dunkle Kontur */
+  .logo{font-family:'Nunito',sans-serif;font-weight:900;line-height:.9;letter-spacing:.02em;margin:0;transform:rotate(-4deg);display:inline-block}
+  .logo span{display:block;-webkit-text-stroke:0;paint-order:stroke fill;filter:drop-shadow(0 5px 0 rgba(0,0,0,0.35))}
+  .logo .o{background:linear-gradient(180deg,var(--blu-hi),var(--blu-lo));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .logo .c{background:linear-gradient(180deg,var(--yel-hi),var(--yel-lo));-webkit-background-clip:text;background-clip:text;color:transparent}
+  @supports (-webkit-text-stroke:1px){
+    .logo span{-webkit-text-stroke:.09em var(--ink)}
+  }
+
+  .wrap{max-width:1220px;margin:0 auto;padding:0 1.2rem}
+  footer{max-width:1220px;margin:0 auto;padding:1.6rem 1.2rem 2.4rem;color:var(--faint);font-size:.86rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;justify-content:space-between;font-weight:700}
+  footer a{color:var(--muted)}
+
+  /* ---------- Spielseite ---------- */
+  .hero{padding:1.6rem 1.2rem 3.2rem;text-align:center}
+  .hero .icon{width:132px;height:132px;border-radius:30px;border:4px solid var(--ink);box-shadow:0 10px 0 rgba(0,0,0,0.25);display:block;margin:.6rem auto 1.4rem}
+  .hero .logo{font-size:clamp(3.1rem,11vw,5.6rem)}
+  .hero .tag{max-width:620px;margin:1.6rem auto 0;color:var(--ink);font-size:1.15rem;font-weight:800;line-height:1.5}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.3rem}
+  .chip{font-weight:900;font-size:.85rem;color:var(--ink);background:rgba(255,255,255,0.7);border:2px solid var(--ink);border-radius:999px;padding:.35rem .8rem}
+  .store{display:inline-flex;align-items:center;gap:.65rem;margin-top:1.6rem;background:var(--ink);color:#fff;border-radius:1rem;padding:.75rem 1.2rem;text-decoration:none;font-weight:800;text-align:left;border:3px solid var(--ink);box-shadow:0 6px 0 rgba(0,0,0,0.3)}
+  .store svg{width:22px;height:22px;flex:none}
+  .store small{display:block;color:#d9c9bd;font-weight:700;font-size:.78rem}
+  .store:hover{color:#fff}
+  .label{font-weight:900;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--yel);margin:2.4rem 0 1rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;padding-bottom:1rem}
+  .tile{display:flex;flex-direction:column;gap:.35rem;padding:1.15rem 1.2rem;border-radius:1.1rem;background:var(--card);border:3px solid rgba(0,0,0,0.35);
+    box-shadow:0 6px 0 rgba(0,0,0,0.25);text-decoration:none;color:var(--text);transition:transform .15s ease,background .15s ease,border-color .15s ease}
+  .tile:hover{transform:translateY(-3px);background:var(--card-hi);border-color:var(--yel);color:var(--text)}
+  .tile .t{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.08rem}
+  .tile .t .ic{width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none;border:2px solid var(--ink);font-size:1.05rem}
+  .tile .t .arr{margin-left:auto;color:var(--yel)}
+  .tile .t .nm{min-width:0;overflow-wrap:break-word}
+  .tile.wide{grid-column:1 / -1}
+  .tile .d{color:var(--muted);font-size:.93rem;line-height:1.45}
+  .tile .mail{color:var(--yel);font-weight:800;word-break:break-all;font-size:.9rem}
+  .ic.y{background:linear-gradient(180deg,var(--yel-hi),var(--yel-lo))}
+  .ic.b{background:linear-gradient(180deg,var(--blu-hi),var(--blu-lo))}
+  .ic.r{background:linear-gradient(180deg,#ff8a7a,#e8202e)}
+  .ic.g{background:linear-gradient(180deg,#9ff07a,#35b34a)}
+  .ic.p{background:linear-gradient(180deg,#ffb3d9,#c43f8a)}
+
+  /* ---------- Rechtstexte ---------- */
+  .doc-head{padding:1.2rem 1.2rem 2.2rem}
+  .doc-head .in{max-width:1220px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .doc-head img{width:64px;height:64px;border-radius:17px;border:3px solid var(--ink);box-shadow:0 6px 0 rgba(0,0,0,0.25);flex:none}
+  .doc-head h1{margin:0;font-weight:900;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.05;color:#fff;
+    -webkit-text-stroke:.07em var(--ink);paint-order:stroke fill;filter:drop-shadow(0 4px 0 rgba(0,0,0,0.3))}
+  .doc-head .sub{margin:.35rem 0 0;color:var(--ink);font-weight:800}
+  .layout{max-width:1220px;margin:0 auto;padding:2rem 1.2rem 3rem;display:grid;grid-template-columns:290px minmax(0,1fr);gap:2rem;align-items:start}
+  .side{position:sticky;top:1.2rem;max-height:calc(100vh - 2.4rem);overflow-y:auto;background:var(--card);border:3px solid rgba(0,0,0,0.35);border-radius:1.2rem;padding:1.1rem 1rem;box-shadow:0 6px 0 rgba(0,0,0,0.25);scrollbar-width:thin}
+  .side .lbl{font-weight:900;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 .5rem .4rem}
+  .toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.1rem}
+  .toc a{display:flex;gap:.55rem;align-items:baseline;padding:.38rem .45rem;border-radius:.6rem;color:var(--muted);text-decoration:none;font-size:.9rem;line-height:1.35;font-weight:700}
+  .toc a:hover{background:rgba(255,255,255,0.07);color:#fff}
+  .toc .n{flex:none;font-weight:900;color:var(--yel);font-size:.8rem;min-width:1.6rem}
+  .side .ask{margin-top:1rem;padding:.8rem .5rem 0;border-top:2px dashed var(--line);font-size:.86rem;color:var(--faint)}
+  .toc-toggle{display:none;width:100%;align-items:center;justify-content:space-between;background:var(--card);color:#fff;border:3px solid rgba(0,0,0,0.35);border-radius:1rem;padding:.75rem 1rem;font:900 .95rem 'Nunito',sans-serif;cursor:pointer}
+  .toc-toggle svg{width:18px;height:18px;transition:transform .2s}
+  .toc-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+  .sec{background:var(--card);border:3px solid rgba(0,0,0,0.35);border-radius:1.2rem;padding:1.3rem 1.4rem 1.2rem;margin-bottom:1rem;box-shadow:0 6px 0 rgba(0,0,0,0.25);scroll-margin-top:1rem}
+  .sec h2{display:flex;align-items:center;gap:.7rem;margin:0 0 .6rem;font-weight:900;font-size:1.22rem;line-height:1.25}
+  .sec h2 .n{flex:none;min-width:2.3rem;height:2.3rem;padding:0 .3rem;border-radius:.8rem;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,var(--yel-hi),var(--yel-lo));color:var(--ink);border:2px solid var(--ink);font-size:.95rem}
+  .sec p{margin:.55rem 0;color:var(--muted)}
+  .sec ul{margin:.5rem 0;padding-left:1.3rem;color:var(--muted)}
+  .sec li{margin:.2rem 0}
+  .sec li::marker{color:var(--yel)}
+  .sec a{overflow-wrap:anywhere}
+  .top-btn{position:fixed;right:1.1rem;bottom:1.1rem;width:3rem;height:3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,var(--yel-hi),var(--yel-lo));border:3px solid var(--ink);color:var(--ink);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+  .top-btn.show{opacity:1;visibility:visible}
+  .top-btn svg{width:20px;height:20px}
+  @media (max-width:900px){
+    .layout{grid-template-columns:minmax(0,1fr);padding-top:1.4rem}
+    .side{position:static;max-height:none}
+    .toc-toggle{display:flex}
+    .side{display:none}
+    .side.open{display:block}
+  }
+  @media (max-width:760px){
+    .topbar{gap:.7rem}
+    .lang{order:2;margin-left:auto}
+    .tabs{order:3;margin-left:0;width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+    .tabs::-webkit-scrollbar{display:none}
+    .tabs a{white-space:nowrap;flex:none}
+  }
+  @media (max-width:560px){
+    .sec{padding:1.1rem 1rem}
+  }
+  @media print{
+    .topbar,.side,.toc-toggle,.top-btn,.curb,.lane{display:none!important}
+    body,.road{background:#fff;color:#111}
+    .sun{background:#fff}
+    .sec{box-shadow:none;border:1px solid #ccc;background:#fff}
+    .sec p,.sec ul{color:#111}
+    .layout{display:block}
+  }
+</style>
+</head>
+<body>
+<div class="sun">
+<header class="topbar">
+  <a class="brand" href="../../../en/" aria-label="OnPoy Studios – Home"><svg aria-hidden="true" class="mark" viewBox="0 0 240 240"><defs><linearGradient gradientUnits="userSpaceOnUse" id="og" x1="24" x2="214" y1="14" y2="226"><stop offset="0" stop-color="#25A9EA"/><stop offset="0.52" stop-color="#4C63E8"/><stop offset="1" stop-color="#C13BD6"/></linearGradient><linearGradient id="osheen" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#CFEFFF" stop-opacity="0.85"/><stop offset="1" stop-color="#CFEFFF" stop-opacity="0"/></linearGradient></defs><g fill="none" stroke-linecap="round"><path d="M91.1 184.1 A74 74 0 1 1 148.9 184.1" stroke="url(#og)" stroke-width="26"/><path d="M97 176 A66 66 0 0 1 128 55" opacity="0.5" stroke="url(#osheen)" stroke-width="6"/><path d="M46 150 C74 111 105 111 123 132 C141 153 170 150 196 115" stroke="url(#og)" stroke-width="24"/><circle cx="120" cy="93" fill="url(#og)" r="17"/><circle cx="113" cy="87" fill="#CFEFFF" opacity="0.55" r="4.6"/></g></svg><span class="wm">OnPoy Studios</span></a>
+  <nav class="tabs" aria-label="OnPoy Cars"><a href="./">OnPoy Cars</a><a href="datenschutz.html">Privacy Policy</a><a href="nutzungsbedingungen.html">Terms of Service</a><a href="leitfaden-eltern.html">Guide for Parents</a><a href="impressum.html" aria-current="page">Legal Notice</a></nav>
+  <div class="lang" role="group" aria-label="Language / Sprache"><a href="../de/impressum.html" hreflang="de">DE</a><span aria-current="true">EN</span></div>
+</header>
+  <div class="doc-head"><div class="in">
+    <img src="../icon.jpg" alt="OnPoy Cars app icon" width="64" height="64">
+    <div><h1>Legal Notice</h1><p class="sub">Provider of the app</p></div>
+  </div></div>
+</div>
+<div class="curb" aria-hidden="true"></div>
+<div class="road">
+  <div class="lane" aria-hidden="true" style="margin-top:14px"></div>
+  <div class="layout">
+    <div>
+      <button class="toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="side"><span>Table of Contents</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+      <aside class="side" id="side">
+        <p class="lbl">Table of Contents</p>
+        <nav class="toc" aria-label="Table of Contents"><ol><li><a href="#s1"><span class="n">01</span><span>Information Pursuant to Section 5 DDG</span></a></li><li><a href="#s2"><span class="n">02</span><span>Contact</span></a></li><li><a href="#s3"><span class="n">03</span><span>Responsible for Content Pursuant to Section 18(2) MStV</span></a></li><li><a href="#s4"><span class="n">04</span><span>Liability for Content</span></a></li></ol></nav>
+        <div class="ask">Questions?<br><a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></div>
+      </aside>
+    </div>
+    <main id="main">
+<section class="sec" id="s1">
+  <h2><span class="n">01</span><span>Information Pursuant to Section 5 DDG</span></h2>
+  <p>Onur Sitar<br>Bayernstraße 33<br>30855 Langenhagen<br>Germany</p>
+</section>
+<section class="sec" id="s2">
+  <h2><span class="n">02</span><span>Contact</span></h2>
+  <p>Email: <a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></p>
+</section>
+<section class="sec" id="s3">
+  <h2><span class="n">03</span><span>Responsible for Content Pursuant to Section 18(2) MStV</span></h2>
+  <p>Onur Sitar<br>Bayernstraße 33<br>30855 Langenhagen<br>Germany</p>
+<p>"OnPoy Studios" is an unregistered trade name of Onur Sitar.</p>
+</section>
+<section class="sec" id="s4">
+  <h2><span class="n">04</span><span>Liability for Content</span></h2>
+  <p>As the provider of this app, we are responsible for our own content in accordance with the general laws pursuant to Section 7(1) DDG. However, pursuant to Sections 8 to 10 DDG, we are not obligated as a provider to monitor transmitted or stored third-party information or to investigate circumstances indicating unlawful activity. Obligations to remove or block the use of information under general law remain unaffected by this.</p>
+<p>The respective advertisers or Google are responsible for the content of the ads shown in the app.</p>
+</section>
+    </main>
+  </div>
+<footer>
+  <span>&copy; <span id="yr">2026</span> OnPoy Studios · Onur Sitar</span>
+  <span><a href="../../../en/">onpoy-studios</a> &middot; <a href="impressum.html">Legal Notice</a> &middot; <a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></span>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</div>
+<button class="top-btn" id="topBtn" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 15l6-6 6 6"/></svg></button>
+<script>
+(function(){
+  var tg=document.getElementById('tocToggle'), side=document.getElementById('side');
+  tg.addEventListener('click',function(){var o=side.classList.toggle('open');tg.setAttribute('aria-expanded',o?'true':'false');});
+  side.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=900){side.classList.remove('open');tg.setAttribute('aria-expanded','false');}});});
+  var b=document.getElementById('topBtn');
+  window.addEventListener('scroll',function(){b.classList.toggle('show',window.scrollY>600);},{passive:true});
+  b.addEventListener('click',function(){window.scrollTo({top:0});});
+})();
+</script>
+</body>
+</html>

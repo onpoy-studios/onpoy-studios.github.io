@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nutzungsbedingungen – OnPoy Cars</title>
+<meta name="description" content="Nutzungsbedingungen – OnPoy Cars. Stand: 29. September 2026">
+<meta name="theme-color" content="#ff9d1c">
+<link rel="icon" href="../icon.jpg">
+<link rel="apple-touch-icon" href="../icon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap">
+<style>
+  :root{
+    --sun-a:#ff9d1c; --sun-b:#ffb534;
+    --yel-hi:#fff24d; --yel-lo:#ff8c1a; --yel:#ffc21a;
+    --blu-hi:#66e6ff; --blu-lo:#3380ff;
+    --red:#ff3b3b;
+    --ink:#2a1206;
+    --road:#262a3f; --road-deep:#1b1e2e;
+    --card:#30354f; --card-hi:#383e5c;
+    --line:rgba(255,255,255,0.14);
+    --text:#f7f8ff; --muted:#cfd4ea; --faint:#98a0c0;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  body{margin:0;min-height:100vh;color:var(--text);background:var(--road-deep);
+    font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.04rem;line-height:1.65;font-weight:600}
+  a{color:var(--yel);text-underline-offset:2px}
+  a:hover{color:var(--yel-hi)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--yel-hi);outline-offset:3px;border-radius:6px}
+  ::selection{background:rgba(255,194,26,0.3)}
+
+  /* Sonnenstrahlen wie im App-Icon */
+  .sun{position:relative;overflow:hidden;
+    background:
+      radial-gradient(60% 70% at 50% 45%, rgba(255,246,176,0.9), rgba(255,246,176,0) 70%),
+      repeating-conic-gradient(from 0deg at 50% 45%, var(--sun-a) 0deg 10deg, var(--sun-b) 10deg 20deg);}
+  /* Rennstrecke: rot-weißer Randstein + Asphalt mit Mittellinie */
+  .curb{height:16px;background:repeating-linear-gradient(90deg,var(--red) 0 44px,#fff 44px 88px);border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+  .road{background:linear-gradient(180deg,var(--road),var(--road-deep) 420px)}
+  .lane{height:8px;background:repeating-linear-gradient(90deg,rgba(255,255,255,0.85) 0 46px,transparent 46px 92px);opacity:.55;margin:0 auto;max-width:1220px}
+
+  /* Kopfzeile: zurück zu OnPoy Studios */
+  .topbar{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;max-width:1220px;margin:0 auto;padding:.85rem 1.2rem}
+  .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;flex:none}
+  .brand .mark{width:28px;height:28px;display:block}
+  .brand .wm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.02rem;color:var(--ink)}
+  .tabs{display:flex;gap:.35rem;flex-wrap:wrap;margin-left:auto}
+  .tabs a{font-weight:800;font-size:.84rem;color:var(--ink);text-decoration:none;padding:.4rem .75rem;border-radius:999px;
+    background:rgba(255,255,255,0.45);border:2px solid rgba(42,18,6,0.25)}
+  .tabs a:hover{background:rgba(255,255,255,0.75);color:var(--ink)}
+  .tabs a[aria-current="page"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .lang{display:flex;gap:.3rem;flex:none}
+  .lang a,.lang span{font-weight:900;font-size:.78rem;padding:.3rem .6rem;border-radius:.55rem;text-decoration:none;border:2px solid var(--ink)}
+  .lang a{background:rgba(255,255,255,0.55);color:var(--ink)}
+  .lang a:hover{background:#fff;color:var(--ink)}
+  .lang span{background:var(--ink);color:#fff}
+
+  /* Schriftzug wie im Spiel: ONPOY blau, CARS gelb/orange, dunkle Kontur */
+  .logo{font-family:'Nunito',sans-serif;font-weight:900;line-height:.9;letter-spacing:.02em;margin:0;transform:rotate(-4deg);display:inline-block}
+  .logo span{display:block;-webkit-text-stroke:0;paint-order:stroke fill;filter:drop-shadow(0 5px 0 rgba(0,0,0,0.35))}
+  .logo .o{background:linear-gradient(180deg,var(--blu-hi),var(--blu-lo));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .logo .c{background:linear-gradient(180deg,var(--yel-hi),var(--yel-lo));-webkit-background-clip:text;background-clip:text;color:transparent}
+  @supports (-webkit-text-stroke:1px){
+    .logo span{-webkit-text-stroke:.09em var(--ink)}
+  }
+
+  .wrap{max-width:1220px;margin:0 auto;padding:0 1.2rem}
+  footer{max-width:1220px;margin:0 auto;padding:1.6rem 1.2rem 2.4rem;color:var(--faint);font-size:.86rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;justify-content:space-between;font-weight:700}
+  footer a{color:var(--muted)}
+
+  /* ---------- Spielseite ---------- */
+  .hero{padding:1.6rem 1.2rem 3.2rem;text-align:center}
+  .hero .icon{width:132px;height:132px;border-radius:30px;border:4px solid var(--ink);box-shadow:0 10px 0 rgba(0,0,0,0.25);display:block;margin:.6rem auto 1.4rem}
+  .hero .logo{font-size:clamp(3.1rem,11vw,5.6rem)}
+  .hero .tag{max-width:620px;margin:1.6rem auto 0;color:var(--ink);font-size:1.15rem;font-weight:800;line-height:1.5}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.3rem}
+  .chip{font-weight:900;font-size:.85rem;color:var(--ink);background:rgba(255,255,255,0.7);border:2px solid var(--ink);border-radius:999px;padding:.35rem .8rem}
+  .store{display:inline-flex;align-items:center;gap:.65rem;margin-top:1.6rem;background:var(--ink);color:#fff;border-radius:1rem;padding:.75rem 1.2rem;text-decoration:none;font-weight:800;text-align:left;border:3px solid var(--ink);box-shadow:0 6px 0 rgba(0,0,0,0.3)}
+  .store svg{width:22px;height:22px;flex:none}
+  .store small{display:block;color:#d9c9bd;font-weight:700;font-size:.78rem}
+  .store:hover{color:#fff}
+  .label{font-weight:900;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--yel);margin:2.4rem 0 1rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;padding-bottom:1rem}
+  .tile{display:flex;flex-direction:column;gap:.35rem;padding:1.15rem 1.2rem;border-radius:1.1rem;background:var(--card);border:3px solid rgba(0,0,0,0.35);
+    box-shadow:0 6px 0 rgba(0,0,0,0.25);text-decoration:none;color:var(--text);transition:transform .15s ease,background .15s ease,border-color .15s ease}
+  .tile:hover{transform:translateY(-3px);background:var(--card-hi);border-color:var(--yel);color:var(--text)}
+  .tile .t{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.08rem}
+  .tile .t .ic{width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none;border:2px solid var(--ink);font-size:1.05rem}
+  .tile .t .arr{margin-left:auto;color:var(--yel)}
+  .tile .t .nm{min-width:0;overflow-wrap:break-word}
+  .tile.wide{grid-column:1 / -1}
+  .tile .d{color:var(--muted);font-size:.93rem;line-height:1.45}
+  .tile .mail{color:var(--yel);font-weight:800;word-break:break-all;font-size:.9rem}
+  .ic.y{background:linear-gradient(180deg,var(--yel-hi),var(--yel-lo))}
+  .ic.b{background:linear-gradient(180deg,var(--blu-hi),var(--blu-lo))}
+  .ic.r{background:linear-gradient(180deg,#ff8a7a,#e8202e)}
+  .ic.g{background:linear-gradient(180deg,#9ff07a,#35b34a)}
+  .ic.p{background:linear-gradient(180deg,#ffb3d9,#c43f8a)}
+
+  /* ---------- Rechtstexte ---------- */
+  .doc-head{padding:1.2rem 1.2rem 2.2rem}
+  .doc-head .in{max-width:1220px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .doc-head img{width:64px;height:64px;border-radius:17px;border:3px solid var(--ink);box-shadow:0 6px 0 rgba(0,0,0,0.25);flex:none}
+  .doc-head h1{margin:0;font-weight:900;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.05;color:#fff;
+    -webkit-text-stroke:.07em var(--ink);paint-order:stroke fill;filter:drop-shadow(0 4px 0 rgba(0,0,0,0.3))}
+  .doc-head .sub{margin:.35rem 0 0;color:var(--ink);font-weight:800}
+  .layout{max-width:1220px;margin:0 auto;padding:2rem 1.2rem 3rem;display:grid;grid-template-columns:290px minmax(0,1fr);gap:2rem;align-items:start}
+  .side{position:sticky;top:1.2rem;max-height:calc(100vh - 2.4rem);overflow-y:auto;background:var(--card);border:3px solid rgba(0,0,0,0.35);border-radius:1.2rem;padding:1.1rem 1rem;box-shadow:0 6px 0 rgba(0,0,0,0.25);scrollbar-width:thin}
+  .side .lbl{font-weight:900;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 .5rem .4rem}
+  .toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.1rem}
+  .toc a{display:flex;gap:.55rem;align-items:baseline;padding:.38rem .45rem;border-radius:.6rem;color:var(--muted);text-decoration:none;font-size:.9rem;line-height:1.35;font-weight:700}
+  .toc a:hover{background:rgba(255,255,255,0.07);color:#fff}
+  .toc .n{flex:none;font-weight:900;color:var(--yel);font-size:.8rem;min-width:1.6rem}
+  .side .ask{margin-top:1rem;padding:.8rem .5rem 0;border-top:2px dashed var(--line);font-size:.86rem;color:var(--faint)}
+  .toc-toggle{display:none;width:100%;align-items:center;justify-content:space-between;background:var(--card);color:#fff;border:3px solid rgba(0,0,0,0.35);border-radius:1rem;padding:.75rem 1rem;font:900 .95rem 'Nunito',sans-serif;cursor:pointer}
+  .toc-toggle svg{width:18px;height:18px;transition:transform .2s}
+  .toc-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+  .sec{background:var(--card);border:3px solid rgba(0,0,0,0.35);border-radius:1.2rem;padding:1.3rem 1.4rem 1.2rem;margin-bottom:1rem;box-shadow:0 6px 0 rgba(0,0,0,0.25);scroll-margin-top:1rem}
+  .sec h2{display:flex;align-items:center;gap:.7rem;margin:0 0 .6rem;font-weight:900;font-size:1.22rem;line-height:1.25}
+  .sec h2 .n{flex:none;min-width:2.3rem;height:2.3rem;padding:0 .3rem;border-radius:.8rem;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,var(--yel-hi),var(--yel-lo));color:var(--ink);border:2px solid var(--ink);font-size:.95rem}
+  .sec p{margin:.55rem 0;color:var(--muted)}
+  .sec ul{margin:.5rem 0;padding-left:1.3rem;color:var(--muted)}
+  .sec li{margin:.2rem 0}
+  .sec li::marker{color:var(--yel)}
+  .sec a{overflow-wrap:anywhere}
+  .top-btn{position:fixed;right:1.1rem;bottom:1.1rem;width:3rem;height:3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,var(--yel-hi),var(--yel-lo));border:3px solid var(--ink);color:var(--ink);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+  .top-btn.show{opacity:1;visibility:visible}
+  .top-btn svg{width:20px;height:20px}
+  @media (max-width:900px){
+    .layout{grid-template-columns:minmax(0,1fr);padding-top:1.4rem}
+    .side{position:static;max-height:none}
+    .toc-toggle{display:flex}
+    .side{display:none}
+    .side.open{display:block}
+  }
+  @media (max-width:760px){
+    .topbar{gap:.7rem}
+    .lang{order:2;margin-left:auto}
+    .tabs{order:3;margin-left:0;width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+    .tabs::-webkit-scrollbar{display:none}
+    .tabs a{white-space:nowrap;flex:none}
+  }
+  @media (max-width:560px){
+    .sec{padding:1.1rem 1rem}
+  }
+  @media print{
+    .topbar,.side,.toc-toggle,.top-btn,.curb,.lane{display:none!important}
+    body,.road{background:#fff;color:#111}
+    .sun{background:#fff}
+    .sec{box-shadow:none;border:1px solid #ccc;background:#fff}
+    .sec p,.sec ul{color:#111}
+    .layout{display:block}
+  }
+</style>
+</head>
+<body>
+<div class="sun">
+<header class="topbar">
+  <a class="brand" href="../../../de/" aria-label="OnPoy Studios – Startseite"><svg aria-hidden="true" class="mark" viewBox="0 0 240 240"><defs><linearGradient gradientUnits="userSpaceOnUse" id="og" x1="24" x2="214" y1="14" y2="226"><stop offset="0" stop-color="#25A9EA"/><stop offset="0.52" stop-color="#4C63E8"/><stop offset="1" stop-color="#C13BD6"/></linearGradient><linearGradient id="osheen" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#CFEFFF" stop-opacity="0.85"/><stop offset="1" stop-color="#CFEFFF" stop-opacity="0"/></linearGradient></defs><g fill="none" stroke-linecap="round"><path d="M91.1 184.1 A74 74 0 1 1 148.9 184.1" stroke="url(#og)" stroke-width="26"/><path d="M97 176 A66 66 0 0 1 128 55" opacity="0.5" stroke="url(#osheen)" stroke-width="6"/><path d="M46 150 C74 111 105 111 123 132 C141 153 170 150 196 115" stroke="url(#og)" stroke-width="24"/><circle cx="120" cy="93" fill="url(#og)" r="17"/><circle cx="113" cy="87" fill="#CFEFFF" opacity="0.55" r="4.6"/></g></svg><span class="wm">OnPoy Studios</span></a>
+  <nav class="tabs" aria-label="OnPoy Cars"><a href="./">OnPoy Cars</a><a href="datenschutz.html">Datenschutzerklärung</a><a href="nutzungsbedingungen.html" aria-current="page">Nutzungsbedingungen</a><a href="leitfaden-eltern.html">Leitfaden für Eltern</a><a href="impressum.html">Impressum</a></nav>
+  <div class="lang" role="group" aria-label="Sprache / Language"><span aria-current="true">DE</span><a href="../en/nutzungsbedingungen.html" hreflang="en">EN</a></div>
+</header>
+  <div class="doc-head"><div class="in">
+    <img src="../icon.jpg" alt="OnPoy Cars App-Icon" width="64" height="64">
+    <div><h1>Nutzungsbedingungen</h1><p class="sub">Stand: 29. September 2026</p></div>
+  </div></div>
+</div>
+<div class="curb" aria-hidden="true"></div>
+<div class="road">
+  <div class="lane" aria-hidden="true" style="margin-top:14px"></div>
+  <div class="layout">
+    <div>
+      <button class="toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="side"><span>Inhaltsverzeichnis</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+      <aside class="side" id="side">
+        <p class="lbl">Inhaltsverzeichnis</p>
+        <nav class="toc" aria-label="Inhaltsverzeichnis"><ol><li><a href="#s1"><span class="n">01</span><span>Anbieter und Geltungsbereich</span></a></li><li><a href="#s2"><span class="n">02</span><span>Gegenstand der App</span></a></li><li><a href="#s3"><span class="n">03</span><span>Alter und Nutzung durch Minderjährige</span></a></li><li><a href="#s4"><span class="n">04</span><span>Spielfortschritt und Spielinhalte</span></a></li><li><a href="#s5"><span class="n">05</span><span>Nutzungsrecht und erlaubte Nutzung</span></a></li><li><a href="#s6"><span class="n">06</span><span>Werbung</span></a></li><li><a href="#s7"><span class="n">07</span><span>Keine In-App-Käufe</span></a></li><li><a href="#s8"><span class="n">08</span><span>Werbung und Minderjährige</span></a></li><li><a href="#s9"><span class="n">09</span><span>Geistiges Eigentum</span></a></li><li><a href="#s10"><span class="n">10</span><span>Marken, Namen und Bezeichnungen Dritter</span></a></li><li><a href="#s11"><span class="n">11</span><span>Drittanbieter, SDKs und Softwarelizenzen</span></a></li><li><a href="#s12"><span class="n">12</span><span>Updates und technische Voraussetzungen</span></a></li><li><a href="#s13"><span class="n">13</span><span>Änderungen von Spiel und Inhalten</span></a></li><li><a href="#s14"><span class="n">14</span><span>Verfügbarkeit und mögliche Einstellung der App</span></a></li><li><a href="#s15"><span class="n">15</span><span>Gewährleistung und Haftung</span></a></li><li><a href="#s16"><span class="n">16</span><span>Dienste und Inhalte Dritter</span></a></li><li><a href="#s17"><span class="n">17</span><span>Datenschutz</span></a></li><li><a href="#s18"><span class="n">18</span><span>Apple-spezifische Bestimmungen</span></a></li><li><a href="#s19"><span class="n">19</span><span>Beendigung der Nutzung</span></a></li><li><a href="#s20"><span class="n">20</span><span>Änderungen dieser Nutzungsbedingungen</span></a></li><li><a href="#s21"><span class="n">21</span><span>Anwendbares Recht und Gerichtsstand</span></a></li><li><a href="#s22"><span class="n">22</span><span>Kontakt</span></a></li></ol></nav>
+        <div class="ask">Fragen dazu?<br><a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></div>
+      </aside>
+    </div>
+    <main id="main">
+<section class="sec" id="s1">
+  <h2><span class="n">01</span><span>Anbieter und Geltungsbereich</span></h2>
+  <p>Diese Nutzungsbedingungen gelten für die Nutzung der iOS-App „OnPoy Cars“ (im Folgenden „App“), die über den Apple App Store bezogen werden kann.</p>
+<p>Anbieter der App ist:<br>Onur Sitar<br>Bayernstraße 33<br>30855 Langenhagen<br>Deutschland<br>E-Mail: <a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></p>
+<p>Mit dem Herunterladen, der Installation oder der Nutzung der App erkennst du diese Nutzungsbedingungen an. Wenn du damit nicht einverstanden bist, darfst du die App nicht nutzen. Ergänzend gelten die Bedingungen des Apple App Store (siehe Abschnitt 18).</p>
+</section>
+<section class="sec" id="s2">
+  <h2><span class="n">02</span><span>Gegenstand der App</span></h2>
+  <p>OnPoy Cars ist ein Autorennspiel im Spielzeug-Look. Du fährst mit einem von vielen Autos gegen computergesteuerte Gegner auf verschiedenen Strecken (Level), sammelst Sterne und schaltest damit weitere Level frei.</p>
+<p>Die App enthält insbesondere:</p>
+<ul><li>Eine Auswahl verschiedener Autos</li><li>Rennstrecken (Level) mit Loopings, Rampen, Sprüngen und Hindernissen</li><li>Eine Werkstatt, in der du das Aussehen deiner Autos anpasst (Farbe, Reifen, Sticker, Auspuff)</li><li>Einstellungen für Musik, Töne, Vibration, Grafik, Gegnerstärke und Sprache</li></ul>
+<p>Alle Gegner werden vom Spiel auf deinem Gerät gesteuert. Es gibt keinen Online-Mehrspielermodus und keine Möglichkeit, in der App mit anderen Personen zu kommunizieren.</p>
+</section>
+<section class="sec" id="s3">
+  <h2><span class="n">03</span><span>Alter und Nutzung durch Minderjährige</span></h2>
+  <p>OnPoy Cars ist im App Store ab 13 Jahren freigegeben. Grund für die Altersfreigabe ist die Werbung in der App. Kinder unter 13 Jahren sollen die App nicht nutzen.</p>
+<p>Wenn du noch nicht 18 Jahre alt bist, darfst du die App nur mit Zustimmung deiner Eltern bzw. Erziehungsberechtigten nutzen.</p>
+<p>Wir empfehlen Eltern, die Geräte und Apple Accounts von Kindern und Jugendlichen mit den Funktionen von iOS abzusichern, insbesondere mit der Bildschirmzeit. Mehr dazu steht im „Leitfaden für Eltern“ in der App.</p>
+</section>
+<section class="sec" id="s4">
+  <h2><span class="n">04</span><span>Spielfortschritt und Spielinhalte</span></h2>
+  <p>Deine Sterne, freigeschalteten Level und Werkstatt-Umbauten werden nur lokal auf deinem Gerät gespeichert. Es besteht kein Anspruch darauf, einen Spielstand auf ein anderes Gerät zu übertragen oder ihn nach dem Löschen der App wiederherzustellen.</p>
+<p>Wie viele Sterne du in einem Level bekommst, hängt von deiner Platzierung im Rennen ab. Die Bedingungen zum Freischalten weiterer Level können sich im Rahmen der Weiterentwicklung der App ändern.</p>
+<p>Die Autos, Strecken und Orte in der App sind frei erfundene, spielzeughaft gestaltete Spielinhalte und stellen keine echten Fahrzeuge, Rennstrecken oder Orte dar.</p>
+</section>
+<section class="sec" id="s5">
+  <h2><span class="n">05</span><span>Nutzungsrecht und erlaubte Nutzung</span></h2>
+  <p>Wir räumen dir das einfache, nicht übertragbare Recht ein, die App auf deinen iOS-Geräten für private, nicht kommerzielle Zwecke zu nutzen, im Rahmen der Bedingungen des Apple App Store.</p>
+<p>Nicht erlaubt ist insbesondere:</p>
+<ul><li>Die App für rechtswidrige oder missbräuchliche Zwecke zu nutzen</li><li>Geschützte Bestandteile der App unberechtigt zu vervielfältigen oder weiterzuverbreiten</li><li>Spielstände, Sterne oder Level-Freischaltungen zu manipulieren</li><li>Die Werbung technisch zu umgehen oder zu manipulieren, zum Beispiel durch künstlich erzeugte Anzeigenaufrufe oder Klicks</li><li>Technische Schutzmaßnahmen zu umgehen</li><li>Die App mit Bots, Skripten oder ähnlichen automatisierten Verfahren zu nutzen</li><li>App-Dateien unberechtigt zu verändern</li><li>Die App zu dekompilieren, zurückzuentwickeln (Reverse Engineering) oder auf ähnliche Weise einzugreifen, soweit das nicht gesetzlich ausdrücklich erlaubt ist</li></ul>
+<p>Zwingende gesetzliche Rechte sowie Rechte aus Open-Source- oder anderen Softwarelizenzen bleiben unberührt.</p>
+</section>
+<section class="sec" id="s6">
+  <h2><span class="n">06</span><span>Werbung</span></h2>
+  <p>Die App ist kostenlos und finanziert sich über Werbung von Google AdMob. In der Regel erscheint nach jedem zweiten beendeten Rennen eine Vollbild-Videoanzeige. Während eines Rennens wird keine Werbung eingeblendet, und es gibt keine Bannerwerbung.</p>
+<p>Wenn du eine Anzeige antippst, kann die App verlassen werden und du wirst zu einem externen Angebot weitergeleitet, zum Beispiel einer Website, einer anderen App oder einer Seite im App Store. Dort gelten die Bedingungen und Datenschutzhinweise des jeweiligen Anbieters.</p>
+<p>Für den Inhalt, die Richtigkeit und die Verfügbarkeit der von Google ausgelieferten Anzeigen sind wir nicht verantwortlich. Ansprüche im Zusammenhang mit einer bestimmten Anzeige sind gegenüber dem werbenden Unternehmen bzw. Google zu klären.</p>
+<p>Welche Daten dabei verarbeitet werden und wie du deine Einwilligung verwaltest (u. a. über „Einstellungen → Werbeeinstellungen“), steht in der Datenschutzerklärung.</p>
+</section>
+<section class="sec" id="s7">
+  <h2><span class="n">07</span><span>Keine In-App-Käufe</span></h2>
+  <p>OnPoy Cars enthält keine In-App-Käufe, keine Abonnements und keine kostenpflichtigen Zusatzinhalte. Alle Autos, Strecken und Werkstatt-Optionen sind kostenlos spielbar.</p>
+<p>Sollten in einer künftigen Version kostenpflichtige Inhalte angeboten werden, werden Preis und Leistungsumfang vor dem Kauf angezeigt und diese Nutzungsbedingungen entsprechend ergänzt.</p>
+</section>
+<section class="sec" id="s8">
+  <h2><span class="n">08</span><span>Werbung und Minderjährige</span></h2>
+  <p>Die Werbung in der App ist auf Anzeigen beschränkt, die Google für Jugendliche ab 13 Jahren als geeignet einstuft. Trotzdem können Anzeigen Inhalte Dritter enthalten, auf die wir keinen Einfluss haben.</p>
+<p>Externe Angebote, zu denen eine Anzeige weiterleitet, können kostenpflichtig sein. Eltern sollten deshalb sicherstellen, dass Kinder und Jugendliche keinen unkontrollierten Zugriff auf Apple Accounts und dort hinterlegte Zahlungsmittel haben. Dafür eignen sich insbesondere die Apple-Funktionen zur Beschränkung von Käufen, die Passwortabfrage, die Bildschirmzeit und die „Kaufanfrage“ in der Familienfreigabe.</p>
+</section>
+<section class="sec" id="s9">
+  <h2><span class="n">09</span><span>Geistiges Eigentum</span></h2>
+  <p>Alle Inhalte der App – insbesondere Programmcode, Gestaltung, Grafiken, Autos, Strecken, Texte, Musik, Töne, Animationen und Benutzeroberfläche – sind urheberrechtlich oder durch andere Schutzrechte geschützt. Die Rechte liegen bei Onur Sitar (OnPoy Studios) oder den jeweiligen Rechteinhabern.</p>
+<p>Durch das Herunterladen oder die Nutzung der App erhältst du keine Eigentums-, Urheber-, Marken- oder sonstigen Schutzrechte, sondern nur das in Abschnitt 5 beschriebene Nutzungsrecht.</p>
+<p>Eine weitergehende Vervielfältigung, Bearbeitung, Verbreitung, öffentliche Zugänglichmachung oder kommerzielle Nutzung der Inhalte ist ohne unsere vorherige Zustimmung nicht erlaubt.</p>
+</section>
+<section class="sec" id="s10">
+  <h2><span class="n">10</span><span>Marken, Namen und Bezeichnungen Dritter</span></h2>
+  <p>Alle Autos, Strecken, Orte und Figuren in OnPoy Cars sind frei erfunden. Sie stellen keine echten Fahrzeugmodelle oder Marken dar.</p>
+<p>Wenn Streckennamen an echte Orte, Bauwerke oder Landschaften erinnern (zum Beispiel „Paris-Tour“ oder „Grand Canyon“), dient das nur der spielerischen Gestaltung.</p>
+<p>Marken, Namen und sonstige geschützte Bezeichnungen Dritter, die in Werbeanzeigen erscheinen, gehören ihren jeweiligen Inhabern. Es besteht keine geschäftliche Verbindung, Partnerschaft, Empfehlung oder Sponsoring zwischen OnPoy Cars bzw. dem Anbieter und Fahrzeugherstellern, Rennserien oder sonstigen Dritten, soweit nicht ausdrücklich anders angegeben.</p>
+</section>
+<section class="sec" id="s11">
+  <h2><span class="n">11</span><span>Drittanbieter, SDKs und Softwarelizenzen</span></h2>
+  <p>Die App verwendet Softwarekomponenten und Dienste Dritter, insbesondere Technologien von Apple sowie das Google Mobile Ads SDK und die Google User Messaging Platform.</p>
+<p>Für diese Komponenten können ergänzend die Lizenz-, Datenschutz- oder Nutzungsbedingungen der jeweiligen Anbieter gelten. Rechte aus anwendbaren Open-Source- oder anderen zwingenden Lizenzbestimmungen werden durch diese Nutzungsbedingungen nicht eingeschränkt.</p>
+</section>
+<section class="sec" id="s12">
+  <h2><span class="n">12</span><span>Updates und technische Voraussetzungen</span></h2>
+  <p>OnPoy Cars wird weiterentwickelt, verbessert und aktualisiert. Updates können nötig sein, um Fehler zu beheben, die Sicherheit zu gewährleisten, die App an neue iOS-Versionen oder Geräte anzupassen, Inhalte zu erweitern oder rechtliche Anforderungen umzusetzen.</p>
+<p>Für eine einwandfreie Nutzung kann eine aktuelle Version der App oder von iOS erforderlich sein. Ältere Versionen werden eventuell nicht dauerhaft unterstützt.</p>
+</section>
+<section class="sec" id="s13">
+  <h2><span class="n">13</span><span>Änderungen von Spiel und Inhalten</span></h2>
+  <p>Wir können die App im Rahmen ihrer Weiterentwicklung verändern. Das kann insbesondere Autos, Strecken, Level-Freischaltungen, Werkstatt-Optionen, Gegnerstärke, Sounds, Animationen, die Benutzeroberfläche und die Häufigkeit der Werbung betreffen.</p>
+<p>Einen Anspruch darauf, dass bestimmte kostenlose Funktionen oder Inhalte dauerhaft unverändert bleiben, gibt es nicht, soweit gesetzlich nichts anderes bestimmt ist. Zwingende gesetzliche Verbraucherrechte bleiben unberührt.</p>
+</section>
+<section class="sec" id="s14">
+  <h2><span class="n">14</span><span>Verfügbarkeit und mögliche Einstellung der App</span></h2>
+  <p>Wir bemühen uns, die App zuverlässig bereitzustellen, können aber keine jederzeitige, fehler- und unterbrechungsfreie Verfügbarkeit garantieren, insbesondere nicht bei Ursachen außerhalb unseres Einflussbereichs (zum Beispiel Änderungen an iOS, Ausfälle des App Store oder von Google AdMob).</p>
+<p>Wir können die Weiterentwicklung oder Bereitstellung der App aus sachlichen Gründen einschränken oder einstellen, etwa aus technischen, rechtlichen oder wirtschaftlichen Gründen. Soweit möglich und zumutbar, informieren wir rechtzeitig darüber.</p>
+</section>
+<section class="sec" id="s15">
+  <h2><span class="n">15</span><span>Gewährleistung und Haftung</span></h2>
+  <p>Da die App kostenlos bereitgestellt wird, gelten die gesetzlichen Regeln für unentgeltlich überlassene digitale Inhalte. Wir bemühen uns um eine sorgfältige und fehlerfreie App, können aber nicht garantieren, dass sie jederzeit fehlerfrei funktioniert oder mit jeder künftigen iOS-Version und jedem Gerät kompatibel ist.</p>
+<p>Wir haften unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit. Bei leicht fahrlässiger Verletzung einer wesentlichen Pflicht ist die Haftung auf den vorhersehbaren, typischerweise eintretenden Schaden begrenzt. Im Übrigen ist die Haftung ausgeschlossen, soweit gesetzlich zulässig.</p>
+<p>Die Haftung nach dem Produkthaftungsgesetz sowie zwingende gesetzliche Verbraucherrechte bleiben unberührt.</p>
+</section>
+<section class="sec" id="s16">
+  <h2><span class="n">16</span><span>Dienste und Inhalte Dritter</span></h2>
+  <p>Die App bindet Dienste Dritter ein, insbesondere für Werbung. Beim Öffnen eines externen Angebots gelten die Nutzungsbedingungen und Datenschutzhinweise des jeweiligen Anbieters.</p>
+<p>Für die Verfügbarkeit und den Inhalt externer Angebote ist der jeweilige Anbieter verantwortlich, soweit gesetzlich nichts anderes bestimmt ist.</p>
+</section>
+<section class="sec" id="s17">
+  <h2><span class="n">17</span><span>Datenschutz</span></h2>
+  <p>Wie deine Daten im Zusammenhang mit OnPoy Cars verarbeitet werden, steht in der Datenschutzerklärung. Dort findest du insbesondere Informationen zu lokal gespeicherten Spiel- und Einstellungsdaten, Google AdMob, der Einwilligungsverwaltung und App Tracking Transparency.</p>
+<p>Die Datenschutzerklärung findest du in der App unter „Einstellungen → Datenschutzerklärung“.</p>
+</section>
+<section class="sec" id="s18">
+  <h2><span class="n">18</span><span>Apple-spezifische Bestimmungen</span></h2>
+  <p>Die App wird über den Apple App Store vertrieben. Soweit für die App keine eigene Endnutzer-Lizenzvereinbarung hinterlegt ist, gilt ergänzend die Standard-Endnutzer-Lizenzvereinbarung von Apple (Standard-EULA). Außerdem gilt im Verhältnis zwischen dir, uns und Apple Inc. bzw. Apple Distribution International Ltd. („Apple“):</p>
+<ul><li>Diese Nutzungsbedingungen bestehen zwischen dir und uns, nicht mit Apple. Apple ist für die App und ihre Inhalte nicht verantwortlich.</li><li>Apple ist nicht verpflichtet, Wartungs- oder Supportleistungen für die App zu erbringen.</li><li>Entspricht die App nicht einer anwendbaren Gewährleistung, kannst du Apple informieren. Da die App kostenlos ist, besteht darüber hinaus keine Gewährleistungspflicht von Apple.</li><li>Für Ansprüche im Zusammenhang mit der App – etwa Produkthaftung, die Nichteinhaltung rechtlicher Anforderungen oder Verbraucherschutz – sind wir verantwortlich, nicht Apple.</li><li>Macht jemand geltend, die App verletze Rechte am geistigen Eigentum, sind wir, nicht Apple, für die Prüfung und Bearbeitung zuständig.</li><li>Du bestätigst, dass du dich nicht in einem Land aufhältst, das einem Embargo der US-Regierung unterliegt oder von ihr als „terrorismusunterstützend“ eingestuft ist, und dass du auf keiner Sperrliste der US-Regierung stehst.</li><li>Apple und seine Tochtergesellschaften sind Drittbegünstigte dieser Nutzungsbedingungen und dürfen sie dir gegenüber durchsetzen.</li></ul>
+</section>
+<section class="sec" id="s19">
+  <h2><span class="n">19</span><span>Beendigung der Nutzung</span></h2>
+  <p>Du kannst die Nutzung jederzeit beenden, indem du die App von deinem Gerät löschst. Da es kein Benutzerkonto gibt, musst du nichts kündigen, und da die App keine Käufe enthält, entstehen dabei keine Erstattungsfragen.</p>
+<p>Verstößt du erheblich gegen diese Nutzungsbedingungen (insbesondere gegen Abschnitt 5), können wir dir die Nutzung der App untersagen.</p>
+</section>
+<section class="sec" id="s20">
+  <h2><span class="n">20</span><span>Änderungen dieser Nutzungsbedingungen</span></h2>
+  <p>Wir können diese Nutzungsbedingungen anpassen, wenn es dafür einen sachlichen Grund gibt, zum Beispiel neue Funktionen, geänderte Dienste von Drittanbietern oder neue rechtliche Anforderungen. Über wesentliche Änderungen informieren wir dich, soweit rechtlich nötig, in geeigneter Form, zum Beispiel beim nächsten Start der App.</p>
+<p>Die jeweils aktuelle Fassung findest du in der App unter „Einstellungen → Nutzungsbedingungen“.</p>
+</section>
+<section class="sec" id="s21">
+  <h2><span class="n">21</span><span>Anwendbares Recht und Gerichtsstand</span></h2>
+  <p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Bist du Verbraucher und lebst in einem anderen Staat, bleiben die zwingenden Verbraucherschutzvorschriften dieses Staates unberührt.</p>
+<p>Für Verbraucher gelten die gesetzlichen Gerichtsstände. Soweit eine Gerichtsstandsvereinbarung gesetzlich zulässig ist (zum Beispiel gegenüber Kaufleuten), ist Gerichtsstand Hannover, Deutschland.</p>
+</section>
+<section class="sec" id="s22">
+  <h2><span class="n">22</span><span>Kontakt</span></h2>
+  <p>Bei Fragen zur App oder zu diesen Nutzungsbedingungen erreichst du uns hier:</p>
+<p>Onur Sitar<br>Bayernstraße 33<br>30855 Langenhagen<br>Deutschland<br>E-Mail: <a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></p>
+</section>
+    </main>
+  </div>
+<footer>
+  <span>&copy; <span id="yr">2026</span> OnPoy Studios · Onur Sitar</span>
+  <span><a href="../../../de/">onpoy-studios</a> &middot; <a href="impressum.html">Impressum</a> &middot; <a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></span>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</div>
+<button class="top-btn" id="topBtn" aria-label="Nach oben"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 15l6-6 6 6"/></svg></button>
+<script>
+(function(){
+  var tg=document.getElementById('tocToggle'), side=document.getElementById('side');
+  tg.addEventListener('click',function(){var o=side.classList.toggle('open');tg.setAttribute('aria-expanded',o?'true':'false');});
+  side.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=900){side.classList.remove('open');tg.setAttribute('aria-expanded','false');}});});
+  var b=document.getElementById('topBtn');
+  window.addEventListener('scroll',function(){b.classList.toggle('show',window.scrollY>600);},{passive:true});
+  b.addEventListener('click',function(){window.scrollTo({top:0});});
+})();
+</script>
+</body>
+</html>

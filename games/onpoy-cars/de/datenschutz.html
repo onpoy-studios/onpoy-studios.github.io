@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung – OnPoy Cars</title>
+<meta name="description" content="Datenschutzerklärung – OnPoy Cars. Stand: 29. September 2026 · OnPoy Cars für iPhone und iPad">
+<meta name="theme-color" content="#ff9d1c">
+<link rel="icon" href="../icon.jpg">
+<link rel="apple-touch-icon" href="../icon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap">
+<style>
+  :root{
+    --sun-a:#ff9d1c; --sun-b:#ffb534;
+    --yel-hi:#fff24d; --yel-lo:#ff8c1a; --yel:#ffc21a;
+    --blu-hi:#66e6ff; --blu-lo:#3380ff;
+    --red:#ff3b3b;
+    --ink:#2a1206;
+    --road:#262a3f; --road-deep:#1b1e2e;
+    --card:#30354f; --card-hi:#383e5c;
+    --line:rgba(255,255,255,0.14);
+    --text:#f7f8ff; --muted:#cfd4ea; --faint:#98a0c0;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  body{margin:0;min-height:100vh;color:var(--text);background:var(--road-deep);
+    font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.04rem;line-height:1.65;font-weight:600}
+  a{color:var(--yel);text-underline-offset:2px}
+  a:hover{color:var(--yel-hi)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--yel-hi);outline-offset:3px;border-radius:6px}
+  ::selection{background:rgba(255,194,26,0.3)}
+
+  /* Sonnenstrahlen wie im App-Icon */
+  .sun{position:relative;overflow:hidden;
+    background:
+      radial-gradient(60% 70% at 50% 45%, rgba(255,246,176,0.9), rgba(255,246,176,0) 70%),
+      repeating-conic-gradient(from 0deg at 50% 45%, var(--sun-a) 0deg 10deg, var(--sun-b) 10deg 20deg);}
+  /* Rennstrecke: rot-weißer Randstein + Asphalt mit Mittellinie */
+  .curb{height:16px;background:repeating-linear-gradient(90deg,var(--red) 0 44px,#fff 44px 88px);border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+  .road{background:linear-gradient(180deg,var(--road),var(--road-deep) 420px)}
+  .lane{height:8px;background:repeating-linear-gradient(90deg,rgba(255,255,255,0.85) 0 46px,transparent 46px 92px);opacity:.55;margin:0 auto;max-width:1220px}
+
+  /* Kopfzeile: zurück zu OnPoy Studios */
+  .topbar{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;max-width:1220px;margin:0 auto;padding:.85rem 1.2rem}
+  .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;flex:none}
+  .brand .mark{width:28px;height:28px;display:block}
+  .brand .wm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.02rem;color:var(--ink)}
+  .tabs{display:flex;gap:.35rem;flex-wrap:wrap;margin-left:auto}
+  .tabs a{font-weight:800;font-size:.84rem;color:var(--ink);text-decoration:none;padding:.4rem .75rem;border-radius:999px;
+    background:rgba(255,255,255,0.45);border:2px solid rgba(42,18,6,0.25)}
+  .tabs a:hover{background:rgba(255,255,255,0.75);color:var(--ink)}
+  .tabs a[aria-current="page"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .lang{display:flex;gap:.3rem;flex:none}
+  .lang a,.lang span{font-weight:900;font-size:.78rem;padding:.3rem .6rem;border-radius:.55rem;text-decoration:none;border:2px solid var(--ink)}
+  .lang a{background:rgba(255,255,255,0.55);color:var(--ink)}
+  .lang a:hover{background:#fff;color:var(--ink)}
+  .lang span{background:var(--ink);color:#fff}
+
+  /* Schriftzug wie im Spiel: ONPOY blau, CARS gelb/orange, dunkle Kontur */
+  .logo{font-family:'Nunito',sans-serif;font-weight:900;line-height:.9;letter-spacing:.02em;margin:0;transform:rotate(-4deg);display:inline-block}
+  .logo span{display:block;-webkit-text-stroke:0;paint-order:stroke fill;filter:drop-shadow(0 5px 0 rgba(0,0,0,0.35))}
+  .logo .o{background:linear-gradient(180deg,var(--blu-hi),var(--blu-lo));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .logo .c{background:linear-gradient(180deg,var(--yel-hi),var(--yel-lo));-webkit-background-clip:text;background-clip:text;color:transparent}
+  @supports (-webkit-text-stroke:1px){
+    .logo span{-webkit-text-stroke:.09em var(--ink)}
+  }
+
+  .wrap{max-width:1220px;margin:0 auto;padding:0 1.2rem}
+  footer{max-width:1220px;margin:0 auto;padding:1.6rem 1.2rem 2.4rem;color:var(--faint);font-size:.86rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;justify-content:space-between;font-weight:700}
+  footer a{color:var(--muted)}
+
+  /* ---------- Spielseite ---------- */
+  .hero{padding:1.6rem 1.2rem 3.2rem;text-align:center}
+  .hero .icon{width:132px;height:132px;border-radius:30px;border:4px solid var(--ink);box-shadow:0 10px 0 rgba(0,0,0,0.25);display:block;margin:.6rem auto 1.4rem}
+  .hero .logo{font-size:clamp(3.1rem,11vw,5.6rem)}
+  .hero .tag{max-width:620px;margin:1.6rem auto 0;color:var(--ink);font-size:1.15rem;font-weight:800;line-height:1.5}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.3rem}
+  .chip{font-weight:900;font-size:.85rem;color:var(--ink);background:rgba(255,255,255,0.7);border:2px solid var(--ink);border-radius:999px;padding:.35rem .8rem}
+  .store{display:inline-flex;align-items:center;gap:.65rem;margin-top:1.6rem;background:var(--ink);color:#fff;border-radius:1rem;padding:.75rem 1.2rem;text-decoration:none;font-weight:800;text-align:left;border:3px solid var(--ink);box-shadow:0 6px 0 rgba(0,0,0,0.3)}
+  .store svg{width:22px;height:22px;flex:none}
+  .store small{display:block;color:#d9c9bd;font-weight:700;font-size:.78rem}
+  .store:hover{color:#fff}
+  .label{font-weight:900;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--yel);margin:2.4rem 0 1rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;padding-bottom:1rem}
+  .tile{display:flex;flex-direction:column;gap:.35rem;padding:1.15rem 1.2rem;border-radius:1.1rem;background:var(--card);border:3px solid rgba(0,0,0,0.35);
+    box-shadow:0 6px 0 rgba(0,0,0,0.25);text-decoration:none;color:var(--text);transition:transform .15s ease,background .15s ease,border-color .15s ease}
+  .tile:hover{transform:translateY(-3px);background:var(--card-hi);border-color:var(--yel);color:var(--text)}
+  .tile .t{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.08rem}
+  .tile .t .ic{width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none;border:2px solid var(--ink);font-size:1.05rem}
+  .tile .t .arr{margin-left:auto;color:var(--yel)}
+  .tile .t .nm{min-width:0;overflow-wrap:break-word}
+  .tile.wide{grid-column:1 / -1}
+  .tile .d{color:var(--muted);font-size:.93rem;line-height:1.45}
+  .tile .mail{color:var(--yel);font-weight:800;word-break:break-all;font-size:.9rem}
+  .ic.y{background:linear-gradient(180deg,var(--yel-hi),var(--yel-lo))}
+  .ic.b{background:linear-gradient(180deg,var(--blu-hi),var(--blu-lo))}
+  .ic.r{background:linear-gradient(180deg,#ff8a7a,#e8202e)}
+  .ic.g{background:linear-gradient(180deg,#9ff07a,#35b34a)}
+  .ic.p{background:linear-gradient(180deg,#ffb3d9,#c43f8a)}
+
+  /* ---------- Rechtstexte ---------- */
+  .doc-head{padding:1.2rem 1.2rem 2.2rem}
+  .doc-head .in{max-width:1220px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .doc-head img{width:64px;height:64px;border-radius:17px;border:3px solid var(--ink);box-shadow:0 6px 0 rgba(0,0,0,0.25);flex:none}
+  .doc-head h1{margin:0;font-weight:900;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.05;color:#fff;
+    -webkit-text-stroke:.07em var(--ink);paint-order:stroke fill;filter:drop-shadow(0 4px 0 rgba(0,0,0,0.3))}
+  .doc-head .sub{margin:.35rem 0 0;color:var(--ink);font-weight:800}
+  .layout{max-width:1220px;margin:0 auto;padding:2rem 1.2rem 3rem;display:grid;grid-template-columns:290px minmax(0,1fr);gap:2rem;align-items:start}
+  .side{position:sticky;top:1.2rem;max-height:calc(100vh - 2.4rem);overflow-y:auto;background:var(--card);border:3px solid rgba(0,0,0,0.35);border-radius:1.2rem;padding:1.1rem 1rem;box-shadow:0 6px 0 rgba(0,0,0,0.25);scrollbar-width:thin}
+  .side .lbl{font-weight:900;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 .5rem .4rem}
+  .toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.1rem}
+  .toc a{display:flex;gap:.55rem;align-items:baseline;padding:.38rem .45rem;border-radius:.6rem;color:var(--muted);text-decoration:none;font-size:.9rem;line-height:1.35;font-weight:700}
+  .toc a:hover{background:rgba(255,255,255,0.07);color:#fff}
+  .toc .n{flex:none;font-weight:900;color:var(--yel);font-size:.8rem;min-width:1.6rem}
+  .side .ask{margin-top:1rem;padding:.8rem .5rem 0;border-top:2px dashed var(--line);font-size:.86rem;color:var(--faint)}
+  .toc-toggle{display:none;width:100%;align-items:center;justify-content:space-between;background:var(--card);color:#fff;border:3px solid rgba(0,0,0,0.35);border-radius:1rem;padding:.75rem 1rem;font:900 .95rem 'Nunito',sans-serif;cursor:pointer}
+  .toc-toggle svg{width:18px;height:18px;transition:transform .2s}
+  .toc-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+  .sec{background:var(--card);border:3px solid rgba(0,0,0,0.35);border-radius:1.2rem;padding:1.3rem 1.4rem 1.2rem;margin-bottom:1rem;box-shadow:0 6px 0 rgba(0,0,0,0.25);scroll-margin-top:1rem}
+  .sec h2{display:flex;align-items:center;gap:.7rem;margin:0 0 .6rem;font-weight:900;font-size:1.22rem;line-height:1.25}
+  .sec h2 .n{flex:none;min-width:2.3rem;height:2.3rem;padding:0 .3rem;border-radius:.8rem;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,var(--yel-hi),var(--yel-lo));color:var(--ink);border:2px solid var(--ink);font-size:.95rem}
+  .sec p{margin:.55rem 0;color:var(--muted)}
+  .sec ul{margin:.5rem 0;padding-left:1.3rem;color:var(--muted)}
+  .sec li{margin:.2rem 0}
+  .sec li::marker{color:var(--yel)}
+  .sec a{overflow-wrap:anywhere}
+  .top-btn{position:fixed;right:1.1rem;bottom:1.1rem;width:3rem;height:3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,var(--yel-hi),var(--yel-lo));border:3px solid var(--ink);color:var(--ink);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+  .top-btn.show{opacity:1;visibility:visible}
+  .top-btn svg{width:20px;height:20px}
+  @media (max-width:900px){
+    .layout{grid-template-columns:minmax(0,1fr);padding-top:1.4rem}
+    .side{position:static;max-height:none}
+    .toc-toggle{display:flex}
+    .side{display:none}
+    .side.open{display:block}
+  }
+  @media (max-width:760px){
+    .topbar{gap:.7rem}
+    .lang{order:2;margin-left:auto}
+    .tabs{order:3;margin-left:0;width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+    .tabs::-webkit-scrollbar{display:none}
+    .tabs a{white-space:nowrap;flex:none}
+  }
+  @media (max-width:560px){
+    .sec{padding:1.1rem 1rem}
+  }
+  @media print{
+    .topbar,.side,.toc-toggle,.top-btn,.curb,.lane{display:none!important}
+    body,.road{background:#fff;color:#111}
+    .sun{background:#fff}
+    .sec{box-shadow:none;border:1px solid #ccc;background:#fff}
+    .sec p,.sec ul{color:#111}
+    .layout{display:block}
+  }
+</style>
+</head>
+<body>
+<div class="sun">
+<header class="topbar">
+  <a class="brand" href="../../../de/" aria-label="OnPoy Studios – Startseite"><svg aria-hidden="true" class="mark" viewBox="0 0 240 240"><defs><linearGradient gradientUnits="userSpaceOnUse" id="og" x1="24" x2="214" y1="14" y2="226"><stop offset="0" stop-color="#25A9EA"/><stop offset="0.52" stop-color="#4C63E8"/><stop offset="1" stop-color="#C13BD6"/></linearGradient><linearGradient id="osheen" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#CFEFFF" stop-opacity="0.85"/><stop offset="1" stop-color="#CFEFFF" stop-opacity="0"/></linearGradient></defs><g fill="none" stroke-linecap="round"><path d="M91.1 184.1 A74 74 0 1 1 148.9 184.1" stroke="url(#og)" stroke-width="26"/><path d="M97 176 A66 66 0 0 1 128 55" opacity="0.5" stroke="url(#osheen)" stroke-width="6"/><path d="M46 150 C74 111 105 111 123 132 C141 153 170 150 196 115" stroke="url(#og)" stroke-width="24"/><circle cx="120" cy="93" fill="url(#og)" r="17"/><circle cx="113" cy="87" fill="#CFEFFF" opacity="0.55" r="4.6"/></g></svg><span class="wm">OnPoy Studios</span></a>
+  <nav class="tabs" aria-label="OnPoy Cars"><a href="./">OnPoy Cars</a><a href="datenschutz.html" aria-current="page">Datenschutzerklärung</a><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="leitfaden-eltern.html">Leitfaden für Eltern</a><a href="impressum.html">Impressum</a></nav>
+  <div class="lang" role="group" aria-label="Sprache / Language"><span aria-current="true">DE</span><a href="../en/datenschutz.html" hreflang="en">EN</a></div>
+</header>
+  <div class="doc-head"><div class="in">
+    <img src="../icon.jpg" alt="OnPoy Cars App-Icon" width="64" height="64">
+    <div><h1>Datenschutzerklärung</h1><p class="sub">Stand: 29. September 2026 · OnPoy Cars für iPhone und iPad</p></div>
+  </div></div>
+</div>
+<div class="curb" aria-hidden="true"></div>
+<div class="road">
+  <div class="lane" aria-hidden="true" style="margin-top:14px"></div>
+  <div class="layout">
+    <div>
+      <button class="toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="side"><span>Inhaltsverzeichnis</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+      <aside class="side" id="side">
+        <p class="lbl">Inhaltsverzeichnis</p>
+        <nav class="toc" aria-label="Inhaltsverzeichnis"><ol><li><a href="#s1"><span class="n">01</span><span>Verantwortlicher</span></a></li><li><a href="#s2"><span class="n">02</span><span>Allgemeines zur App und zur Datenverarbeitung</span></a></li><li><a href="#s3"><span class="n">03</span><span>Lokal auf dem Gerät gespeicherte Daten</span></a></li><li><a href="#s4"><span class="n">04</span><span>Sprach- und Regionseinstellungen</span></a></li><li><a href="#s5"><span class="n">05</span><span>Google AdMob und Werbung</span></a></li><li><a href="#s6"><span class="n">06</span><span>Personalisierte und nicht personalisierte Werbung</span></a></li><li><a href="#s7"><span class="n">07</span><span>Google User Messaging Platform (UMP)</span></a></li><li><a href="#s8"><span class="n">08</span><span>Änderung und Widerruf der Werbeeinwilligung</span></a></li><li><a href="#s9"><span class="n">09</span><span>App Tracking Transparency (ATT) und IDFA</span></a></li><li><a href="#s10"><span class="n">10</span><span>Keine In-App-Käufe</span></a></li><li><a href="#s11"><span class="n">11</span><span>Keine Benutzerkonten und keine Online-Funktionen</span></a></li><li><a href="#s12"><span class="n">12</span><span>Weitergabe personenbezogener Daten</span></a></li><li><a href="#s13"><span class="n">13</span><span>Datenübermittlung in Drittländer</span></a></li><li><a href="#s14"><span class="n">14</span><span>Rechtsgrundlagen der Datenverarbeitung</span></a></li><li><a href="#s15"><span class="n">15</span><span>Speicherdauer und Löschung</span></a></li><li><a href="#s16"><span class="n">16</span><span>Minderjährige und Kinder</span></a></li><li><a href="#s17"><span class="n">17</span><span>Keine Nutzung von Kamera, Mikrofon oder genauem Standort</span></a></li><li><a href="#s18"><span class="n">18</span><span>Deine Rechte</span></a></li><li><a href="#s19"><span class="n">19</span><span>Beschwerderecht bei einer Aufsichtsbehörde</span></a></li><li><a href="#s20"><span class="n">20</span><span>Sicherheit</span></a></li><li><a href="#s21"><span class="n">21</span><span>Datenschutzhinweise von Google und Apple</span></a></li><li><a href="#s22"><span class="n">22</span><span>Änderungen dieser Datenschutzerklärung</span></a></li><li><a href="#s23"><span class="n">23</span><span>Kontakt für Datenschutzanfragen</span></a></li></ol></nav>
+        <div class="ask">Fragen dazu?<br><a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></div>
+      </aside>
+    </div>
+    <main id="main">
+<section class="sec" id="s1">
+  <h2><span class="n">01</span><span>Verantwortlicher</span></h2>
+  <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für die Verarbeitung personenbezogener Daten im Zusammenhang mit der iOS-App „OnPoy Cars“ ist:</p>
+<p>Onur Sitar<br>Bayernstraße 33<br>30855 Langenhagen<br>Deutschland<br>E-Mail: <a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></p>
+<p>In dieser Datenschutzerklärung erfährst du, welche Daten bei der Nutzung der App verarbeitet werden, zu welchen Zwecken das geschieht und welche Rechte du hast.</p>
+</section>
+<section class="sec" id="s2">
+  <h2><span class="n">02</span><span>Allgemeines zur App und zur Datenverarbeitung</span></h2>
+  <p>OnPoy Cars ist ein Autorennspiel im Spielzeug-Look für iPhone und iPad. Du fährst gegen computergesteuerte Gegner, sammelst Sterne, schaltest Level frei und baust deine Autos in der Werkstatt um. Du brauchst dafür keine Registrierung und kein Benutzerkonto. Für Spielstände betreiben wir kein eigenes Backend und keinen eigenen Server.</p>
+<p>Die App selbst erhebt insbesondere keine:</p>
+<ul><li>Namen</li><li>E-Mail-Adressen</li><li>Telefonnummern</li><li>Fotos oder Videos</li><li>Sprachaufnahmen</li></ul>
+<p>Die App verwendet weder die Kamera noch das Mikrofon und fragt nicht nach deinem genauen Standort.</p>
+<p>Weil die App kostenlos ist und sich über Werbung finanziert, ist Google AdMob eingebunden. Dabei kann Google bestimmte technische und personenbezogene Daten verarbeiten (siehe Abschnitte 5 bis 9).</p>
+</section>
+<section class="sec" id="s3">
+  <h2><span class="n">03</span><span>Lokal auf dem Gerät gespeicherte Daten</span></h2>
+  <p>Folgende Daten werden ausschließlich lokal auf deinem Gerät gespeichert (über die iOS-Funktion UserDefaults):</p>
+<ul><li>Gesammelte Sterne und die beste Sterne-Wertung je Level</li><li>Freigeschaltete Level</li><li>Zuletzt gewähltes Auto und Level</li><li>Werkstatt-Umbauten je Auto (Farbe, Reifen, Sticker, Auspuff)</li><li>Einstellungen: Musik, Musiklautstärke, Töne, Vibration, Grafik, Gegnerstärke und Sprache</li><li>Ob die Einführung beim ersten Start schon gezeigt wurde</li><li>Ein Zähler beendeter Rennen, der steuert, wann die nächste Werbung erscheint</li></ul>
+<p>Diese Daten bleiben auf deinem Gerät. Sie werden nicht an uns übertragen und nicht an Dritte weitergegeben. Wir haben keine Kopie davon auf einem Server.</p>
+<p>Zusätzlich speichert das Google-Einwilligungsformular (siehe Abschnitt 7) deine Werbe-Einwilligung lokal auf dem Gerät, damit sie beim nächsten Start berücksichtigt wird.</p>
+<p>Du kannst alle diese Daten entfernen, indem du die App löschst.</p>
+</section>
+<section class="sec" id="s4">
+  <h2><span class="n">04</span><span>Sprach- und Regionseinstellungen</span></h2>
+  <p>Die App liest die auf deinem Gerät eingestellte Sprache aus, um automatisch eine passende Sprache zu wählen: Deutsch bei deutscher Gerätesprache, sonst Englisch. Dafür ist kein Zugriff auf GPS oder deinen genauen Standort nötig.</p>
+<p>Du kannst die Sprache in den Einstellungen der App jederzeit ändern. Deine Auswahl wird lokal auf dem Gerät gespeichert (siehe Abschnitt 3).</p>
+</section>
+<section class="sec" id="s5">
+  <h2><span class="n">05</span><span>Google AdMob und Werbung</span></h2>
+  <p>Die App zeigt Werbung über Google AdMob (Google Mobile Ads SDK). Anbieter für Nutzer im Europäischen Wirtschaftsraum und in der Schweiz ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
+<p>So wird Werbung in OnPoy Cars eingesetzt:</p>
+<ul><li>In der Regel nach jedem zweiten beendeten Rennen erscheint eine Vollbild-Videoanzeige (Interstitial).</li><li>Während eines Rennens wird keine Werbung eingeblendet.</li><li>Es gibt keine Bannerwerbung.</li><li>Die Anzeigen sind auf Inhalte beschränkt, die Google für Jugendliche ab 13 Jahren als geeignet einstuft (Google-Einstufung „T“).</li></ul>
+<p>Im Zusammenhang mit dem Google Mobile Ads SDK können insbesondere folgende Daten verarbeitet werden:</p>
+<ul><li>IP-Adresse, aus der ein ungefährer Standort abgeleitet werden kann</li><li>Gerätekennungen, einschließlich der Werbe-ID (IDFA), sofern verfügbar und erlaubt (siehe Abschnitt 9)</li><li>Informationen über angezeigte Anzeigen und deine Interaktionen damit</li><li>Technische Geräte-, Betriebssystem- und App-Informationen</li><li>Leistungs-, Absturz- und Diagnosedaten</li></ul>
+<p>Google verarbeitet diese Daten, um Anzeigen auszuliefern, auszuwählen und zu messen, die Häufigkeit von Anzeigen zu steuern, Betrug und Missbrauch zu verhindern und – nur mit deiner Einwilligung – Werbung zu personalisieren. Die jeweils aktuelle Liste der Datenkategorien veröffentlicht Google in der Dokumentation zum Google Mobile Ads SDK.</p>
+</section>
+<section class="sec" id="s6">
+  <h2><span class="n">06</span><span>Personalisierte und nicht personalisierte Werbung</span></h2>
+  <p>Soweit gesetzlich erforderlich, fragen wir dich vor einer Datenverarbeitung zu Werbezwecken nach deiner Einwilligung. Du entscheidest selbst, ob du personalisierter Werbung zustimmst.</p>
+<p>Stimmst du nicht zu, können nicht personalisierte oder eingeschränkte Anzeigen angezeigt werden. Auch dabei können bestimmte Daten verarbeitet werden, soweit dies für die Auslieferung, Sicherheit oder Messung der Anzeigen erforderlich ist. Das Spiel kannst du in jedem Fall vollständig nutzen.</p>
+</section>
+<section class="sec" id="s7">
+  <h2><span class="n">07</span><span>Google User Messaging Platform (UMP)</span></h2>
+  <p>Zur Verwaltung deiner Einwilligungen nutzt die App die Google User Messaging Platform (UMP). Insbesondere im Europäischen Wirtschaftsraum, im Vereinigten Königreich und in der Schweiz erscheint beim ersten Start ein Einwilligungsformular von Google, in dem du über die Datenverarbeitung informiert wirst und deine Auswahl treffen kannst.</p>
+<p>Deine Auswahl wird lokal gespeichert (siehe Abschnitt 3) und, soweit technisch und rechtlich nötig, an die Werbedienste übermittelt.</p>
+</section>
+<section class="sec" id="s8">
+  <h2><span class="n">08</span><span>Änderung und Widerruf der Werbeeinwilligung</span></h2>
+  <p>Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft ändern oder widerrufen. Dazu gibt es in der App unter „Einstellungen → Werbeeinstellungen“ einen dauerhaften Zugang zum Google-Einwilligungsformular. Dieser Eintrag erscheint, wenn für deine Region eine solche Widerrufsmöglichkeit vorgesehen ist.</p>
+<p>Ein Widerruf wirkt nur für die Zukunft und berührt nicht die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung.</p>
+</section>
+<section class="sec" id="s9">
+  <h2><span class="n">09</span><span>App Tracking Transparency (ATT) und IDFA</span></h2>
+  <p>Die Werbe-ID deines Geräts (IDFA) darf nur mit deiner Erlaubnis für Tracking verwendet werden. Dafür zeigt iOS einmalig eine Systemabfrage an („Darf OnPoy Cars deine Aktivitäten … erfassen?“).</p>
+<p>Lehnst du ab, kannst du das Spiel trotzdem uneingeschränkt nutzen; es werden dann nur Anzeigen ohne Tracking gezeigt. Deine Entscheidung kannst du jederzeit in den iOS-Einstellungen unter „Datenschutz &amp; Sicherheit → Tracking“ ändern.</p>
+</section>
+<section class="sec" id="s10">
+  <h2><span class="n">10</span><span>Keine In-App-Käufe</span></h2>
+  <p>OnPoy Cars enthält keine In-App-Käufe und keine Abonnements. Alle Autos, Strecken und Werkstatt-Umbauten sind kostenlos spielbar.</p>
+<p>Die App finanziert sich ausschließlich über Werbung (siehe Abschnitt 5). Zahlungsdaten werden von der App nicht verarbeitet.</p>
+</section>
+<section class="sec" id="s11">
+  <h2><span class="n">11</span><span>Keine Benutzerkonten und keine Online-Funktionen</span></h2>
+  <p>Für die Nutzung der App brauchst du kein Benutzerkonto. Es gibt insbesondere:</p>
+<ul><li>Keinen Login</li><li>Keine öffentlichen Profile</li><li>Keinen Chat</li><li>Keine Nachrichten zwischen Spielern</li><li>Keine Möglichkeit, Fotos oder Videos hochzuladen</li><li>Keinen Online-Mehrspielermodus</li></ul>
+<p>Die Gegner im Rennen werden vollständig vom Spiel auf deinem Gerät gesteuert. Es gibt keine Verbindung zu anderen Spielern.</p>
+</section>
+<section class="sec" id="s12">
+  <h2><span class="n">12</span><span>Weitergabe personenbezogener Daten</span></h2>
+  <p>Wir verkaufen keine personenbezogenen Daten. Eine Verarbeitung durch Dritte findet nur im Rahmen der eingebundenen Dienste statt:</p>
+<ul><li>Google – im Zusammenhang mit Google AdMob und der Google UMP</li><li>Apple – im Zusammenhang mit dem App Store und iOS</li></ul>
+<p>Darüber hinaus geben wir keine personenbezogenen Daten an Dritte weiter, es sei denn, wir sind gesetzlich dazu verpflichtet.</p>
+</section>
+<section class="sec" id="s13">
+  <h2><span class="n">13</span><span>Datenübermittlung in Drittländer</span></h2>
+  <p>Google und Apple sind international tätige Unternehmen. Bei der Nutzung ihrer Dienste können personenbezogene Daten auch außerhalb Deutschlands und des Europäischen Wirtschaftsraums verarbeitet werden, insbesondere in den USA.</p>
+<p>Eine solche Übermittlung stützt sich auf die gesetzlich vorgesehenen Mechanismen, zum Beispiel einen Angemessenheitsbeschluss der Europäischen Kommission (etwa das EU-US Data Privacy Framework) oder geeignete Garantien nach Art. 46 DSGVO wie Standardvertragsklauseln. Näheres findest du in den Datenschutzhinweisen von Google und Apple (siehe Abschnitt 21).</p>
+</section>
+<section class="sec" id="s14">
+  <h2><span class="n">14</span><span>Rechtsgrundlagen der Datenverarbeitung</span></h2>
+  <p>Für das Speichern von Informationen auf deinem Gerät und den Zugriff darauf gilt zusätzlich § 25 des Telekommunikation-Digitale-Dienste-Datenschutz-Gesetzes (TDDDG). Ist das Speichern oder der Zugriff nicht unbedingt erforderlich, erfolgt es nur mit deiner vorherigen Einwilligung.</p>
+<p>Je nach Zweck stützt sich die Verarbeitung auf folgende Rechtsgrundlagen der DSGVO:</p>
+<ul><li>Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG (Einwilligung) – insbesondere für personalisierte Werbung und Tracking</li><li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) – für die technisch notwendige Bereitstellung der App und nicht personalisierter Werbung sowie für Sicherheit, Betrugs- und Missbrauchsvermeidung. Unser berechtigtes Interesse liegt in der sicheren, stabilen und wirtschaftlichen Bereitstellung der kostenlosen App.</li><li>Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung) – soweit wir gesetzlich zur Verarbeitung verpflichtet sind</li></ul>
+<p>Die rein lokal gespeicherten Spiel- und Einstellungsdaten (Abschnitt 3) sind für die Funktion des Spiels unbedingt erforderlich und verlassen dein Gerät nicht.</p>
+</section>
+<section class="sec" id="s15">
+  <h2><span class="n">15</span><span>Speicherdauer und Löschung</span></h2>
+  <p>Deine Sterne, freigeschalteten Level, Werkstatt-Umbauten und Einstellungen bleiben auf deinem Gerät, bis du die App löschst. Da wir sie nicht auf eigenen Servern speichern, haben wir keine Kopie davon.</p>
+<p>Für Daten, die Google oder Apple verarbeiten, gelten deren eigene Aufbewahrungs- und Löschregeln.</p>
+</section>
+<section class="sec" id="s16">
+  <h2><span class="n">16</span><span>Minderjährige und Kinder</span></h2>
+  <p>OnPoy Cars ist im App Store ab 13 Jahren freigegeben, weil die App Werbung zeigt. Wir sammeln nicht gezielt personenbezogene Daten von Kindern. Es gibt keine Benutzerkonten, keine öffentlichen Profile, keinen Chat und keine Möglichkeit, eigene Inhalte zu teilen.</p>
+<p>Die Werbung ist auf Anzeigen beschränkt, die für Jugendliche ab 13 Jahren geeignet sind (siehe Abschnitt 5). Kann eine minderjährige Person nach dem geltenden Recht nicht selbst wirksam einwilligen – in Deutschland in der Regel bis zum 16. Geburtstag (Art. 8 DSGVO) –, ist für personalisierte Werbung die Zustimmung der Eltern bzw. Erziehungsberechtigten nötig.</p>
+<p>Wir empfehlen Eltern, die Datenschutz-, Werbe-, Bildschirmzeit- und Kaufeinstellungen des Geräts altersgerecht einzurichten. Mehr dazu steht im „Leitfaden für Eltern“ in der App.</p>
+</section>
+<section class="sec" id="s17">
+  <h2><span class="n">17</span><span>Keine Nutzung von Kamera, Mikrofon oder genauem Standort</span></h2>
+  <p>OnPoy Cars braucht für das Spiel keinen Zugriff auf:</p>
+<ul><li>Kamera</li><li>Mikrofon</li><li>Fotos</li><li>Kontakte</li><li>Genauen GPS-Standort</li></ul>
+<p>Davon zu unterscheiden sind technische Informationen, die Google im Rahmen der Werbung verarbeiten kann, zum Beispiel ein ungefährer Standort anhand der IP-Adresse (siehe Abschnitt 5).</p>
+</section>
+<section class="sec" id="s18">
+  <h2><span class="n">18</span><span>Deine Rechte</span></h2>
+  <p>Soweit die DSGVO gilt, hast du insbesondere folgende Rechte:</p>
+<ul><li>Auskunft (Art. 15 DSGVO)</li><li>Berichtigung (Art. 16 DSGVO)</li><li>Löschung (Art. 17 DSGVO)</li><li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li><li>Datenübertragbarkeit (Art. 20 DSGVO)</li><li>Widerspruch (Art. 21 DSGVO)</li><li>Widerruf einer Einwilligung (Art. 7 Abs. 3 DSGVO)</li></ul>
+<p>Da Spielstände und Einstellungen nur lokal auf deinem Gerät liegen und wir keine Benutzerkonten führen, können wir diese Daten keiner Person zuordnen und nicht aus der Ferne löschen. Du kannst sie jederzeit selbst entfernen, indem du die App löschst. Für die von Google verarbeiteten Werbedaten kannst du deine Rechte auch direkt gegenüber Google geltend machen.</p>
+</section>
+<section class="sec" id="s19">
+  <h2><span class="n">19</span><span>Beschwerderecht bei einer Aufsichtsbehörde</span></h2>
+  <p>Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, wenn du der Meinung bist, dass die Verarbeitung deiner personenbezogenen Daten gegen die DSGVO verstößt (Art. 77 DSGVO). Für uns zuständig ist die Landesbeauftragte für den Datenschutz Niedersachsen. Du kannst dich aber auch an die Aufsichtsbehörde an deinem Wohnort wenden.</p>
+<p>Dieses Recht besteht unabhängig von anderen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfen.</p>
+</section>
+<section class="sec" id="s20">
+  <h2><span class="n">20</span><span>Sicherheit</span></h2>
+  <p>Wir setzen auf Datensparsamkeit: Es gibt bewusst keine Benutzerkonten und keine Speicherung von Spielständen auf Servern.</p>
+<p>Die eingebundenen Dienste von Google (AdMob, UMP) und Apple setzen ihre eigenen technischen und organisatorischen Sicherheitsmaßnahmen ein.</p>
+</section>
+<section class="sec" id="s21">
+  <h2><span class="n">21</span><span>Datenschutzhinweise von Google und Apple</span></h2>
+  <p>Ergänzend gelten die Datenschutzhinweise der eingebundenen Anbieter:</p>
+<ul><li>Google-Datenschutzerklärung: <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">policies.google.com/privacy</a></li><li>Wie Google Daten aus Apps von Partnern verwendet: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener" target="_blank">policies.google.com/technologies/partner-sites</a></li><li>Apple-Datenschutzrichtlinie: <a href="https://apple.com/de/legal/privacy" rel="noopener" target="_blank">apple.com/de/legal/privacy</a></li></ul>
+</section>
+<section class="sec" id="s22">
+  <h2><span class="n">22</span><span>Änderungen dieser Datenschutzerklärung</span></h2>
+  <p>Wir passen diese Datenschutzerklärung an, wenn sich Funktionen der App, eingebundene Dienste, technische Abläufe oder rechtliche Anforderungen ändern.</p>
+<p>Die jeweils aktuelle Fassung findest du immer in der App unter „Einstellungen → Datenschutzerklärung“.</p>
+</section>
+<section class="sec" id="s23">
+  <h2><span class="n">23</span><span>Kontakt für Datenschutzanfragen</span></h2>
+  <p>Bei Fragen zum Datenschutz kannst du dich jederzeit an uns wenden:</p>
+<p>Onur Sitar<br>Bayernstraße 33<br>30855 Langenhagen<br>Deutschland<br>E-Mail: <a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></p>
+</section>
+    </main>
+  </div>
+<footer>
+  <span>&copy; <span id="yr">2026</span> OnPoy Studios · Onur Sitar</span>
+  <span><a href="../../../de/">onpoy-studios</a> &middot; <a href="impressum.html">Impressum</a> &middot; <a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></span>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</div>
+<button class="top-btn" id="topBtn" aria-label="Nach oben"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 15l6-6 6 6"/></svg></button>
+<script>
+(function(){
+  var tg=document.getElementById('tocToggle'), side=document.getElementById('side');
+  tg.addEventListener('click',function(){var o=side.classList.toggle('open');tg.setAttribute('aria-expanded',o?'true':'false');});
+  side.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=900){side.classList.remove('open');tg.setAttribute('aria-expanded','false');}});});
+  var b=document.getElementById('topBtn');
+  window.addEventListener('scroll',function(){b.classList.toggle('show',window.scrollY>600);},{passive:true});
+  b.addEventListener('click',function(){window.scrollTo({top:0});});
+})();
+</script>
+</body>
+</html>
