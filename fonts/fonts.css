@@ -42,3 +42,13 @@
   font-style:normal; font-weight:600; font-display:swap;
   src:url(./poppins-600.woff2) format('woff2');
 }
+@font-face{
+  font-family:'Source Serif 4';
+  font-style:italic; font-weight:200 900; font-display:swap;
+  src:url(./source-serif-4-italic-var.woff2) format('woff2-variations');
+}
+@font-face{
+  font-family:'Nunito';
+  font-style:normal; font-weight:200 1000; font-display:swap;
+  src:url(./nunito-var.woff2) format('woff2-variations');
+}

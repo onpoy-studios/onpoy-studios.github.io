@@ -3,6 +3,7 @@ und dürfen selbst gehostet und weitergegeben werden.
 
   Bricolage Grotesque  – Copyright The Bricolage Grotesque Project Authors
   IBM Plex Mono / Sans – Copyright IBM Corp.
+  Nunito               – Copyright The Nunito Project Authors
   Poppins              – Copyright The Poppins Project Authors
   Source Serif 4       – Copyright Adobe
 
