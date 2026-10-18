@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nutzungsbedingungen – OnPoy Facts</title>
+<meta name="description" content="Nutzungsbedingungen der iOS-App OnPoy Facts von OnPoy Studios.">
+<meta name="theme-color" content="#1b0b3d">
+<link rel="icon" href="../icon.jpg">
+<link rel="apple-touch-icon" href="../icon.jpg">
+<link rel="alternate" hreflang="de" href="../de/nutzungsbedingungen.html">
+<link rel="alternate" hreflang="en" href="../en/nutzungsbedingungen.html">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+  :root{
+    --night:#0d0520; --stage:#1b0b3d; --stage-2:#2a1260;
+    --panel:#24114a; --panel-hi:#2f1860;
+    --border:rgba(189,133,255,0.55); --border-soft:rgba(189,133,255,0.22);
+    --purple:#9e52ff; --purple-hi:#c99bff; --neon:#b06bff;
+    --gold:#ffcc33; --gold-hi:#ffe27a; --gold-deep:#fa8f14;
+    --ink:#1a0833;
+    --text:#f7f3ff; --muted:#d8ccf2; --faint:#a594c9;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  body{margin:0;min-height:100vh;color:var(--text);background:var(--night);
+    font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.04rem;line-height:1.65;font-weight:600}
+  a{color:var(--gold);text-underline-offset:2px}
+  a:hover{color:var(--gold-hi)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--gold-hi);outline-offset:3px;border-radius:6px}
+  ::selection{background:rgba(255,204,51,0.3)}
+
+  /* Bühne wie im App-Icon: violettes Scheinwerferlicht, Neonbogen, schwebende Fragekarten */
+  .stage{position:relative;overflow:hidden;isolation:isolate;
+    background:
+      radial-gradient(70% 60% at 50% 0%, rgba(176,107,255,0.45), rgba(176,107,255,0) 70%),
+      radial-gradient(40% 50% at 15% 10%, rgba(255,255,255,0.10), rgba(255,255,255,0) 70%),
+      radial-gradient(40% 50% at 85% 10%, rgba(255,255,255,0.10), rgba(255,255,255,0) 70%),
+      linear-gradient(180deg,var(--stage-2),var(--stage) 60%,var(--night));}
+  .stage::before{content:"";position:absolute;left:50%;top:-55%;width:150%;aspect-ratio:1;transform:translateX(-50%);z-index:-1;
+    border-radius:50%;border:3px solid rgba(176,107,255,0.55);box-shadow:0 0 30px rgba(176,107,255,0.55),inset 0 0 30px rgba(176,107,255,0.35)}
+  .qcard{position:absolute;z-index:-1;width:46px;height:58px;border-radius:9px;
+    background:linear-gradient(160deg,#3a2560,#1c0f33);border:2px solid rgba(255,204,51,0.35);
+    color:rgba(255,204,51,0.65);font:900 1.6rem 'Nunito',sans-serif;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 18px rgba(0,0,0,0.45)}
+  .qcard.a{left:5%;top:58%;transform:rotate(-18deg)}
+  .qcard.b{right:6%;top:30%;transform:rotate(14deg)}
+  .qcard.c{left:12%;top:16%;transform:rotate(9deg);width:34px;height:44px;font-size:1.1rem;opacity:.7}
+  .qcard.d{right:14%;top:72%;transform:rotate(-8deg);width:36px;height:46px;font-size:1.2rem;opacity:.75}
+  @media (max-width:640px){.qcard.c,.qcard.d{display:none}.qcard.a{left:-8px}.qcard.b{right:-8px}}
+  .stage.doc .qcard.a,.stage.doc .qcard.c{display:none}
+  .neon{height:4px;background:linear-gradient(90deg,transparent,var(--neon) 15%,var(--gold) 50%,var(--neon) 85%,transparent);
+    box-shadow:0 0 14px rgba(176,107,255,0.8),0 0 4px rgba(255,204,51,0.6)}
+
+  /* Kopfzeile: zurück zu OnPoy Studios */
+  .topbar{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;max-width:1220px;margin:0 auto;padding:.85rem 1.2rem}
+  .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;flex:none}
+  .brand .mark{width:28px;height:28px;display:block}
+  .brand .wm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.02rem;color:#fff}
+  .tabs{display:flex;gap:.35rem;flex-wrap:wrap;margin-left:auto}
+  .tabs a{font-weight:800;font-size:.84rem;color:var(--muted);text-decoration:none;padding:.4rem .8rem;border-radius:999px;
+    background:rgba(36,17,74,0.75);border:1.5px solid var(--border-soft)}
+  .tabs a:hover{color:#fff;border-color:var(--border)}
+  .lang{display:flex;gap:.3rem;flex:none}
+  .lang a,.lang span{font-weight:900;font-size:.78rem;padding:.32rem .62rem;border-radius:.55rem;text-decoration:none;border:1.5px solid var(--border)}
+  .lang a{background:rgba(36,17,74,0.75);color:var(--muted)}
+  .lang a:hover{color:#fff;border-color:var(--gold)}
+  .lang span{background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:var(--ink);border-color:transparent}
+  .tabs a[aria-current="page"]{background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:var(--ink);border-color:transparent}
+
+  /* Schriftzug wie im Spiel: „OnPoy“ weiß, „FACTS“ gold, kursiv mit dunkler Kontur */
+  .logo{font-family:'Nunito',sans-serif;font-weight:900;font-style:italic;line-height:.92;margin:0;display:inline-block;letter-spacing:.01em}
+  .logo span{display:block;paint-order:stroke fill;filter:drop-shadow(0 5px 0 rgba(0,0,0,0.45))}
+  .logo .o{color:#fff;font-size:.62em}
+  .logo .f{background:linear-gradient(180deg,var(--gold-hi),var(--gold) 45%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.04em}
+  @supports (-webkit-text-stroke:1px){ .logo span{-webkit-text-stroke:.07em var(--ink)} }
+
+  .wrap{max-width:1220px;margin:0 auto;padding:0 1.2rem}
+  footer{max-width:1220px;margin:0 auto;padding:1.6rem 1.2rem 2.4rem;color:var(--faint);font-size:.86rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;justify-content:space-between;font-weight:700}
+  footer a{color:var(--muted)}
+
+  .card{background:var(--panel);border:1.6px solid var(--border);border-radius:1.3rem;box-shadow:0 14px 34px -14px rgba(0,0,0,0.7),inset 0 1px 0 rgba(255,255,255,0.06)}
+
+  /* ---------- Spielseite ---------- */
+  .hero{padding:1.4rem 1.2rem 3.2rem;text-align:center}
+  .hero .icon{width:132px;height:132px;border-radius:30px;border:2px solid var(--border);box-shadow:0 0 0 4px rgba(176,107,255,0.18),0 14px 30px rgba(0,0,0,0.55);display:block;margin:.6rem auto 1.4rem}
+  .hero .logo{font-size:clamp(3.2rem,12vw,6rem)}
+  .hero .tag{max-width:640px;margin:1.6rem auto 0;color:var(--muted);font-size:1.15rem;font-weight:700;line-height:1.55}
+  .hero .tag b{color:#fff}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.3rem}
+  .chip{font-weight:800;font-size:.85rem;color:#fff;background:rgba(36,17,74,0.85);border:1.5px solid var(--border);border-radius:999px;padding:.35rem .85rem}
+  .chip.g{background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:var(--ink);border-color:transparent}
+  .store{display:inline-flex;align-items:center;gap:.65rem;margin-top:1.7rem;background:#000;color:#fff;border-radius:1rem;padding:.75rem 1.25rem;text-decoration:none;font-weight:800;text-align:left;border:1.5px solid rgba(255,255,255,0.25)}
+  .store svg{width:22px;height:22px;flex:none}
+  .store small{display:block;color:#bfb3d9;font-weight:700;font-size:.78rem}
+  .store:hover{color:#fff}
+  .label{font-weight:900;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:2.6rem 0 1rem}
+  .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  @media (max-width:820px){.steps{grid-template-columns:1fr}}
+  .step{padding:1.2rem 1.25rem}
+  .step .num{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.15rem;
+    background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:var(--ink);margin-bottom:.7rem;box-shadow:0 4px 0 rgba(0,0,0,0.35)}
+  .step h3{margin:0 0 .3rem;font-size:1.12rem;font-weight:900}
+  .step p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.5}
+  .example{margin-top:1rem;padding:1.2rem 1.25rem}
+  .example .q{font-weight:900;font-size:1.1rem;text-align:center;margin:0 0 .8rem}
+  .ans{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap;padding:.6rem .9rem;border-radius:.9rem;background:rgba(13,5,32,0.55);margin-top:.5rem;border:1.5px solid}
+  .ans.bluff{border-color:var(--purple)} .ans.true{border-color:#34c759}
+  .ans .pill{font-size:.78rem;font-weight:900;border-radius:999px;padding:.2rem .65rem}
+  .ans.bluff .pill{background:var(--purple)} .ans.true .pill{background:#2fb352}
+  .modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  @media (max-width:820px){.modes{grid-template-columns:1fr}}
+  .mode{padding:1.1rem 1.2rem;display:flex;gap:.9rem;align-items:flex-start}
+  .mode .ic{width:46px;height:46px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(158,82,255,0.55);color:var(--gold)}
+  .mode .ic svg{width:24px;height:24px}
+  .mode h3{margin:0 0 .2rem;font-size:1.05rem;font-weight:900}
+  .mode p{margin:0;color:var(--muted);font-size:.93rem;line-height:1.45}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;padding-bottom:1rem}
+  .tile{display:flex;flex-direction:column;gap:.35rem;padding:1.15rem 1.2rem;text-decoration:none;color:var(--text);transition:transform .15s ease,background .15s ease,border-color .15s ease}
+  .tile:hover{transform:translateY(-3px);background:var(--panel-hi);border-color:var(--gold);color:var(--text)}
+  .tile .t{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.08rem}
+  .tile .t .ic{width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none;font-size:1.05rem;background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:var(--ink)}
+  .tile .t .ic svg{width:19px;height:19px}
+  .tile .t .arr{margin-left:auto;color:var(--gold)}
+  .tile.wide{grid-column:1 / -1}
+  .tile .d{color:var(--muted);font-size:.93rem;line-height:1.45}
+  .tile .mail{color:var(--gold);font-weight:800;word-break:break-all;font-size:.9rem}
+  .note{margin:1rem 0 0;color:var(--faint);font-size:.9rem;text-align:center}
+
+  /* ---------- Rechtstexte ---------- */
+  .doc-head{padding:1.2rem 1.2rem 2.4rem}
+  .doc-head .in{max-width:1220px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .doc-head img{width:64px;height:64px;border-radius:17px;border:2px solid var(--border);box-shadow:0 8px 20px rgba(0,0,0,0.5);flex:none}
+  .doc-head h1{margin:0;font-weight:900;font-style:italic;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.05;color:#fff;
+    -webkit-text-stroke:.06em var(--ink);paint-order:stroke fill;filter:drop-shadow(0 4px 0 rgba(0,0,0,0.4))}
+  .doc-head .sub{margin:.35rem 0 0;color:var(--muted);font-weight:800}
+  .layout{max-width:1220px;margin:0 auto;padding:2rem 1.2rem 3rem;display:grid;grid-template-columns:290px minmax(0,1fr);gap:2rem;align-items:start}
+  .side{position:sticky;top:1.2rem;max-height:calc(100vh - 2.4rem);overflow-y:auto;padding:1.1rem 1rem;scrollbar-width:thin}
+  .side .lbl{font-weight:900;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 .5rem .4rem}
+  .toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.1rem}
+  .toc a{display:flex;gap:.55rem;align-items:baseline;padding:.38rem .45rem;border-radius:.6rem;color:var(--muted);text-decoration:none;font-size:.9rem;line-height:1.35;font-weight:700}
+  .toc a:hover{background:rgba(255,255,255,0.07);color:#fff}
+  .toc .n{flex:none;font-weight:900;color:var(--gold);font-size:.8rem;min-width:1.6rem}
+  .side .ask{margin-top:1rem;padding:.8rem .5rem 0;border-top:2px dashed var(--border-soft);font-size:.86rem;color:var(--faint)}
+  .toc-toggle{display:none;width:100%;align-items:center;justify-content:space-between;background:var(--panel);color:#fff;border:1.6px solid var(--border);border-radius:1rem;padding:.75rem 1rem;font:900 .95rem 'Nunito',sans-serif;cursor:pointer}
+  .toc-toggle svg{width:18px;height:18px;transition:transform .2s}
+  .toc-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+  .sec{padding:1.3rem 1.4rem 1.2rem;margin-bottom:1rem;scroll-margin-top:1rem}
+  .sec h2{display:flex;align-items:center;gap:.7rem;margin:0 0 .6rem;font-weight:900;font-size:1.22rem;line-height:1.25}
+  .sec h2 .n{flex:none;min-width:2.3rem;height:2.3rem;padding:0 .3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:var(--ink);font-size:.95rem;box-shadow:0 3px 0 rgba(0,0,0,0.35)}
+  .sec p{margin:.55rem 0;color:var(--muted)}
+  .sec strong{color:#fff}
+  .sec ul{margin:.5rem 0;padding-left:1.3rem;color:var(--muted)}
+  .sec li{margin:.2rem 0}
+  .sec li::marker{color:var(--gold)}
+  .sec a{overflow-wrap:anywhere}
+  .top-btn{position:fixed;right:1.1rem;bottom:1.1rem;width:3rem;height:3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,var(--gold),var(--gold-deep));border:0;color:var(--ink);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;box-shadow:0 6px 16px rgba(0,0,0,0.5)}
+  .top-btn.show{opacity:1;visibility:visible}
+  .top-btn svg{width:20px;height:20px}
+  @media (max-width:900px){
+    .layout{grid-template-columns:minmax(0,1fr);padding-top:1.4rem}
+    .side{position:static;max-height:none;display:none}
+    .side.open{display:block}
+    .toc-toggle{display:flex}
+  }
+  @media (max-width:760px){
+    .topbar{gap:.7rem}
+    .lang{order:2;margin-left:auto}
+    .tabs{order:3;margin-left:0;width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+    .tabs::-webkit-scrollbar{display:none}
+    .tabs a{white-space:nowrap;flex:none}
+  }
+  @media (max-width:560px){ .sec{padding:1.1rem 1rem} }
+  @media print{
+    .topbar,.side,.toc-toggle,.top-btn,.neon,.qcard{display:none!important}
+    body{background:#fff;color:#111}
+    .stage{background:#fff}
+    .stage::before{display:none}
+    .doc-head h1{color:#111;-webkit-text-stroke:0;filter:none}
+    .doc-head .sub{color:#333}
+    .sec{box-shadow:none;border:1px solid #ccc;background:#fff}
+    .sec p,.sec ul,.sec strong{color:#111}
+    .layout{display:block}
+  }
+  .layout>*{min-width:0}.layout *{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div class="stage doc">
+<span class="qcard a" aria-hidden="true">?</span><span class="qcard b" aria-hidden="true">?</span><span class="qcard c" aria-hidden="true">?</span><span class="qcard d" aria-hidden="true">?</span>
+<header class="topbar">
+  <a class="brand" href="../../../de/" aria-label="OnPoy Studios – Startseite"><svg aria-hidden="true" class="mark" viewBox="0 0 240 240"><defs><linearGradient gradientUnits="userSpaceOnUse" id="og" x1="24" x2="214" y1="14" y2="226"><stop offset="0" stop-color="#25A9EA"/><stop offset="0.52" stop-color="#4C63E8"/><stop offset="1" stop-color="#C13BD6"/></linearGradient><linearGradient id="osheen" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#CFEFFF" stop-opacity="0.85"/><stop offset="1" stop-color="#CFEFFF" stop-opacity="0"/></linearGradient></defs><g fill="none" stroke-linecap="round"><path d="M91.1 184.1 A74 74 0 1 1 148.9 184.1" stroke="url(#og)" stroke-width="26"/><path d="M97 176 A66 66 0 0 1 128 55" opacity="0.5" stroke="url(#osheen)" stroke-width="6"/><path d="M46 150 C74 111 105 111 123 132 C141 153 170 150 196 115" stroke="url(#og)" stroke-width="24"/><circle cx="120" cy="93" fill="url(#og)" r="17"/><circle cx="113" cy="87" fill="#CFEFFF" opacity="0.55" r="4.6"/></g></svg><span class="wm">OnPoy Studios</span></a>
+  <nav class="tabs" aria-label="OnPoy Facts"><a href="./">OnPoy Facts</a><a href="datenschutz.html">Datenschutzerklärung</a><a href="nutzungsbedingungen.html" aria-current="page">Nutzungsbedingungen</a><a href="impressum.html">Impressum</a></nav>
+  <div class="lang" role="group" aria-label="Sprache / Language"><span aria-current="true">DE</span><a href="../en/nutzungsbedingungen.html" hreflang="en">EN</a></div>
+</header>
+  <div class="doc-head"><div class="in">
+    <img src="../icon.jpg" alt="OnPoy Facts App-Icon" width="64" height="64">
+    <div><h1>Nutzungsbedingungen</h1><p class="sub">Stand: 18. Oktober 2026 · OnPoy Facts für iPhone und iPad</p></div>
+  </div></div>
+</div>
+<div class="neon" aria-hidden="true"></div>
+<div class="layout">
+  <div>
+    <button class="toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="side"><span>Inhaltsverzeichnis</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+    <aside class="side card" id="side">
+      <p class="lbl">Inhaltsverzeichnis</p>
+      <nav class="toc" aria-label="Inhaltsverzeichnis"><ol><li><a href="#s1"><span class="n">01</span><span>Anbieter, Geltungsbereich und Verhältnis zur Apple-Lizenz</span></a></li><li><a href="#s2"><span class="n">02</span><span>Gegenstand der App</span></a></li><li><a href="#s3"><span class="n">03</span><span>Altersvoraussetzung</span></a></li><li><a href="#s4"><span class="n">04</span><span>Spielinhalte, Fakten und Namen Dritter</span></a></li><li><a href="#s5"><span class="n">05</span><span>Spielernamen und Verhalten</span></a></li><li><a href="#s6"><span class="n">06</span><span>Online-Spiel über Apple Game Center</span></a></li><li><a href="#s7"><span class="n">07</span><span>Leben</span></a></li><li><a href="#s8"><span class="n">08</span><span>Werbung</span></a></li><li><a href="#s9"><span class="n">09</span><span>Zulässige Nutzung</span></a></li><li><a href="#s10"><span class="n">10</span><span>Geistiges Eigentum</span></a></li><li><a href="#s11"><span class="n">11</span><span>Drittanbieter, SDKs und Lizenzen</span></a></li><li><a href="#s12"><span class="n">12</span><span>Updates und technische Voraussetzungen</span></a></li><li><a href="#s13"><span class="n">13</span><span>Änderungen von Spiel und Inhalten</span></a></li><li><a href="#s14"><span class="n">14</span><span>Verfügbarkeit und Einstellung der App</span></a></li><li><a href="#s15"><span class="n">15</span><span>Gewährleistung und Haftung</span></a></li><li><a href="#s16"><span class="n">16</span><span>Dienste und Inhalte Dritter</span></a></li><li><a href="#s17"><span class="n">17</span><span>Datenschutz</span></a></li><li><a href="#s18"><span class="n">18</span><span>Apple App Store</span></a></li><li><a href="#s19"><span class="n">19</span><span>Beendigung der Nutzung</span></a></li><li><a href="#s20"><span class="n">20</span><span>Änderungen dieser Nutzungsbedingungen</span></a></li><li><a href="#s21"><span class="n">21</span><span>Anwendbares Recht, Gerichtsstand und Streitbeilegung</span></a></li><li><a href="#s22"><span class="n">22</span><span>Kontakt</span></a></li></ol></nav>
+      <div class="ask">Fragen dazu?<br><a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></div>
+    </aside>
+  </div>
+  <main id="main">
+<section class="sec card" id="s1">
+  <h2><span class="n">01</span><span>Anbieter, Geltungsbereich und Verhältnis zur Apple-Lizenz</span></h2>
+  <p>Anbieter der iOS-App „OnPoy Facts“ (nachfolgend „App“) ist Onur Sitar (Kontaktangaben in Abschnitt 22).</p>
+<p>Für die Nutzung der App gilt die <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Standard-Endnutzer-Lizenzvereinbarung von Apple (Licensed Application End User License Agreement)</a>, die beim Herunterladen über den Apple App Store vereinbart wird. Diese Nutzungsbedingungen ergänzen sie: Sie erklären die Regeln, Funktionen und Besonderheiten der App und enthalten rechtliche Hinweise. Bei Widersprüchen geht die Lizenzvereinbarung von Apple vor; gesetzliche Rechte der Nutzer bleiben unberührt.</p>
+<p>Die jeweils aktuelle Fassung ist jederzeit in der App unter Einstellungen → Nutzungsbedingungen abrufbar und kann dort kopiert werden.</p>
+</section>
+<section class="sec card" id="s2">
+  <h2><span class="n">02</span><span>Gegenstand der App</span></h2>
+  <p>OnPoy Facts ist ein Bluff- und Quizspiel. Zu jeder Frage gibt es eine überraschende, wahre Antwort; die Spieler wählen aus vorgegebenen falschen Antworten Bluffs aus, um ihre Mitspieler zu täuschen, und stimmen anschließend ab, welche Antwort die Wahrheit ist. Die App bietet insbesondere:</p>
+<ul><li>Offline: 2 bis 4 Spieler auf einem Gerät, 5, 10 oder 15 Fragen,</li><li>Online „Zufälliger Gegner“: 2 Spieler, 5 Fragen, abwechselnd über Apple Game Center,</li><li>Online „Mit Freunden“: bis zu 4 Spieler gleichzeitig über Apple Game Center.</li></ul>
+<p>Änderungen an Spielmodi, Fragen und Inhalten richten sich nach Abschnitt 13.</p>
+</section>
+<section class="sec card" id="s3">
+  <h2><span class="n">03</span><span>Altersvoraussetzung</span></h2>
+  <p>Die App richtet sich an Nutzer ab 13 Jahren. Minderjährige dürfen die App nur nutzen, soweit die Zustimmung ihrer gesetzlichen Vertreter erforderlich ist und vorliegt. Eltern und Erziehungsberechtigte können den Zugang Minderjähriger zu Geräten, Apple Accounts und Game Center zusätzlich über die Einstellungen von iOS (z. B. Bildschirmzeit) steuern.</p>
+</section>
+<section class="sec card" id="s4">
+  <h2><span class="n">04</span><span>Spielinhalte, Fakten und Namen Dritter</span></h2>
+  <p>Die Fragen und Antworten wurden sorgfältig recherchiert und dienen der Unterhaltung. Dennoch können einzelne Angaben fehlerhaft, unvollständig oder aufgrund späterer Entwicklungen überholt sein. Insbesondere zeitabhängige Angaben wie Einwohnerzahlen können sich ändern. Die falschen Antworten sind bewusst erfunden. Gesetzliche Gewährleistungsrechte bleiben unberührt.</p>
+<p>In den Fragen können Namen von Personen, Unternehmen, Marken, Werken, Orten und sonstigen Bezeichnungen vorkommen. Die Rechte daran stehen den jeweiligen Inhabern zu. Die Nennung dient ausschließlich dem Quizinhalt; sie bedeutet keine Verbindung, Unterstützung, Empfehlung oder Partnerschaft zwischen dem Anbieter und den Genannten.</p>
+</section>
+<section class="sec card" id="s5">
+  <h2><span class="n">05</span><span>Spielernamen und Verhalten</span></h2>
+  <p>Beleidigende, diskriminierende, anstößige oder rechtswidrige Spielernamen sind nicht erlaubt. Die App prüft eingegebene Namen automatisch; der Filter ist jedoch nicht fehlerfrei. In den Online-Modi wird der Game-Center-Name angezeigt; hierfür gelten zusätzlich die Bedingungen von Apple.</p>
+</section>
+<section class="sec card" id="s6">
+  <h2><span class="n">06</span><span>Online-Spiel über Apple Game Center</span></h2>
+  <p>Für die Online-Modi ist eine Anmeldung bei Apple Game Center erforderlich. Die Verfügbarkeit der Online-Modi hängt von Apple ab.</p>
+<p>Für den Modus „Zufälliger Gegner“ (abwechselndes Spiel) gilt:</p>
+<ul><li>Findet sich innerhalb kurzer Zeit kein Mitspieler, spielt ein Computergegner. Computergegner sind immer am Namen „QuizBot“ erkennbar.</li><li>Punkte, Siege und sonstige Ergebnisse aus Spielen gegen Computergegner zählen nicht für Bestenlisten, Ranglisten oder Erfolge (z. B. in Game Center).</li><li>Der jeweils aktive Spieler hat bis zu 24 Stunden Zeit für seinen Zug. Wer diese Frist verstreichen lässt, verliert das Spiel.</li><li>Es können höchstens 5 Spiele gleichzeitig offen sein. Beendete Spiele bleiben sichtbar, bis der Spieler sie verlässt.</li><li>Nach einem Spiel kann eine Revanche angefragt werden; sie beginnt, wenn beide Spieler zustimmen.</li></ul>
+<p>Für alle Online-Modi gilt: Wer ein laufendes Spiel während einer Auswahl verlässt, kann je nach Modus das Spiel verlieren bzw. als ausgeschieden gelten.</p>
+</section>
+<section class="sec card" id="s7">
+  <h2><span class="n">07</span><span>Leben</span></h2>
+  <p>Im Modus „Zufälliger Gegner“ verfügen Nutzer über bis zu 4 Leben. Jedes neue Spiel kostet ein Leben, unabhängig davon, ob gegen einen Menschen oder einen Computergegner gespielt wird. Alle 30 Minuten kommt ein Leben zurück, höchstens bis 4. Zusätzlich kann ohne Leben freiwillig eine Prämienanzeige angesehen werden, um ein Leben zu erhalten; ein Anspruch auf die Verfügbarkeit einer solchen Anzeige besteht nicht. Das Weiterspielen offener Spiele und Revanchen kosten kein Leben.</p>
+<p>Leben sind ein reines Spielelement: Sie können nicht gekauft, verkauft oder übertragen werden, haben keinen Geldwert und werden nur auf dem jeweiligen Gerät gespeichert (beim Löschen der App gehen sie verloren). Die Manipulation der Leben, z. B. durch Verstellen der Geräteuhr, ist nicht gestattet. Änderungen am System der Leben richten sich nach Abschnitt 13.</p>
+</section>
+<section class="sec card" id="s8">
+  <h2><span class="n">08</span><span>Werbung</span></h2>
+  <p>Die App ist kostenlos und wird durch Werbung über Google AdMob finanziert. Auf der Startseite kann ein Werbebanner erscheinen. Nach jedem dritten beendeten Spiel im Offline-Modus oder im Modus „Mit Freunden“ kann – sofern verfügbar und datenschutzrechtlich zulässig – eine Vollbildanzeige erscheinen. Zusätzlich können Nutzer freiwillig eine Prämienanzeige ansehen, um ein Leben zu erhalten. Ein Anspruch auf die Verfügbarkeit einer solchen Anzeige oder Prämie besteht nicht. Beim Antippen einer Anzeige kann der Nutzer die App verlassen und zu einem Angebot eines Dritten weitergeleitet werden; für dieses Angebot gelten die Bedingungen des jeweiligen Dritten. Informationen zur Datenverarbeitung enthält die Datenschutzerklärung.</p>
+</section>
+<section class="sec card" id="s9">
+  <h2><span class="n">09</span><span>Zulässige Nutzung</span></h2>
+  <p>Die App ist für die persönliche, nicht-kommerzielle Nutzung bestimmt. Nicht gestattet sind insbesondere:</p>
+<ul><li>die Nutzung zu rechtswidrigen oder missbräuchlichen Zwecken,</li><li>die Manipulation von Spielständen, Ergebnissen, Leben oder Online-Spielen,</li><li>der Einsatz von Bots, Skripten oder vergleichbaren Hilfsmitteln,</li><li>das automatisierte Auslesen oder massenhafte Kopieren der Fragen und Antworten,</li><li>die unberechtigte Vervielfältigung oder Verbreitung geschützter Bestandteile der App,</li><li>Dekompilierung, Reverse Engineering oder die Umgehung technischer Schutzmaßnahmen, soweit nicht gesetzlich zwingend erlaubt.</li></ul>
+</section>
+<section class="sec card" id="s10">
+  <h2><span class="n">10</span><span>Geistiges Eigentum</span></h2>
+  <p>Die App und ihre vom Anbieter erstellten Bestandteile, insbesondere Programmcode, Gestaltung, Grafiken, Logo, Texte, Fragen- und Antwortsammlung, Musik, Sounds und Animationen, sind urheberrechtlich oder durch andere Schutzrechte geschützt. Durch Herunterladen oder Nutzung werden keine Rechte übertragen; der Nutzer erhält nur die Nutzungsrechte nach den App-Store-Bedingungen, der Standard-EULA von Apple und diesen Bedingungen.</p>
+</section>
+<section class="sec card" id="s11">
+  <h2><span class="n">11</span><span>Drittanbieter, SDKs und Lizenzen</span></h2>
+  <p>Die App verwendet Technologien und Dienste Dritter, insbesondere von Apple (iOS, Game Center) und Google (Google Mobile Ads SDK, Google User Messaging Platform). Soweit entsprechende Bedingungen dieser Anbieter gegenüber dem Nutzer gelten (z. B. die Bedingungen von Apple für Game Center), sind sie ergänzend zu beachten.</p>
+<p>Quellen und Lizenzen: Der Namensfilter der App nutzt unter anderem die „List of Dirty, Naughty, Obscene, and Otherwise Bad Words“, © 2012–2020 Shutterstock, Inc., lizenziert unter <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">Creative Commons Namensnennung 4.0 International (CC BY 4.0)</a> – <a href="https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words" rel="noopener">Quelle</a>. Die verwendete Liste wurde verändert; Begriffe wurden entfernt und ergänzt.</p>
+</section>
+<section class="sec card" id="s12">
+  <h2><span class="n">12</span><span>Updates und technische Voraussetzungen</span></h2>
+  <p>Der Anbieter stellt Aktualisierungen bereit, soweit dies gesetzlich erforderlich ist, insbesondere Sicherheitsaktualisierungen. Für eine ordnungsgemäße Nutzung kann eine aktuelle Version der App und von iOS erforderlich sein. Installiert der Nutzer bereitgestellte Aktualisierungen nicht, haftet der Anbieter nicht für einen Mangel, der allein auf das Fehlen dieser Aktualisierung zurückzuführen ist, sofern der Nutzer über die Verfügbarkeit und die Folgen einer unterlassenen Installation informiert wurde (§ 327f Abs. 2 BGB).</p>
+</section>
+<section class="sec card" id="s13">
+  <h2><span class="n">13</span><span>Änderungen von Spiel und Inhalten</span></h2>
+  <p>Änderungen der App, ihrer Regeln oder Funktionen (z. B. Spielmodi, Fragen, Leben, Werbeformen, Gestaltung und technische Abläufe) können aus triftigem Grund vorgenommen werden, insbesondere zur Behebung von Fehlern und Sicherheitsproblemen, zur Anpassung an technische oder rechtliche Anforderungen, aufgrund von Änderungen an Diensten von Apple oder Google, zur Verhinderung von Missbrauch oder zur Weiterentwicklung der App. Nutzern entstehen dadurch keine zusätzlichen Kosten.</p>
+<p>Soweit eine Änderung die Nutzungsmöglichkeit mehr als nur unerheblich beeinträchtigt, werden die Nutzer im gesetzlich erforderlichen Umfang rechtzeitig und klar über die Änderung, ihren Zeitpunkt und ihre Rechte informiert (§ 327r BGB). Gesetzliche Gewährleistungs-, Beendigungs- und sonstige Verbraucherrechte bleiben unberührt.</p>
+</section>
+<section class="sec card" id="s14">
+  <h2><span class="n">14</span><span>Verfügbarkeit und Einstellung der App</span></h2>
+  <p>Eine jederzeit fehlerfreie und unterbrechungsfreie Verfügbarkeit, insbesondere der Online-Modi, kann nicht gewährleistet werden. Einschränkungen können durch Wartung, technische Probleme oder Änderungen bei Apple, Google oder anderen Diensten entstehen. Die Bereitstellung der App kann aus triftigem Grund (z. B. dauerhafte Einstellung von Diensten Dritter, rechtliche Vorgaben oder fehlende Wirtschaftlichkeit) für die Zukunft eingeschränkt oder eingestellt werden; Nutzer werden darüber in angemessener Frist vorher informiert, soweit dies möglich ist. Abschnitt 13 und die gesetzlichen Verbraucherrechte bleiben unberührt.</p>
+</section>
+<section class="sec card" id="s15">
+  <h2><span class="n">15</span><span>Gewährleistung und Haftung</span></h2>
+  <p>Für Verbraucher gelten die gesetzlichen Gewährleistungsrechte.</p>
+<p>Der Anbieter haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit, für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit, bei arglistigem Verschweigen eines Mangels, im Umfang einer ausdrücklich übernommenen Garantie sowie nach dem Produkthaftungsgesetz.</p>
+<p>Bei leicht fahrlässiger Verletzung einer wesentlichen Vertragspflicht ist die Haftung auf den vorhersehbaren, vertragstypischen Schaden begrenzt. Wesentliche Vertragspflichten sind Pflichten, deren Erfüllung die ordnungsgemäße Durchführung des Vertrags erst ermöglicht und auf deren Einhaltung der Nutzer regelmäßig vertrauen darf. Im Übrigen ist die Haftung für leichte Fahrlässigkeit ausgeschlossen.</p>
+<p>Die vorstehenden Haftungsbeschränkungen gelten auch zugunsten der gesetzlichen Vertreter und Erfüllungsgehilfen des Anbieters. Zwingende gesetzliche Rechte bleiben unberührt.</p>
+</section>
+<section class="sec card" id="s16">
+  <h2><span class="n">16</span><span>Dienste und Inhalte Dritter</span></h2>
+  <p>Für den Inhalt von Werbeanzeigen und von externen Angeboten, zu denen eine Anzeige weiterleitet, sind die jeweiligen Drittanbieter verantwortlich; für diese Angebote gelten deren Nutzungs- und Datenschutzbedingungen. Eigene gesetzliche Prüf-, Schutz- und Haftungspflichten des Anbieters bleiben unberührt.</p>
+</section>
+<section class="sec card" id="s17">
+  <h2><span class="n">17</span><span>Datenschutz</span></h2>
+  <p>Informationen zur Verarbeitung personenbezogener Daten enthält die gesonderte Datenschutzerklärung der App (Einstellungen → Datenschutzerklärung).</p>
+</section>
+<section class="sec card" id="s18">
+  <h2><span class="n">18</span><span>Apple App Store</span></h2>
+  <p>Die App wird über den Apple App Store bereitgestellt. Für Download, Installation, Lizenzierung und Nutzung gelten zusätzlich die Bedingungen von Apple, insbesondere die <a href="https://www.apple.com/de/legal/internet-services/itunes/de/terms.html" rel="noopener">Bedingungen der Apple Mediendienste</a>.</p>
+</section>
+<section class="sec card" id="s19">
+  <h2><span class="n">19</span><span>Beendigung der Nutzung</span></h2>
+  <p>Der Nutzer kann die Nutzung jederzeit beenden und die App löschen. Da kein eigenes Benutzerkonto besteht, ist keine Kündigung erforderlich.</p>
+</section>
+<section class="sec card" id="s20">
+  <h2><span class="n">20</span><span>Änderungen dieser Nutzungsbedingungen</span></h2>
+  <p>Diese Nutzungsbedingungen werden angepasst, wenn sich die App, ihre Regeln oder die rechtlichen Anforderungen ändern (siehe Abschnitt 13). Die jeweils aktuelle Fassung mit Datum („Stand“) ist in der App unter Einstellungen → Nutzungsbedingungen abrufbar. Gesetzliche Rechte der Nutzer bleiben unberührt.</p>
+</section>
+<section class="sec card" id="s21">
+  <h2><span class="n">21</span><span>Anwendbares Recht, Gerichtsstand und Streitbeilegung</span></h2>
+  <p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Gegenüber Verbrauchern gilt diese Rechtswahl nur, soweit ihnen dadurch keine zwingenden Schutzvorschriften ihres Aufenthaltsstaats entzogen werden. Für Verbraucher gelten die gesetzlichen Gerichtsstände. Ist der Nutzer Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen, ist Gerichtsstand Hannover.</p>
+<p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+</section>
+<section class="sec card" id="s22">
+  <h2><span class="n">22</span><span>Kontakt</span></h2>
+  <p>Onur Sitar<br>Bayernstraße 33<br>30855 Langenhagen<br>Deutschland<br>E-Mail: <a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></p>
+</section>
+  </main>
+</div>
+<footer>
+  <span>&copy; <span id="yr">2026</span> OnPoy Studios · Onur Sitar</span>
+  <span><a href="../../../de/">onpoy-studios</a> &middot; <a href="impressum.html">Impressum</a> &middot; <a href="datenschutz.html">Datenschutz</a> &middot; <a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></span>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<button class="top-btn" id="topBtn" aria-label="Nach oben"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 15l6-6 6 6"/></svg></button>
+<script>
+(function(){
+  var tg=document.getElementById('tocToggle'), side=document.getElementById('side');
+  tg.addEventListener('click',function(){var o=side.classList.toggle('open');tg.setAttribute('aria-expanded',o?'true':'false');});
+  side.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=900){side.classList.remove('open');tg.setAttribute('aria-expanded','false');}});});
+  var b=document.getElementById('topBtn');
+  window.addEventListener('scroll',function(){b.classList.toggle('show',window.scrollY>600);},{passive:true});
+  b.addEventListener('click',function(){window.scrollTo({top:0});});
+})();
+</script>
+</body>
+</html>

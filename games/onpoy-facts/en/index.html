@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OnPoy Facts – The Bluff Quiz</title>
+<meta name="description" content="OnPoy Facts: the bluff quiz by OnPoy Studios for iPhone and iPad. 747 questions with absurd but true answers. Privacy policy, terms of service, legal notice and support.">
+<meta name="theme-color" content="#1b0b3d">
+<link rel="icon" href="../icon.jpg">
+<link rel="apple-touch-icon" href="../icon.jpg">
+<link rel="alternate" hreflang="de" href="../de/">
+<link rel="alternate" hreflang="en" href="../en/">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+  :root{
+    --night:#0d0520; --stage:#1b0b3d; --stage-2:#2a1260;
+    --panel:#24114a; --panel-hi:#2f1860;
+    --border:rgba(189,133,255,0.55); --border-soft:rgba(189,133,255,0.22);
+    --purple:#9e52ff; --purple-hi:#c99bff; --neon:#b06bff;
+    --gold:#ffcc33; --gold-hi:#ffe27a; --gold-deep:#fa8f14;
+    --ink:#1a0833;
+    --text:#f7f3ff; --muted:#d8ccf2; --faint:#a594c9;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  body{margin:0;min-height:100vh;color:var(--text);background:var(--night);
+    font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.04rem;line-height:1.65;font-weight:600}
+  a{color:var(--gold);text-underline-offset:2px}
+  a:hover{color:var(--gold-hi)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--gold-hi);outline-offset:3px;border-radius:6px}
+  ::selection{background:rgba(255,204,51,0.3)}
+
+  /* Bühne wie im App-Icon: violettes Scheinwerferlicht, Neonbogen, schwebende Fragekarten */
+  .stage{position:relative;overflow:hidden;isolation:isolate;
+    background:
+      radial-gradient(70% 60% at 50% 0%, rgba(176,107,255,0.45), rgba(176,107,255,0) 70%),
+      radial-gradient(40% 50% at 15% 10%, rgba(255,255,255,0.10), rgba(255,255,255,0) 70%),
+      radial-gradient(40% 50% at 85% 10%, rgba(255,255,255,0.10), rgba(255,255,255,0) 70%),
+      linear-gradient(180deg,var(--stage-2),var(--stage) 60%,var(--night));}
+  .stage::before{content:"";position:absolute;left:50%;top:-55%;width:150%;aspect-ratio:1;transform:translateX(-50%);z-index:-1;
+    border-radius:50%;border:3px solid rgba(176,107,255,0.55);box-shadow:0 0 30px rgba(176,107,255,0.55),inset 0 0 30px rgba(176,107,255,0.35)}
+  .qcard{position:absolute;z-index:-1;width:46px;height:58px;border-radius:9px;
+    background:linear-gradient(160deg,#3a2560,#1c0f33);border:2px solid rgba(255,204,51,0.35);
+    color:rgba(255,204,51,0.65);font:900 1.6rem 'Nunito',sans-serif;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 18px rgba(0,0,0,0.45)}
+  .qcard.a{left:5%;top:58%;transform:rotate(-18deg)}
+  .qcard.b{right:6%;top:30%;transform:rotate(14deg)}
+  .qcard.c{left:12%;top:16%;transform:rotate(9deg);width:34px;height:44px;font-size:1.1rem;opacity:.7}
+  .qcard.d{right:14%;top:72%;transform:rotate(-8deg);width:36px;height:46px;font-size:1.2rem;opacity:.75}
+  @media (max-width:640px){.qcard.c,.qcard.d{display:none}.qcard.a{left:-8px}.qcard.b{right:-8px}}
+  .stage.doc .qcard.a,.stage.doc .qcard.c{display:none}
+  .neon{height:4px;background:linear-gradient(90deg,transparent,var(--neon) 15%,var(--gold) 50%,var(--neon) 85%,transparent);
+    box-shadow:0 0 14px rgba(176,107,255,0.8),0 0 4px rgba(255,204,51,0.6)}
+
+  /* Kopfzeile: zurück zu OnPoy Studios */
+  .topbar{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;max-width:1220px;margin:0 auto;padding:.85rem 1.2rem}
+  .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;flex:none}
+  .brand .mark{width:28px;height:28px;display:block}
+  .brand .wm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.02rem;color:#fff}
+  .tabs{display:flex;gap:.35rem;flex-wrap:wrap;margin-left:auto}
+  .tabs a{font-weight:800;font-size:.84rem;color:var(--muted);text-decoration:none;padding:.4rem .8rem;border-radius:999px;
+    background:rgba(36,17,74,0.75);border:1.5px solid var(--border-soft)}
+  .tabs a:hover{color:#fff;border-color:var(--border)}
+  .lang{display:flex;gap:.3rem;flex:none}
+  .lang a,.lang span{font-weight:900;font-size:.78rem;padding:.32rem .62rem;border-radius:.55rem;text-decoration:none;border:1.5px solid var(--border)}
+  .lang a{background:rgba(36,17,74,0.75);color:var(--muted)}
+  .lang a:hover{color:#fff;border-color:var(--gold)}
+  .lang span{background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:var(--ink);border-color:transparent}
+  .tabs a[aria-current="page"]{background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:var(--ink);border-color:transparent}
+
+  /* Schriftzug wie im Spiel: „OnPoy“ weiß, „FACTS“ gold, kursiv mit dunkler Kontur */
+  .logo{font-family:'Nunito',sans-serif;font-weight:900;font-style:italic;line-height:.92;margin:0;display:inline-block;letter-spacing:.01em}
+  .logo span{display:block;paint-order:stroke fill;filter:drop-shadow(0 5px 0 rgba(0,0,0,0.45))}
+  .logo .o{color:#fff;font-size:.62em}
+  .logo .f{background:linear-gradient(180deg,var(--gold-hi),var(--gold) 45%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.04em}
+  @supports (-webkit-text-stroke:1px){ .logo span{-webkit-text-stroke:.07em var(--ink)} }
+
+  .wrap{max-width:1220px;margin:0 auto;padding:0 1.2rem}
+  footer{max-width:1220px;margin:0 auto;padding:1.6rem 1.2rem 2.4rem;color:var(--faint);font-size:.86rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;justify-content:space-between;font-weight:700}
+  footer a{color:var(--muted)}
+
+  .card{background:var(--panel);border:1.6px solid var(--border);border-radius:1.3rem;box-shadow:0 14px 34px -14px rgba(0,0,0,0.7),inset 0 1px 0 rgba(255,255,255,0.06)}
+
+  /* ---------- Spielseite ---------- */
+  .hero{padding:1.4rem 1.2rem 3.2rem;text-align:center}
+  .hero .icon{width:132px;height:132px;border-radius:30px;border:2px solid var(--border);box-shadow:0 0 0 4px rgba(176,107,255,0.18),0 14px 30px rgba(0,0,0,0.55);display:block;margin:.6rem auto 1.4rem}
+  .hero .logo{font-size:clamp(3.2rem,12vw,6rem)}
+  .hero .tag{max-width:640px;margin:1.6rem auto 0;color:var(--muted);font-size:1.15rem;font-weight:700;line-height:1.55}
+  .hero .tag b{color:#fff}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.3rem}
+  .chip{font-weight:800;font-size:.85rem;color:#fff;background:rgba(36,17,74,0.85);border:1.5px solid var(--border);border-radius:999px;padding:.35rem .85rem}
+  .chip.g{background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:var(--ink);border-color:transparent}
+  .store{display:inline-flex;align-items:center;gap:.65rem;margin-top:1.7rem;background:#000;color:#fff;border-radius:1rem;padding:.75rem 1.25rem;text-decoration:none;font-weight:800;text-align:left;border:1.5px solid rgba(255,255,255,0.25)}
+  .store svg{width:22px;height:22px;flex:none}
+  .store small{display:block;color:#bfb3d9;font-weight:700;font-size:.78rem}
+  .store:hover{color:#fff}
+  .label{font-weight:900;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:2.6rem 0 1rem}
+  .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  @media (max-width:820px){.steps{grid-template-columns:1fr}}
+  .step{padding:1.2rem 1.25rem}
+  .step .num{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.15rem;
+    background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:var(--ink);margin-bottom:.7rem;box-shadow:0 4px 0 rgba(0,0,0,0.35)}
+  .step h3{margin:0 0 .3rem;font-size:1.12rem;font-weight:900}
+  .step p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.5}
+  .example{margin-top:1rem;padding:1.2rem 1.25rem}
+  .example .q{font-weight:900;font-size:1.1rem;text-align:center;margin:0 0 .8rem}
+  .ans{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap;padding:.6rem .9rem;border-radius:.9rem;background:rgba(13,5,32,0.55);margin-top:.5rem;border:1.5px solid}
+  .ans.bluff{border-color:var(--purple)} .ans.true{border-color:#34c759}
+  .ans .pill{font-size:.78rem;font-weight:900;border-radius:999px;padding:.2rem .65rem}
+  .ans.bluff .pill{background:var(--purple)} .ans.true .pill{background:#2fb352}
+  .modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  @media (max-width:820px){.modes{grid-template-columns:1fr}}
+  .mode{padding:1.1rem 1.2rem;display:flex;gap:.9rem;align-items:flex-start}
+  .mode .ic{width:46px;height:46px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(158,82,255,0.55);color:var(--gold)}
+  .mode .ic svg{width:24px;height:24px}
+  .mode h3{margin:0 0 .2rem;font-size:1.05rem;font-weight:900}
+  .mode p{margin:0;color:var(--muted);font-size:.93rem;line-height:1.45}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;padding-bottom:1rem}
+  .tile{display:flex;flex-direction:column;gap:.35rem;padding:1.15rem 1.2rem;text-decoration:none;color:var(--text);transition:transform .15s ease,background .15s ease,border-color .15s ease}
+  .tile:hover{transform:translateY(-3px);background:var(--panel-hi);border-color:var(--gold);color:var(--text)}
+  .tile .t{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.08rem}
+  .tile .t .ic{width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none;font-size:1.05rem;background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:var(--ink)}
+  .tile .t .ic svg{width:19px;height:19px}
+  .tile .t .arr{margin-left:auto;color:var(--gold)}
+  .tile.wide{grid-column:1 / -1}
+  .tile .d{color:var(--muted);font-size:.93rem;line-height:1.45}
+  .tile .mail{color:var(--gold);font-weight:800;word-break:break-all;font-size:.9rem}
+  .note{margin:1rem 0 0;color:var(--faint);font-size:.9rem;text-align:center}
+
+  /* ---------- Rechtstexte ---------- */
+  .doc-head{padding:1.2rem 1.2rem 2.4rem}
+  .doc-head .in{max-width:1220px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .doc-head img{width:64px;height:64px;border-radius:17px;border:2px solid var(--border);box-shadow:0 8px 20px rgba(0,0,0,0.5);flex:none}
+  .doc-head h1{margin:0;font-weight:900;font-style:italic;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.05;color:#fff;
+    -webkit-text-stroke:.06em var(--ink);paint-order:stroke fill;filter:drop-shadow(0 4px 0 rgba(0,0,0,0.4))}
+  .doc-head .sub{margin:.35rem 0 0;color:var(--muted);font-weight:800}
+  .layout{max-width:1220px;margin:0 auto;padding:2rem 1.2rem 3rem;display:grid;grid-template-columns:290px minmax(0,1fr);gap:2rem;align-items:start}
+  .side{position:sticky;top:1.2rem;max-height:calc(100vh - 2.4rem);overflow-y:auto;padding:1.1rem 1rem;scrollbar-width:thin}
+  .side .lbl{font-weight:900;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 .5rem .4rem}
+  .toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.1rem}
+  .toc a{display:flex;gap:.55rem;align-items:baseline;padding:.38rem .45rem;border-radius:.6rem;color:var(--muted);text-decoration:none;font-size:.9rem;line-height:1.35;font-weight:700}
+  .toc a:hover{background:rgba(255,255,255,0.07);color:#fff}
+  .toc .n{flex:none;font-weight:900;color:var(--gold);font-size:.8rem;min-width:1.6rem}
+  .side .ask{margin-top:1rem;padding:.8rem .5rem 0;border-top:2px dashed var(--border-soft);font-size:.86rem;color:var(--faint)}
+  .toc-toggle{display:none;width:100%;align-items:center;justify-content:space-between;background:var(--panel);color:#fff;border:1.6px solid var(--border);border-radius:1rem;padding:.75rem 1rem;font:900 .95rem 'Nunito',sans-serif;cursor:pointer}
+  .toc-toggle svg{width:18px;height:18px;transition:transform .2s}
+  .toc-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+  .sec{padding:1.3rem 1.4rem 1.2rem;margin-bottom:1rem;scroll-margin-top:1rem}
+  .sec h2{display:flex;align-items:center;gap:.7rem;margin:0 0 .6rem;font-weight:900;font-size:1.22rem;line-height:1.25}
+  .sec h2 .n{flex:none;min-width:2.3rem;height:2.3rem;padding:0 .3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:var(--ink);font-size:.95rem;box-shadow:0 3px 0 rgba(0,0,0,0.35)}
+  .sec p{margin:.55rem 0;color:var(--muted)}
+  .sec strong{color:#fff}
+  .sec ul{margin:.5rem 0;padding-left:1.3rem;color:var(--muted)}
+  .sec li{margin:.2rem 0}
+  .sec li::marker{color:var(--gold)}
+  .sec a{overflow-wrap:anywhere}
+  .top-btn{position:fixed;right:1.1rem;bottom:1.1rem;width:3rem;height:3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,var(--gold),var(--gold-deep));border:0;color:var(--ink);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;box-shadow:0 6px 16px rgba(0,0,0,0.5)}
+  .top-btn.show{opacity:1;visibility:visible}
+  .top-btn svg{width:20px;height:20px}
+  @media (max-width:900px){
+    .layout{grid-template-columns:minmax(0,1fr);padding-top:1.4rem}
+    .side{position:static;max-height:none;display:none}
+    .side.open{display:block}
+    .toc-toggle{display:flex}
+  }
+  @media (max-width:760px){
+    .topbar{gap:.7rem}
+    .lang{order:2;margin-left:auto}
+    .tabs{order:3;margin-left:0;width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+    .tabs::-webkit-scrollbar{display:none}
+    .tabs a{white-space:nowrap;flex:none}
+  }
+  @media (max-width:560px){ .sec{padding:1.1rem 1rem} }
+  @media print{
+    .topbar,.side,.toc-toggle,.top-btn,.neon,.qcard{display:none!important}
+    body{background:#fff;color:#111}
+    .stage{background:#fff}
+    .stage::before{display:none}
+    .doc-head h1{color:#111;-webkit-text-stroke:0;filter:none}
+    .doc-head .sub{color:#333}
+    .sec{box-shadow:none;border:1px solid #ccc;background:#fff}
+    .sec p,.sec ul,.sec strong{color:#111}
+    .layout{display:block}
+  }
+  .layout>*{min-width:0}.layout *{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div class="stage">
+<span class="qcard a" aria-hidden="true">?</span><span class="qcard b" aria-hidden="true">?</span><span class="qcard c" aria-hidden="true">?</span><span class="qcard d" aria-hidden="true">?</span>
+<header class="topbar">
+  <a class="brand" href="../../../en/" aria-label="OnPoy Studios – Home"><svg aria-hidden="true" class="mark" viewBox="0 0 240 240"><defs><linearGradient gradientUnits="userSpaceOnUse" id="og" x1="24" x2="214" y1="14" y2="226"><stop offset="0" stop-color="#25A9EA"/><stop offset="0.52" stop-color="#4C63E8"/><stop offset="1" stop-color="#C13BD6"/></linearGradient><linearGradient id="osheen" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#CFEFFF" stop-opacity="0.85"/><stop offset="1" stop-color="#CFEFFF" stop-opacity="0"/></linearGradient></defs><g fill="none" stroke-linecap="round"><path d="M91.1 184.1 A74 74 0 1 1 148.9 184.1" stroke="url(#og)" stroke-width="26"/><path d="M97 176 A66 66 0 0 1 128 55" opacity="0.5" stroke="url(#osheen)" stroke-width="6"/><path d="M46 150 C74 111 105 111 123 132 C141 153 170 150 196 115" stroke="url(#og)" stroke-width="24"/><circle cx="120" cy="93" fill="url(#og)" r="17"/><circle cx="113" cy="87" fill="#CFEFFF" opacity="0.55" r="4.6"/></g></svg><span class="wm">OnPoy Studios</span></a>
+  <nav class="tabs" aria-label="OnPoy Facts"><a href="./" aria-current="page">OnPoy Facts</a><a href="datenschutz.html">Privacy Policy</a><a href="nutzungsbedingungen.html">Terms of Service</a><a href="impressum.html">Legal Notice</a></nav>
+  <div class="lang" role="group" aria-label="Language / Sprache"><a href="../de/" hreflang="de">DE</a><span aria-current="true">EN</span></div>
+</header>
+  <section class="hero">
+    <img class="icon" src="../icon.jpg" alt="OnPoy Facts app icon" width="132" height="132">
+    <h1 class="logo"><span class="o">OnPoy</span><span class="f">FACTS</span></h1>
+    <p class="tag">The bluff quiz for you and your friends: every question has <b>one absurd but true answer</b> &ndash; and plenty of convincing lies.</p>
+    <div class="chips"><span class="chip g">747 questions</span><span class="chip">2&ndash;4 players offline</span><span class="chip">Online via Game Center</span><span class="chip">Ages 13+</span><span class="chip">Free</span></div>
+    <a class="store" href="#" aria-disabled="true" onclick="return false"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.1 1.2-.4 2.4-1.1 3.2-.7.9-1.9 1.6-3 1.5-.1-1.2.5-2.4 1.2-3.2C14.3 3.6 15.5 3 16.5 3zM19 17c-.6 1.3-1.3 2.6-2.4 3.7-1 1-2.1 1.3-3.1 1.3-1 0-1.4-.6-2.7-.6-1.3 0-1.7.6-2.7.6-1 0-2-.4-3-1.4C1.8 19 .8 15.5 2 12.8c.6-1.4 1.9-2.5 3.3-2.5 1.2 0 2 .7 3 .7 1 0 1.5-.7 3-.7 1.2 0 2.4.6 3.2 1.6-2.8 1.6-2.4 5.6.5 6.8z"/></svg><span>Coming soon to the App&nbsp;Store<small>Link will follow at release</small></span></a>
+    <p class="note">The app is currently available in German.</p>
+  </section>
+</div>
+<div class="neon" aria-hidden="true"></div>
+<main class="wrap">
+  <p class="label">How to play</p>
+  <div class="steps"><div class="step card"><div class="num">1</div><h3>Pick a bluff</h3><p>Choose the most convincing of four false answers.</p></div><div class="step card"><div class="num">2</div><h3>Find the truth</h3><p>All answers get shuffled &ndash; tap the real one.</p></div><div class="step card"><div class="num">3</div><h3>Score points</h3><p>+1 for the truth, +1 for everyone who falls for your bluff.</p></div></div>
+  <div class="example card">
+    <p class="q">What shape is wombat poop?</p>
+    <div class="ans bluff"><span>It is star-shaped.</span><span class="pill">Your bluff</span></div>
+    <div class="ans true"><span>It is cube-shaped.</span><span class="pill">Truth</span></div>
+  </div>
+
+  <p class="label">Game modes</p>
+  <div class="modes"><div class="mode card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.6"/><path d="M16 14.2c2.9.3 5 2.6 5 5.8"/></svg></span><div><h3>Play offline</h3><p>2&ndash;4 players on one phone &middot; 5, 10 or 15 questions.</p></div></div><div class="mode card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h4l10 12h4"/><path d="M3 18h4l3-3.6"/><path d="M14 9.6 17 6h4"/><path d="m18 3 3 3-3 3"/><path d="m18 15 3 3-3 3"/></svg></span><div><h3>Random opponent</h3><p>Take turns online against other players &ndash; with rematches. If nobody is found, a clearly labeled QuizBot plays.</p></div></div><div class="mode card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="8" height="14" rx="2"/><rect x="13" y="6" width="8" height="14" rx="2"/><path d="M6.5 15h1M16.5 17h1"/></svg></span><div><h3>With friends</h3><p>Up to 4 friends live &ndash; everyone on their own phone.</p></div></div></div>
+
+  <p class="label">Legal &amp; Support</p>
+  <div class="tiles">
+    <a class="tile card" href="datenschutz.html">
+      <span class="t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/></svg></span><span>Privacy Policy</span><span class="arr" aria-hidden="true">&rarr;</span></span>
+      <span class="d">What data the app processes, how advertising works and what rights you have.</span>
+    </a>
+    <a class="tile card" href="nutzungsbedingungen.html">
+      <span class="t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg></span><span>Terms of Service</span><span class="arr" aria-hidden="true">&rarr;</span></span>
+      <span class="d">Rules and legal information on using OnPoy Facts.</span>
+    </a>
+    <a class="tile card" href="impressum.html">
+      <span class="t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><span>Legal Notice</span><span class="arr" aria-hidden="true">&rarr;</span></span>
+      <span class="d">Provider identification pursuant to Section&nbsp;5 DDG.</span>
+    </a>
+    <a class="tile card wide" href="../../../en/#kontakt">
+      <span class="t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span>Support / Contact</span><span class="arr" aria-hidden="true">&rarr;</span></span>
+      <span class="d">Questions, problems or spotted a question with a wrong answer? Write to us.</span>
+      <span class="mail">onpoy.studios@gmail.com</span>
+    </a>
+  </div>
+  <p class="note">OnPoy Facts is free and financed by advertising. Personalized ads only with your consent.</p>
+</main>
+<footer>
+  <span>&copy; <span id="yr">2026</span> OnPoy Studios · Onur Sitar</span>
+  <span><a href="../../../en/">onpoy-studios</a> &middot; <a href="impressum.html">Legal Notice</a> &middot; <a href="datenschutz.html">Privacy</a> &middot; <a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></span>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
