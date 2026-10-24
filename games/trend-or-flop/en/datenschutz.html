@@ -385,7 +385,11 @@
 <li>sound effects settings,</li>
 <li>haptic feedback settings,</li>
 <li>reduced motion setting,</li>
-<li>selected language.</li>
+<li>selected language,</li>
+<li>number of rounds played per game mode, in particular Party, Trend Ladder and Exact Guess,</li>
+<li>highest score per game mode,</li>
+<li>whether Premium has been unlocked,</li>
+<li>whether the first-launch introduction has already been shown.</li>
 </ul>
 <p>In the local Party mode, users may also enter freely chosen names or nicknames for the participating players in order to distinguish between them during the current game.</p>
 <p>These names are processed only temporarily on the device, are not permanently stored, and are not transmitted to us or to third parties. They are automatically deleted once the app is closed.</p>
@@ -443,6 +447,9 @@
 <section class="policy-section" data-title-de="Personalisierte und nicht-personalisierte Werbung" data-title-en="Personalized and Non-Personalized Advertising" id="s6">
 <h2><span class="idx">06</span><span>Personalized and Non-Personalized Advertising</span></h2>
 <div class="lang-body">
+<p><strong>Default: protection as for minors.</strong> By default we treat every user according to the heightened protections that apply to minors. In that case we do not request personalized advertising, we flag ad requests for age-appropriate treatment, and we limit ad content to material suitable for the app's age rating. Neither a consent dialog nor Apple's tracking prompt is shown.</p>
+<p><strong>Exception: verified age of 16 or above.</strong> On devices running iOS 26 or later we use Apple's “Declared Age Range” feature to ask the user to share their age range with us. Only if Apple tells us that the user is at least 16 years old AND that this information was set by a parent or guardian, or confirmed by Apple (for example by government ID or credit card), do we ask for consent to personalized advertising and tracking. An age that was merely self-declared is not sufficient.</p>
+<p>In regions where no age assurance is required, this request is omitted and the usual consent dialog applies.</p>
 <p>Where required by applicable law, the user's consent will be requested before certain data processing for advertising purposes takes place.</p>
 <p>Users may, in particular, be given the opportunity to decide whether they consent to data processing for personalized advertising.</p>
 <p>Where the appropriate consent has been provided, advertisements may be personalized on the basis of permitted information concerning interests or activities.</p>
@@ -483,7 +490,7 @@
 <div class="lang-body">
 <p>Where the Identifier for Advertisers (IDFA) or other information is used for tracking within the meaning of Apple's requirements, Apple's additional privacy mechanisms apply.</p>
 <p>Apple provides the App Tracking Transparency (ATT) framework for this purpose.</p>
-<p>Where ATT authorization is required, the corresponding iOS system prompt will be displayed to the user.</p>
+<p>The iOS system prompt is shown only where a verified age of at least 16 within the meaning of section 06 has been established beforehand. In all other cases no tracking takes place and no prompt is shown.</p>
 <p>The user may grant or deny this permission.</p>
 <p>Refusing tracking permission does not prevent the basic use of the game.</p>
 <p>Tracking permissions can also be managed through the privacy and tracking settings provided by iOS. Where the required permission has not been granted, the IDFA must not be accessed for tracking requiring ATT authorization.</p>
@@ -548,8 +555,8 @@
 <div class="lang-body">
 <p>Where the GDPR applies, the processing of personal data may be based on the following legal bases, depending on the particular processing activity:</p>
 <div class="basis">
-<span class="label">Article 6(1)(a) GDPR – Consent</span>
-<p>Where we request consent for particular processing activities, processing is carried out on the basis of that consent. This may apply in particular to certain processing activities relating to personalized advertising.</p>
+<span class="label">Article 6(1)(a) GDPR and Section 25(1) TDDDG – Consent</span>
+<p>Where we request consent for particular processing activities, processing is carried out on the basis of that consent. This applies to personalized advertising and tracking for users whose age of at least 16 within the meaning of section 06 has been verified and who have given their consent. Consent may be withdrawn at any time.</p>
 </div>
 <div class="basis">
 <span class="label">Article 6(1)(b) GDPR – Performance of a Contract or Pre-Contractual Measures</span>
@@ -583,6 +590,8 @@
 <p>We do not intentionally collect personal information directly from children through user accounts, profiles or communication features.</p>
 <p>The app does not provide user accounts, public chat or functionality allowing players to directly exchange personal content with unknown players.</p>
 <p>Where parental or guardian consent is legally required for a particular processing activity involving a minor, the applicable legal requirements must be observed.</p>
+<p>We do not ask for a date of birth. On devices running iOS 26 or later we use Apple's “Declared Age Range” feature to request an age range. Whether this information is shared is decided by the user, or by a parent or guardian through Family Sharing in the case of children. We receive only the age range and how it was set (self-declared, guardian-declared or confirmed), never a date of birth. We use it solely to decide whether an advertising consent dialog may be shown, and we do not store it on servers of our own.</p>
+<p>If the age range is not shared, is below 16, was merely self-declared, or the iOS version is older, we treat the user according to the heightened protections that apply to minors.</p>
 <p>Parents and guardians are encouraged to use Apple's privacy, advertising, Screen Time and purchase restriction features as appropriate for the age of the child. Additional information for parents and guardians may be provided in our Parents' Guide.</p>
 </div>
 </section>

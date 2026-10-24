@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – Onpoys MiniGames</title>
+<meta name="description" content="Privacy Policy – Onpoys MiniGames. Last updated: 24 October 2026 · Onpoys MiniGames for iPhone and iPad">
+<meta name="theme-color" content="#4fb8ff">
+<link rel="icon" href="../icon.jpg">
+<link rel="apple-touch-icon" href="../icon.jpg">
+<link rel="alternate" hreflang="de" href="https://onpoy-studios.github.io/games/onpoys-minigames/de/datenschutz.html">
+<link rel="alternate" hreflang="en" href="https://onpoy-studios.github.io/games/onpoys-minigames/en/datenschutz.html">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+  :root{
+    --sky-a:#4fb8ff; --sky-b:#9fe0ff;
+    --ink:#1b2350;
+    --coral:#ff6b6b; --sun:#ffd23f; --teal:#22c3b0; --violet:#8b5cf6; --blue:#3fa2ff;
+    --night:#16204a; --night-deep:#0f1636;
+    --card:#232e63; --card-hi:#2c3975;
+    --line:rgba(255,255,255,0.14);
+    --text:#f7f8ff; --muted:#d0d6f2; --faint:#9aa4cf;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  body{margin:0;min-height:100vh;color:var(--text);background:var(--night-deep);
+    font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.04rem;line-height:1.65;font-weight:600}
+  a{color:var(--sun);text-underline-offset:2px}
+  a:hover{color:#ffe680}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+  ::selection{background:rgba(255,210,63,0.3)}
+
+  /* Himmel mit Wolken wie im Spielmenü */
+  .sky{position:relative;overflow:hidden;
+    background:
+      radial-gradient(28% 40% at 12% 78%, rgba(255,255,255,0.75), rgba(255,255,255,0) 70%),
+      radial-gradient(24% 34% at 88% 70%, rgba(255,255,255,0.65), rgba(255,255,255,0) 70%),
+      radial-gradient(18% 26% at 60% 18%, rgba(255,255,255,0.45), rgba(255,255,255,0) 70%),
+      linear-gradient(180deg,var(--sky-a),var(--sky-b));}
+  /* Wiese mit Wimpelkette */
+  .meadow{height:18px;background:linear-gradient(180deg,#7ed957,#46a83a);border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+  .pennants{height:16px;margin:0 auto;max-width:1220px;opacity:.85;
+    background:
+      conic-gradient(from 150deg at 50% 0, var(--coral) 0 60deg, transparent 60deg) 0 0/48px 16px repeat-x,
+      conic-gradient(from 150deg at 50% 0, var(--sun) 0 60deg, transparent 60deg) 12px 0/48px 16px repeat-x,
+      conic-gradient(from 150deg at 50% 0, var(--teal) 0 60deg, transparent 60deg) 24px 0/48px 16px repeat-x,
+      conic-gradient(from 150deg at 50% 0, var(--violet) 0 60deg, transparent 60deg) 36px 0/48px 16px repeat-x}
+  .ground{background:linear-gradient(180deg,var(--night),var(--night-deep) 420px)}
+
+  .topbar{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;max-width:1220px;margin:0 auto;padding:.85rem 1.2rem}
+  .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;flex:none}
+  .brand .mark{width:28px;height:28px;display:block}
+  .brand .wm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.02rem;color:var(--ink)}
+  .tabs{display:flex;gap:.35rem;flex-wrap:wrap;margin-left:auto}
+  .tabs a{font-weight:800;font-size:.84rem;color:var(--ink);text-decoration:none;padding:.4rem .75rem;border-radius:999px;
+    background:rgba(255,255,255,0.55);border:2px solid rgba(27,35,80,0.25)}
+  .tabs a:hover{background:rgba(255,255,255,0.85);color:var(--ink)}
+  .tabs a[aria-current="page"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .lang{display:flex;gap:.3rem;flex:none}
+  .lang a,.lang span{font-weight:900;font-size:.78rem;padding:.3rem .6rem;border-radius:.55rem;text-decoration:none;border:2px solid var(--ink)}
+  .lang a{background:rgba(255,255,255,0.6);color:var(--ink)}
+  .lang a:hover{background:#fff;color:var(--ink)}
+  .lang span{background:var(--ink);color:#fff}
+
+  .wrap{max-width:1220px;margin:0 auto;padding:0 1.2rem}
+  footer{max-width:1220px;margin:0 auto;padding:1.6rem 1.2rem 2.4rem;color:var(--faint);font-size:.86rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;justify-content:space-between;font-weight:700}
+  footer a{color:var(--muted)}
+
+  /* ---------- Spielseite ---------- */
+  .hero{padding:1.2rem 1.2rem 3rem;text-align:center}
+  .hero .banner{max-width:900px;margin:.4rem auto 0;border-radius:26px;overflow:hidden;border:4px solid var(--ink);box-shadow:0 10px 0 rgba(0,0,0,0.22);position:relative;aspect-ratio:2532/1170;
+    background:#7fd0ff url(../hero.jpg) center/cover no-repeat}
+  .hero .banner img.logo{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%) rotate(-3deg);width:min(70%,560px);height:auto;filter:drop-shadow(0 8px 0 rgba(0,0,0,0.25))}
+  .hero .tag{max-width:640px;margin:1.6rem auto 0;color:var(--ink);font-size:1.15rem;font-weight:800;line-height:1.5}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.3rem}
+  .chip{font-weight:900;font-size:.85rem;color:var(--ink);background:rgba(255,255,255,0.75);border:2px solid var(--ink);border-radius:999px;padding:.35rem .8rem}
+  .store{display:inline-flex;align-items:center;gap:.65rem;margin-top:1.6rem;background:var(--ink);color:#fff;border-radius:1rem;padding:.75rem 1.2rem;text-decoration:none;font-weight:800;text-align:left;border:3px solid var(--ink);box-shadow:0 6px 0 rgba(0,0,0,0.3)}
+  .store svg{width:22px;height:22px;flex:none}
+  .store small{display:block;color:#c9d0f0;font-weight:700;font-size:.78rem}
+  .store:hover{color:#fff}
+  .label{font-weight:900;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sun);margin:2.4rem 0 1rem}
+  .games{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:.5rem}
+  .games span{font-weight:800;font-size:.86rem;color:var(--muted);background:var(--card);border:2px solid rgba(0,0,0,0.35);border-radius:999px;padding:.3rem .75rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;padding-bottom:1rem}
+  .tile{display:flex;flex-direction:column;gap:.35rem;padding:1.15rem 1.2rem;border-radius:1.1rem;background:var(--card);border:3px solid rgba(0,0,0,0.35);
+    box-shadow:0 6px 0 rgba(0,0,0,0.25);text-decoration:none;color:var(--text);transition:transform .15s ease,background .15s ease,border-color .15s ease}
+  .tile:hover{transform:translateY(-3px);background:var(--card-hi);border-color:var(--sun);color:var(--text)}
+  .tile .t{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.08rem}
+  .tile .t .ic{width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none;border:2px solid var(--ink);font-size:1.05rem}
+  .tile .t .arr{margin-left:auto;color:var(--sun)}
+  .tile .t .nm{min-width:0;overflow-wrap:normal;hyphens:manual}
+  .tile.wide{grid-column:1 / -1}
+  .tile .d{color:var(--muted);font-size:.93rem;line-height:1.45}
+  .tile .mail{color:var(--sun);font-weight:800;word-break:break-all;font-size:.9rem}
+  .ic.y{background:linear-gradient(180deg,#ffe680,#ffb020)}
+  .ic.b{background:linear-gradient(180deg,#8fd3ff,#3f86ff)}
+  .ic.r{background:linear-gradient(180deg,#ff9a9a,#ef4b4b)}
+  .ic.g{background:linear-gradient(180deg,#8ff0c8,#1fb39e)}
+  .ic.p{background:linear-gradient(180deg,#c7a8ff,#7c4ef0)}
+
+  /* ---------- Rechtstexte ---------- */
+  .doc-head{padding:1.2rem 1.2rem 2.2rem}
+  .doc-head .in{max-width:1220px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .doc-head img{width:64px;height:64px;border-radius:17px;border:3px solid var(--ink);box-shadow:0 6px 0 rgba(0,0,0,0.22);flex:none}
+  .doc-head h1{margin:0;font-weight:900;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.05;color:#fff;
+    -webkit-text-stroke:.07em var(--ink);paint-order:stroke fill;filter:drop-shadow(0 4px 0 rgba(0,0,0,0.25))}
+  .doc-head .sub{margin:.35rem 0 0;color:var(--ink);font-weight:800}
+  .layout{max-width:1220px;margin:0 auto;padding:2rem 1.2rem 3rem;display:grid;grid-template-columns:290px minmax(0,1fr);gap:2rem;align-items:start}
+  .side{position:sticky;top:1.2rem;max-height:calc(100vh - 2.4rem);overflow-y:auto;background:var(--card);border:3px solid rgba(0,0,0,0.35);border-radius:1.2rem;padding:1.1rem 1rem;box-shadow:0 6px 0 rgba(0,0,0,0.25);scrollbar-width:thin}
+  .side .lbl{font-weight:900;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 .5rem .4rem}
+  .toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.1rem}
+  .toc a{display:flex;gap:.55rem;align-items:baseline;padding:.38rem .45rem;border-radius:.6rem;color:var(--muted);text-decoration:none;font-size:.9rem;line-height:1.35;font-weight:700}
+  .toc a:hover{background:rgba(255,255,255,0.07);color:#fff}
+  .toc .n{flex:none;font-weight:900;color:var(--sun);font-size:.8rem;min-width:1.6rem}
+  .side .ask{margin-top:1rem;padding:.8rem .5rem 0;border-top:2px dashed var(--line);font-size:.86rem;color:var(--faint)}
+  .toc-toggle{display:none;width:100%;align-items:center;justify-content:space-between;background:var(--card);color:#fff;border:3px solid rgba(0,0,0,0.35);border-radius:1rem;padding:.75rem 1rem;font:900 .95rem 'Nunito',sans-serif;cursor:pointer}
+  .toc-toggle svg{width:18px;height:18px;transition:transform .2s}
+  .toc-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+  .sec{background:var(--card);border:3px solid rgba(0,0,0,0.35);border-radius:1.2rem;padding:1.3rem 1.4rem 1.2rem;margin-bottom:1rem;box-shadow:0 6px 0 rgba(0,0,0,0.25);scroll-margin-top:1rem}
+  .sec h2{display:flex;align-items:center;gap:.7rem;margin:0 0 .6rem;font-weight:900;font-size:1.22rem;line-height:1.25}
+  .sec h2 .n{flex:none;min-width:2.3rem;height:2.3rem;padding:0 .3rem;border-radius:.8rem;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,#ffe680,#ffb020);color:var(--ink);border:2px solid var(--ink);font-size:.95rem}
+  .sec p{margin:.55rem 0;color:var(--muted)}
+  .sec p strong{color:var(--text)}
+  .sec ul{margin:.5rem 0;padding-left:1.3rem;color:var(--muted)}
+  .sec li{margin:.2rem 0}
+  .sec li::marker{color:var(--sun)}
+  .sec a{overflow-wrap:anywhere}
+  .top-btn{position:fixed;right:1.1rem;bottom:1.1rem;width:3rem;height:3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,#ffe680,#ffb020);border:3px solid var(--ink);color:var(--ink);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+  .top-btn.show{opacity:1;visibility:visible}
+  .top-btn svg{width:20px;height:20px}
+  @media (max-width:900px){
+    .layout{grid-template-columns:minmax(0,1fr);padding-top:1.4rem}
+    .side{position:static;max-height:none}
+    .toc-toggle{display:flex}
+    .side{display:none}
+    .side.open{display:block}
+  }
+  @media (max-width:760px){
+    .topbar{gap:.7rem}
+    .lang{order:2;margin-left:auto}
+    .tabs{order:3;margin-left:0;width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+    .tabs::-webkit-scrollbar{display:none}
+    .tabs a{white-space:nowrap;flex:none}
+  }
+  @media (max-width:560px){ .sec{padding:1.1rem 1rem} }
+  @media print{
+    .topbar,.side,.toc-toggle,.top-btn,.meadow,.pennants{display:none!important}
+    body,.ground{background:#fff;color:#111}
+    .sky{background:#fff}
+    .sec{box-shadow:none;border:1px solid #ccc;background:#fff}
+    .sec p,.sec ul{color:#111}
+    .layout{display:block}
+  }
+  .layout>*{min-width:0}.layout *{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div class="sky">
+<header class="topbar">
+  <a class="brand" href="../../../en/" aria-label="OnPoy Studios – Home"><svg aria-hidden="true" class="mark" viewBox="0 0 240 240"><defs><linearGradient gradientUnits="userSpaceOnUse" id="og" x1="24" x2="214" y1="14" y2="226"><stop offset="0" stop-color="#25A9EA"/><stop offset="0.52" stop-color="#4C63E8"/><stop offset="1" stop-color="#C13BD6"/></linearGradient><linearGradient id="osheen" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#CFEFFF" stop-opacity="0.85"/><stop offset="1" stop-color="#CFEFFF" stop-opacity="0"/></linearGradient></defs><g fill="none" stroke-linecap="round"><path d="M91.1 184.1 A74 74 0 1 1 148.9 184.1" stroke="url(#og)" stroke-width="26"/><path d="M97 176 A66 66 0 0 1 128 55" opacity="0.5" stroke="url(#osheen)" stroke-width="6"/><path d="M46 150 C74 111 105 111 123 132 C141 153 170 150 196 115" stroke="url(#og)" stroke-width="24"/><circle cx="120" cy="93" fill="url(#og)" r="17"/><circle cx="113" cy="87" fill="#CFEFFF" opacity="0.55" r="4.6"/></g></svg><span class="wm">OnPoy Studios</span></a>
+  <nav class="tabs" aria-label="Onpoys MiniGames"><a href="./">Onpoys MiniGames</a><a href="datenschutz.html" aria-current="page">Privacy Policy</a><a href="nutzungsbedingungen.html">Terms of Use</a><a href="leitfaden-eltern.html">Parents' Guide</a><a href="impressum.html">Legal Notice</a></nav>
+  <div class="lang" role="group" aria-label="Sprache / Language"><a href="../de/datenschutz.html" hreflang="de">DE</a><span aria-current="true">EN</span></div>
+</header>
+  <div class="doc-head"><div class="in">
+    <img src="../icon.jpg" alt="Onpoys MiniGames app icon" width="64" height="64">
+    <div><h1>Privacy Policy</h1><p class="sub">Last updated: 24 October 2026 · Onpoys MiniGames for iPhone and iPad</p></div>
+  </div></div>
+</div>
+<div class="meadow" aria-hidden="true"></div>
+<div class="ground">
+  <div class="pennants" aria-hidden="true"></div>
+  <div class="layout">
+    <div>
+      <button class="toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="side"><span>Contents</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+      <aside class="side" id="side">
+        <p class="lbl">Contents</p>
+        <nav class="toc" aria-label="Contents"><ol><li><a href="#s1"><span class="n">i</span><span>Note on this translation</span></a></li><li><a href="#s2"><span class="n">01</span><span>Controller</span></a></li><li><a href="#s3"><span class="n">02</span><span>About the App</span></a></li><li><a href="#s4"><span class="n">03</span><span>Data stored locally</span></a></li><li><a href="#s5"><span class="n">04</span><span>Motion sensors and vibration</span></a></li><li><a href="#s6"><span class="n">05</span><span>Online multiplayer via Apple Game Center</span></a></li><li><a href="#s7"><span class="n">06</span><span>Virtual hearts</span></a></li><li><a href="#s8"><span class="n">07</span><span>Advertising and Google AdMob</span></a></li><li><a href="#s9"><span class="n">08</span><span>Privacy choices for advertising</span></a></li><li><a href="#s10"><span class="n">09</span><span>App Tracking Transparency</span></a></li><li><a href="#s11"><span class="n">10</span><span>Recipients and transfers to third countries</span></a></li><li><a href="#s12"><span class="n">11</span><span>Legal bases for processing</span></a></li><li><a href="#s13"><span class="n">12</span><span>Retention and deletion</span></a></li><li><a href="#s14"><span class="n">13</span><span>Children and teenagers</span></a></li><li><a href="#s15"><span class="n">14</span><span>Your privacy rights</span></a></li><li><a href="#s16"><span class="n">15</span><span>Right to lodge a complaint</span></a></li><li><a href="#s17"><span class="n">16</span><span>Data security</span></a></li><li><a href="#s18"><span class="n">17</span><span>Changes to this Privacy Policy</span></a></li><li><a href="#s19"><span class="n">18</span><span>Contact</span></a></li></ol></nav>
+        <div class="ask">Questions?<br><a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></div>
+      </aside>
+    </div>
+    <main id="main">
+<section class="sec" id="s1">
+  <h2><span class="n">i</span><span>Note on this translation</span></h2>
+  <p>This English version is provided for your convenience. In case of any discrepancy, the German version shall prevail.</p>
+</section>
+<section class="sec" id="s2">
+  <h2><span class="n">01</span><span>Controller</span></h2>
+  <p>The controller responsible for processing personal data in connection with the iOS app “Onpoys MiniGames” (the “App”) is:</p>
+<p>Onur Sitar<br>OnPoy Studios<br>Bayernstraße 33<br>30855 Langenhagen<br>Germany<br>Email: <a href="mailto:onpoy.studios@gmail.com">OnPoy.Studios@gmail.com</a><br>Website: <a href="https://onpoy-studios.github.io/en/#kontakt" rel="noopener">https://onpoy-studios.github.io/en/#kontakt</a></p>
+<p>“OnPoy Studios” is an unregistered trading name of Onur Sitar.</p>
+<p>This Privacy Policy explains which data is processed when you use the App, for what purposes, and what rights you have.</p>
+</section>
+<section class="sec" id="s3">
+  <h2><span class="n">02</span><span>About the App</span></h2>
+  <p>“Onpoys MiniGames” is a free party game for iPhone and iPad with 25 short mini-games. The App is intended for users aged 13 and over.</p>
+<p>You can play offline against computer-controlled opponents or online against other players via Apple Game Center.</p>
+<p>Offline play requires no user account and no internet connection. Online mode requires Apple Game Center.</p>
+<p>We do not operate our own game servers or a backend for the central storage of player profiles or game progress.</p>
+<p>The App does not ask you to enter your name, email address, phone number or postal address. It does not access your camera, microphone, contacts, photo library or GPS location.</p>
+<p>However, technical and personal data may be processed when you use Apple Game Center and the integrated advertising services.</p>
+</section>
+<section class="sec" id="s4">
+  <h2><span class="n">03</span><span>Data stored locally</span></h2>
+  <p>To make the App work and keep your personal settings, we store certain information locally on your device. This includes:</p>
+<ul><li>your custom player avatar (mask, outfit and colour),</li><li>the number of available hearts and the time of the next refill,</li><li>settings for music, sound effects, vibration, volume and language,</li><li>whether the game introduction has already been shown,</li><li>the most recently selected mini-game,</li><li>a counter used to control how often ads are shown,</li><li>cached preview images of the mini-games.</li></ul>
+<p>This information is managed using iOS's local storage, in particular UserDefaults and the app cache.</p>
+<p>We do not transfer this data to our own servers for permanent storage. Some avatar information and game-related data may be sent to other players during an online match (see Section 5). Local data may also be included in a device backup you have set up (e.g. iCloud Backup); Apple's terms apply to such backups.</p>
+<p>Storing and reading this information is strictly necessary to provide the App functions you have requested (Section 25(2) No. 2 of the German TDDDG). You can remove this data at any time by deleting the App.</p>
+</section>
+<section class="sec" id="s5">
+  <h2><span class="n">04</span><span>Motion sensors and vibration</span></h2>
+  <p>In mini-games with tilt controls, the App processes motion and orientation data of your device via the motion sensors provided by iOS (CoreMotion) while you are actively playing.</p>
+<p>Raw sensor readings are not stored permanently and are not sent to our servers or to advertising services. In online mode, control and movement information derived from them may be sent to other players.</p>
+<p>The App also uses your device's haptics for vibration effects. You can turn this off in the game settings.</p>
+</section>
+<section class="sec" id="s6">
+  <h2><span class="n">05</span><span>Online multiplayer via Apple Game Center</span></h2>
+  <p>The optional online mode uses Apple Game Center and the GameKit framework. You can play against random players or invited friends.</p>
+<p>The technical connection between participants is established using the multiplayer functions provided by Apple. Signing in to Game Center with Apple is required to take part. We do not operate our own account management for this.</p>
+<p>The following information may be processed and exchanged between the participating devices:</p>
+<ul><li>Game Center player ID and display name,</li><li>settings of your custom player avatar,</li><li>game inputs, positions and movements,</li><li>scores and match results,</li><li>technically necessary connection information.</li></ul>
+<p>Other participants in a match can see your Game Center display name, your player avatar and the gameplay visible to them.</p>
+<p>The App has no text or voice chat of its own and does not allow uploading your own photos, videos or messages.</p>
+<p>We do not store this multiplayer data permanently on our own servers. Apple processes data within Game Center under its own responsibility; Apple's privacy policy applies. You can manage visibility, friends and multiplayer features in the iOS settings or restrict them using Screen Time.</p>
+</section>
+<section class="sec" id="s7">
+  <h2><span class="n">06</span><span>Virtual hearts</span></h2>
+  <p>A virtual heart is required to take part in an online match.</p>
+<p>The App manages the number of available hearts and the times of their automatic refill locally. Where available, additional hearts can be earned by voluntarily watching a rewarded video.</p>
+<p>Hearts have no monetary value, cannot be redeemed for money and cannot be bought with real money. The local information required for this is used solely to provide and manage this game feature.</p>
+</section>
+<section class="sec" id="s8">
+  <h2><span class="n">07</span><span>Advertising and Google AdMob</span></h2>
+  <p>The App is free. It is financed by advertising via Google AdMob. The provider of the advertising service is:</p>
+<p>Google Ireland Limited<br>Gordon House<br>Barrow Street<br>Dublin 4<br>Ireland</p>
+<p>Full-screen ads may be shown after several completed offline games. In addition, optional rewarded videos may be offered that give users an extra heart for online mode.</p>
+<p><strong>Default: protection as for minors.</strong> By default, we treat all users according to the special protection rules for minors. In that case we do not request personalised advertising, we flag ad requests for age-appropriate treatment, and we limit content to ads that are suitable for the App's age rating. Neither a consent dialog nor the iOS tracking prompt is shown in this case.</p>
+<p><strong>Exception: verified age of 16 or over.</strong> On devices running iOS 26 or later, we ask you via Apple's “Declared Age Range” feature to share your age range with us (see Section 13). Only if Apple tells us that you are at least 16 years old AND this information was set by your parents or confirmed by Apple (for example by ID or credit card) do we ask whether you consent to personalised advertising and tracking (Sections 8 and 9). A merely self-declared age is not sufficient. Even then, ads remain limited to content suitable for the App's age rating.</p>
+<p><strong>Regions without age verification.</strong> In regions where no age verification is required, the age range request does not apply; there, the usual process with the consent dialog and the iOS tracking prompt applies. On devices running a version of iOS earlier than iOS 26, this only applies outside the European Economic Area, the United Kingdom and Switzerland; within these areas, we treat all users on such devices according to the protection rules for minors.</p>
+<p>Where accessing or storing information on your device would require consent by law, the relevant ad processing does not take place without such valid consent. If limited ad delivery is not legally possible, no ads are loaded.</p>
+<p><strong>Possible data processing by Google</strong></p>
+<p>When delivering ads, Google may process in particular the following information:</p>
+<ul><li>IP address and approximate location derived from it,</li><li>device, operating system and app information,</li><li>technical information for delivering and displaying ads,</li><li>information about ad views and interactions,</li><li>technical diagnostic and performance information.</li></ul>
+<p>Depending on the delivery mode, ad content and technical components may be cached on your device.</p>
+<p>We do not use our own analytics or crash-reporting SDKs. The processing of technical diagnostic information by the Google Mobile Ads SDK is separate from this.</p>
+<p>If you tap an ad, an external website or another provider's offer may open. That provider's privacy policy applies to any processing there.</p>
+<p>For more information on data processing by Google, see: <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a></p>
+</section>
+<section class="sec" id="s9">
+  <h2><span class="n">08</span><span>Privacy choices for advertising</span></h2>
+  <p>We use the Google User Messaging Platform (UMP) to manage privacy choices relating to advertising.</p>
+<p>Users whom we treat as minors under Section 7 are not shown a consent dialog for advertising. We do not base ad delivery on the supposed consent of minor users.</p>
+<p>We show the consent dialog only to users who are verifiably at least 16 years old under Section 7 or who are in a region without age verification. There, you can freely decide whether to consent to personalised advertising and the related storage and access on your device. If you decline, you will only receive non-personalised or limited ads; the game remains fully playable. You can change or withdraw your choice at any time with effect for the future under Settings → “Ad settings”.</p>
+<p>Where consent required by law has not been given, the relevant processing does not take place.</p>
+</section>
+<section class="sec" id="s10">
+  <h2><span class="n">09</span><span>App Tracking Transparency</span></h2>
+  <p>We do not ask users whom we treat as minors under Section 7 for permission to track across apps via Apple's App Tracking Transparency (ATT). The advertising identifier (IDFA) is not used for them.</p>
+<p>The iOS tracking prompt is shown only if an age of at least 16 has first been verified under Section 7 or if the user is in a region without age verification. In all other cases, no tracking takes place and you are not asked about it. Only if you agree there may Google use the advertising identifier (IDFA) for personalised advertising and measurement. You can withdraw this permission at any time in the iOS settings under “Privacy &amp; Security → Tracking”.</p>
+<p>Other technical data processing in connection with advertising is described in Section 7.</p>
+</section>
+<section class="sec" id="s11">
+  <h2><span class="n">10</span><span>Recipients and transfers to third countries</span></h2>
+  <p>We do not sell personal user data.</p>
+<p>The following recipients or categories of recipients may in particular be involved when you use the App:</p>
+<ul><li>Apple for the App Store, iOS and Game Center,</li><li>Google Ireland Limited and any advertising service providers actually involved in delivering ads,</li><li>other participants in an online match, with regard to the information needed for the game.</li></ul>
+<p>We only disclose data beyond this where there is a legal basis for doing so.</p>
+<p>When using Apple and Google services, personal data may be processed outside the European Union or the European Economic Area, in particular in the United States. Where personal data is transferred to third countries, the legal requirements of Art. 44 et seq. GDPR must be met. Depending on the recipient and the processing, this may be based in particular on a valid adequacy decision, including the EU-US Data Privacy Framework for certified companies, or on appropriate safeguards such as standard contractual clauses.</p>
+<p>You can find more information on the safeguards and transfers actually used in the privacy information of the providers involved:</p>
+<ul><li>Apple: <a href="https://www.apple.com/legal/privacy/" rel="noopener">https://www.apple.com/legal/privacy/</a></li><li>Google: <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a></li></ul>
+</section>
+<section class="sec" id="s12">
+  <h2><span class="n">11</span><span>Legal bases for processing</span></h2>
+  <p>Depending on the purpose, personal data is processed on the following legal bases:</p>
+<ul><li><strong>Art. 6(1)(b) GDPR:</strong> where necessary to provide the agreed game features, in particular the online multiplayer mode you request.</li><li><strong>Art. 6(1)(f) GDPR:</strong> where permitted, to ensure technical security, prevent errors and handle enquiries, and for necessary, data-minimising technical processing. Our legitimate interest is the secure and functioning operation of the App.</li><li><strong>Art. 6(1)(c) GDPR:</strong> where processing is necessary to comply with legal obligations.</li><li><strong>Art. 6(1)(a) GDPR and Section 25(1) TDDDG:</strong> for personalised advertising and tracking for users whose age of at least 16 has been verified or who are in a region without age verification, and who have given their consent (Sections 7 to 9). Consent can be withdrawn at any time with effect for the future.</li></ul>
+<p>In addition, the requirements of Section 25 TDDDG apply to storing and reading information on your device. Access to your device that is not strictly technically necessary does not become exempt from consent merely because it serves to finance or operate the App.</p>
+</section>
+<section class="sec" id="s13">
+  <h2><span class="n">12</span><span>Retention and deletion</span></h2>
+  <p>Locally stored game settings, avatar information, heart counters and technical game preferences remain on your device until you change them in the App or delete the App. We do not keep a copy.</p>
+<p>Game data processed during an online match is processed by us only temporarily to the extent necessary to run the game and is not archived on our own servers.</p>
+<p>For data that Apple or Google process and store under their own responsibility, their respective privacy and retention policies apply.</p>
+<p>Personal information that reaches us through enquiries or when you exercise your privacy rights is kept only as long as necessary to handle the request or to comply with legal obligations.</p>
+</section>
+<section class="sec" id="s14">
+  <h2><span class="n">13</span><span>Children and teenagers</span></h2>
+  <p>“Onpoys MiniGames” is intended for users aged 13 and over.</p>
+<p>To protect younger users, we do without our own user accounts, chat features, voice communication and uploads of user-created content.</p>
+<p>We do not ask for your date of birth. On devices running iOS 26 or later, we ask for your age range via Apple's “Declared Age Range” feature (for example “13 to 15” or “16 to 17”). Whether this information is shared is decided by you or, for children in Family Sharing, by your parents. We only receive the age range and how it was set (self-declared, set by parents or confirmed), not your date of birth. We use the age range solely to decide whether a consent dialog for advertising may be shown (Section 7), and we do not store it on our own servers.</p>
+<p>If the age range is not shared, is under 16, was only self-declared, or the device runs an older version of iOS, we treat you according to the special protection rules for minors.</p>
+<p>The App's age rating of 13+ is not the same as the ability to give consent under data protection law. Under Art. 8 GDPR, special requirements apply to certain consent-based processing involving minors. In Germany, consent from a parent or guardian may be required for users under 16.</p>
+<p>Parents and guardians can restrict online mode and other features using Apple's parental controls or Screen Time settings. More information is available in our “Parents' Guide”.</p>
+</section>
+<section class="sec" id="s15">
+  <h2><span class="n">14</span><span>Your privacy rights</span></h2>
+  <p>Where the legal requirements are met, you have the following rights:</p>
+<ul><li>access (Art. 15 GDPR),</li><li>rectification (Art. 16 GDPR),</li><li>erasure (Art. 17 GDPR),</li><li>restriction of processing (Art. 18 GDPR),</li><li>data portability (Art. 20 GDPR),</li><li>objection to certain processing (Art. 21 GDPR),</li><li>withdrawal of consent with effect for the future (Art. 7(3) GDPR).</li></ul>
+<p>To exercise your rights, you can contact us at any time at <a href="mailto:onpoy.studios@gmail.com">OnPoy.Studios@gmail.com</a>.</p>
+<p>Because we do not operate user accounts or central storage of game progress, we generally cannot link locally stored data to a specific device using only a name or email address, or delete it remotely. We will review such requests within our legal possibilities.</p>
+<p>Where Apple or Google process personal data under their own responsibility, you can also exercise your rights directly with those providers.</p>
+<p>We do not make any solely automated decisions with legal or similarly significant effects within the meaning of Art. 22 GDPR.</p>
+</section>
+<section class="sec" id="s16">
+  <h2><span class="n">15</span><span>Right to lodge a complaint</span></h2>
+  <p>Under Art. 77 GDPR, you have the right to lodge a complaint with a data protection supervisory authority if you believe that the processing of your personal data violates applicable data protection law.</p>
+<p>The supervisory authority responsible for us is in particular:</p>
+<p>Der Landesbeauftragte für den Datenschutz Niedersachsen<br>Prinzenstraße 5<br>30159 Hannover<br>Germany<br>Website: <a href="https://www.lfd.niedersachsen.de" rel="noopener">https://www.lfd.niedersachsen.de</a></p>
+</section>
+<section class="sec" id="s17">
+  <h2><span class="n">16</span><span>Data security</span></h2>
+  <p>We follow the principle of data minimisation when developing and operating the App. In particular, we do without our own player registration, central player storage and our own messaging service for text or voice messages.</p>
+<p>For online mode, we use the GameKit functions provided by Apple. For data processing by integrated third-party providers, their own technical and organisational security measures also apply.</p>
+<p>Complete protection against all technical risks cannot be guaranteed.</p>
+</section>
+<section class="sec" id="s18">
+  <h2><span class="n">17</span><span>Changes to this Privacy Policy</span></h2>
+  <p>We update this Privacy Policy when the App's features, the services used or the legal requirements change.</p>
+<p>The current version is always available in the App under “Settings → Privacy”.</p>
+</section>
+<section class="sec" id="s19">
+  <h2><span class="n">18</span><span>Contact</span></h2>
+  <p>If you have any questions about data protection or the processing of personal information, you can reach us at:</p>
+<p>Onur Sitar – OnPoy Studios<br>Bayernstraße 33<br>30855 Langenhagen<br>Germany<br>Email: <a href="mailto:onpoy.studios@gmail.com">OnPoy.Studios@gmail.com</a><br>Contact form: <a href="https://onpoy-studios.github.io/en/#kontakt" rel="noopener">https://onpoy-studios.github.io/en/#kontakt</a></p>
+</section>
+    </main>
+  </div>
+<footer>
+  <span>&copy; <span id="yr">2026</span> OnPoy Studios · Onur Sitar</span>
+  <span><a href="../../../en/">onpoy-studios</a> &middot; <a href="impressum.html">Legal Notice</a> &middot; <a href="mailto:onpoy.studios@gmail.com">onpoy.studios@gmail.com</a></span>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</div>
+<button class="top-btn" id="topBtn" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 15l6-6 6 6"/></svg></button>
+<script>
+(function(){
+  var tg=document.getElementById('tocToggle'), side=document.getElementById('side');
+  tg.addEventListener('click',function(){var o=side.classList.toggle('open');tg.setAttribute('aria-expanded',o?'true':'false');});
+  side.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=900){side.classList.remove('open');tg.setAttribute('aria-expanded','false');}});});
+  var b=document.getElementById('topBtn');
+  window.addEventListener('scroll',function(){b.classList.toggle('show',window.scrollY>600);},{passive:true});
+  b.addEventListener('click',function(){window.scrollTo({top:0});});
+})();
+</script>
+</body>
+</html>
